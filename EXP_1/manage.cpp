@@ -4,6 +4,7 @@ Manage::Manage()
 {
 
 }
+// Записує шлях до файлу в список
 QString Manage::Return_Way(bool _st)
 {
     QString str;
@@ -54,11 +55,16 @@ for(auto _itb = _obj.begin();_itb != _obj.end();_itb++)
  }
  else if(_itb.value().isArray()) // (4)
  {
-     //QJsonArray arr = _itb.value().toArray();
-     //QJsonObject nextOBJ = _itb.value().toObject();
-     qDebug()<<currentJsonObject_;
-     //qDebug()<<_itb.value();
-     //Test(nextOBJ);
+     qDebug()<<"Start------------"<<_itb.key()<<"----------------";
+     QJsonObject ab;
+     QJsonArray arr = _itb.value().toArray();
+        for(auto tb = arr.begin(); tb != arr.end();tb++)
+        {
+            ab =  tb->toObject();
+        }
+    Test(ab);
+     qDebug()<<"END------------"<<_itb.key()<<"----------------";
+     qDebug()<<  "\t";
  }
  else if(_itb.value().isObject()) // 5)
  {}
