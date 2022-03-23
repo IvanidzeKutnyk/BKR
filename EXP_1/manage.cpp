@@ -55,14 +55,29 @@ for(auto _itb = _obj.begin();_itb != _obj.end();_itb++)
  }
  else if(_itb.value().isArray()) // (4)
  {
-     qDebug()<<"Start------------"<<_itb.key()<<"----------------";
      QJsonObject ab;
      QJsonArray arr = _itb.value().toArray();
-        for(auto tb = arr.begin(); tb != arr.end();tb++)
+     bool check = true;
+     qDebug()<<"Start------------"<<_itb.key()<<"----------------";
+            for(auto tb = arr.begin(); tb != arr.end();tb++)
         {
             ab =  tb->toObject();
+                if(tb->toObject().keys().isEmpty())
+                      {
+                         check = false;
+                        }
         }
+
+    if(check){
     Test(ab);
+    }
+    else
+    {
+        for(int tr = 0; tr < arr.size(); tr++)
+            {
+                    qDebug()<< arr[tr].toString();
+                }
+    }
      qDebug()<<"END------------"<<_itb.key()<<"----------------";
      qDebug()<<  "\t";
  }
