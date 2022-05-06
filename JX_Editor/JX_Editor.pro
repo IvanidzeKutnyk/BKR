@@ -9,14 +9,21 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    custom_left_buttom.cpp \
+    last_files_widget.cpp \
     main.cpp \
+    main_set.cpp \
+    main_widgets_right.cpp \
     mainwindow.cpp \
-    manage.cpp
+    togglebutton.cpp
 
 HEADERS += \
-    Glob_Define.h \
+    custom_left_buttom.h \
+    last_files_widget.h \
+    main_set.h \
+    main_widgets_right.h \
     mainwindow.h \
-    manage.h
+    togglebutton.h
 
 FORMS += \
     mainwindow.ui
@@ -26,5 +33,5 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-DISTFILES += \
-    ../Json files/arenasettings.json
+RESOURCES += \
+    File_Res.qrc

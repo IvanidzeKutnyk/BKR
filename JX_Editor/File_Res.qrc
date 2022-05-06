@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/images/icons"/>
+    <qresource prefix="/">
+        <file>icons/FileIcon.svg</file>
+    </qresource>
+</RCC>

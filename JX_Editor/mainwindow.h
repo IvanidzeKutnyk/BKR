@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "manage.h"
+#include "main_set.h"
+#include "togglebutton.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -13,15 +14,16 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    Main_Set main_set;
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    Manage mng;
+
 
 private slots:
-    void on_pushButton_clicked();
-    void on_pushButton_2_clicked();
+    //Buttons
 
 private:
     Ui::MainWindow *ui;
+    void Set_Default_Settings();
 };
 #endif // MAINWINDOW_H
