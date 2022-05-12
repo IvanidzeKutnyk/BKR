@@ -13,16 +13,16 @@ SOURCES += \
     last_files_widget.cpp \
     main.cpp \
     main_set.cpp \
-    main_widgets_right.cpp \
     mainwindow.cpp \
+    right_main_widgets.cpp \
     togglebutton.cpp
 
 HEADERS += \
     custom_left_buttom.h \
     last_files_widget.h \
     main_set.h \
-    main_widgets_right.h \
     mainwindow.h \
+    right_main_widgets.h \
     togglebutton.h
 
 FORMS += \

@@ -2,5 +2,8 @@
     <qresource prefix="/images/icons"/>
     <qresource prefix="/">
         <file>icons/FileIcon.svg</file>
+        <file>icons/OpenLogo.svg</file>
+        <file>icons/SaveLogo.svg</file>
+        <file>icons/JX_Logo.svg</file>
     </qresource>
 </RCC>
