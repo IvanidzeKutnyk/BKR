@@ -1,4 +1,4 @@
-#include "togglebutton.h"
+#include "All_Libr.h"
 
 ///Standart const
 ToggleButton::ToggleButton()

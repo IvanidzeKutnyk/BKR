@@ -18,6 +18,7 @@ SOURCES += \
     togglebutton.cpp
 
 HEADERS += \
+    All_Libr.h \
     custom_left_buttom.h \
     last_files_widget.h \
     main_set.h \

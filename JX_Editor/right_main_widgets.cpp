@@ -1,4 +1,4 @@
-#include "right_main_widgets.h"
+#include "All_Libr.h"
 
 Right_Main_Widgets::Right_Main_Widgets()
 {

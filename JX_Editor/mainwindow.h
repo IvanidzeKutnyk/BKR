@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "main_set.h"
-
+#include "All_Libr.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,13 +17,18 @@ public:
     Main_Set main_set;
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+private:
 
+    QStringList _file_ways;
+    bool _statList;
 
-private slots:
-    //Buttons
+    void OpenFilesWays();
+    QVector<Last_Files_Widget*> leftwidgets;
+
+public slots:
+     void Clicked(QString _fname,QString _fway,QString _fABSway,QString _ftimeEdit);
 
 private:
     Ui::MainWindow *ui;
-    void Set_Default_Settings();
 };
 #endif // MAINWINDOW_H

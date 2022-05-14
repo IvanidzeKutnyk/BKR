@@ -178,7 +178,12 @@ background-color:#3D76CE;
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
+          <string notr="true">background-image: url(:/icons/JX_Logo.svg);
+background-position: center;
+background-repeat: no-repeat;
+background-color: rgb(255, 255, 255);
+
+</string>
          </property>
          <layout class="QGridLayout" name="gridLayout">
           <property name="leftMargin">

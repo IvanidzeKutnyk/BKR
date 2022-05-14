@@ -3,13 +3,7 @@
 
 //#include <QAbstractButton>
 
-#include <QEvent>
-#include <QPainter>
-#include <QWidget>
-#include <QAbstractButton>
-#include <QColor>
-#include <QPropertyAnimation>
-#include <QMouseEvent>
+#include "All_Libr.h"
 class QPropertyAnimation;
 
 class ToggleButton :public QWidget

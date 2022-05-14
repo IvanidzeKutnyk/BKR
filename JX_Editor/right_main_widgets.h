@@ -1,9 +1,7 @@
 #ifndef RIGHT_MAIN_WIDGETS_H
 #define RIGHT_MAIN_WIDGETS_H
 
-#include <QPainter>
-#include <QWidget>
-#include <QString>
+#include "All_Libr.h"
 
 class Right_Main_Widgets :public QWidget
 {

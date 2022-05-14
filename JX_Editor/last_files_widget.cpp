@@ -1,4 +1,4 @@
-#include "last_files_widget.h"
+#include "All_Libr.h"
 
 Last_Files_Widget::Last_Files_Widget()
 {
@@ -18,7 +18,7 @@ Last_Files_Widget::Last_Files_Widget()
 /// \param _name
 /// \param _way
 ///
-Last_Files_Widget::Last_Files_Widget(QString _name, QString _way, QString _time)
+Last_Files_Widget::Last_Files_Widget(QString _name, QString _way,QString _wayABS, QString _time)
 {
     this->_height = 70;
     this->_radius = 10;
@@ -29,6 +29,7 @@ Last_Files_Widget::Last_Files_Widget(QString _name, QString _way, QString _time)
     this->setFixedHeight(this->_height);
     this->_file_name = _name;
     this->_file_way = _way;
+    this->_file_wayABS = _wayABS;
     this->_file_time_edit = _time;
     this->_mouseCl = false;
     this->_mouseEnt_Lev = false;
@@ -88,12 +89,14 @@ void Last_Files_Widget::leaveEvent(QEvent *e)
 }
 void Last_Files_Widget::mousePressEvent(QMouseEvent *e)
 {
-    Q_UNUSED(e);
-    this->_mouseCl = true;
-    this->Set_Style();
-    this->_backgroundColorMainRec = this->_backgroundColorPressed;
-    update();
-    qDebug()<<"Pressed";
+    if(e->button() == Qt::LeftButton)
+    {
+        this->_mouseCl = true;
+        this->Set_Style();
+        this->_backgroundColorMainRec = this->_backgroundColorPressed;
+        update();
+        emit this->LeftClick();
+    }
 }
 void Last_Files_Widget::mouseReleaseEvent(QMouseEvent *e)
 {
@@ -102,26 +105,8 @@ void Last_Files_Widget::mouseReleaseEvent(QMouseEvent *e)
     this->Set_Style();
     this->_backgroundColorMainRec = this->_backgroundColorEnter;
     update();
-    qDebug()<<"UnPressed";
 }
 
-//File Information
-///
-/// \brief Last_Files_Widget::Set_File_Name
-/// \param _name
-///
-void Last_Files_Widget::Set_File_Name(QString _name)
-{
-    this->_file_name = _name;
-}
-///
-/// \brief Last_Files_Widget::Set_File_Way
-/// \param _way
-///
-void Last_Files_Widget::Set_File_Way(QString _way)
-{
-    this->_file_way = _way;
-}
 //Widgets
 void Last_Files_Widget::add_Widgets()
 {

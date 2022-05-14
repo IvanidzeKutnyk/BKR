@@ -1,4 +1,4 @@
-#include "custom_left_buttom.h"
+#include "All_Libr.h"
 // ----------50-----------
 // --5-------40--------5--
 
@@ -35,6 +35,7 @@ Custom_Left_Buttom::Custom_Left_Buttom(bool _save, bool _open)
     this->_colorbackgroundsmallrecEnter = "#fff";
 
     this->setFixedSize(this->_width + 10, this->_height + 10);
+
 
 }
 void Custom_Left_Buttom::paintEvent(QPaintEvent *)
@@ -96,7 +97,9 @@ void Custom_Left_Buttom::mousePressEvent(QMouseEvent *)
      this->_colorbackgroundbigrecSelected = this->_colorbackgroundbigrecPressed;
      this->_colorbackgroundsmallrecSelected = this->_colorbackgroundsmallrecPressed;
      update();
-    //Debug
+     this->Open_File();
+
+     /* Debug
     if(this->_save_bool == true && this->_open_bool == false)
     {
          qDebug()<<"Button SAVE pressed!";
@@ -109,11 +112,30 @@ void Custom_Left_Buttom::mousePressEvent(QMouseEvent *)
     {
         qDebug()<<"Button ERROR!";
     }
-
+        */
 }
 void Custom_Left_Buttom::mouseReleaseEvent(QMouseEvent *)
 {
     this->_colorbackgroundbigrecSelected = this->_colorbackgroundbigrecEnter;
     this->_colorbackgroundsmallrecSelected = this->_colorbackgroundsmallrecEnter;
     update();
+}
+void Custom_Left_Buttom::Open_File()
+{
+    this->_buttfunc = QFileDialog::getOpenFileName(0, "Відкрити", "", "Json file (*.json)");
+    if(this->_buttfunc.isEmpty())
+    {
+        qDebug()<<"Empty";
+    }
+    else
+    {
+        QFileInfo fi(this->_buttfunc);
+        QString _file_Name = fi.fileName(); //File_Name
+        QString _file_ABSWay = fi.absolutePath(); //File_Way_ABS
+        QString _file_Way = fi.absoluteFilePath(); //File_Way
+        QDateTime _lastEdit = fi.lastModified(); //Last_Edit
+        QString _l = _lastEdit.toString();
+        emit Clicked(_file_Name,_file_Way,_file_ABSWay,_l);
+
+    }
 }
