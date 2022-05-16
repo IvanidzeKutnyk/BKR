@@ -11,6 +11,7 @@ Custom_Left_Buttom::Custom_Left_Buttom(bool _save, bool _open, bool _setting)
     this->_open_bool = _open;
     this->_sett_bool = _setting;
     this->_clicked = false;
+    this->_mousein = false;
     this->_height = 50;
     this->_width = 50;
     this->_round = 10;
@@ -35,8 +36,8 @@ void Custom_Left_Buttom::paintEvent(QPaintEvent *e)
                                    0 + this->_clicked,
                                    this->_height - this->_clicked,
                                    this->_width -  this->_clicked),
-                                   this->_round,
-                                   this->_round);
+                                   this->_round + (this->_mousein * 2),
+                                   this->_round + (this->_mousein * 2));
     if(this->Add_Image() == "")
     {
         //qDebug()<<"Buttons or Image Error";
@@ -56,6 +57,7 @@ void Custom_Left_Buttom::enterEvent(QEvent *e)
 {
     Q_UNUSED(e);
     //---------
+    this->_mousein = true;
     _color->_colorbackgroundbigrecSelected = _color->_colorbackgroundbigrecEnter;
     update();
     //qDebug()<<"IN";
@@ -64,6 +66,7 @@ void Custom_Left_Buttom::leaveEvent(QEvent *e)
 {
     Q_UNUSED(e);
     //---------
+    this->_mousein = false;
     _color->_colorbackgroundbigrecSelected = _color->_colorbackgroundbigrecIdle;
     update();
     //qDebug()<<"OUT";

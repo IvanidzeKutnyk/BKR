@@ -48,6 +48,7 @@ private:
     bool _save_bool;
     bool _sett_bool;
     bool _clicked;
+    bool _mousein;
 signals:
     void SendFileInfoAfterClick(WorkFile *);
 

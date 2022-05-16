@@ -14,7 +14,6 @@ Last_Files_Widget::Last_Files_Widget(QString _name, QString _way,QString _wayABS
     this->_mouseEnt_Lev = false;
     this->_Active_Stat = false;
     this->Main_Functions();
-    emit this->SendWidg(this);
 }
 //PaintFunction
 void Last_Files_Widget::paintEvent(QPaintEvent *)
@@ -54,55 +53,54 @@ void Last_Files_Widget::Set_Memory()
 void Last_Files_Widget::enterEvent(QEvent *e)
 {
     Q_UNUSED(e);
+    this->_mouseEnt_Lev = true;
     if(this->_Active_Stat){}
     else
     {
-        this->_mouseEnt_Lev = true;
         this->Set_Style();
         _color->_backgroundColorMainRec = _color->_backgroundColorEnter;
-        update();
-        //qDebug()<<"In";
     }
+            update();
 }
 void Last_Files_Widget::leaveEvent(QEvent *e)
 {
     Q_UNUSED(e);
+    this->_mouseEnt_Lev = false;
     if(this->_Active_Stat){}
     else
     {
-        this->_mouseEnt_Lev = false;
         this->Set_Style();
         _color->_backgroundColorMainRec = _color->_backgroundColorIdle;
-        update();
-        //qDebug()<<"Out";
     }
+            update();
 }
 void Last_Files_Widget::mousePressEvent(QMouseEvent *e)
 {
+    this->_mouseCl = true;
     if(this->_Active_Stat){}
     else
     {
     if(e->button() == Qt::LeftButton)
-        {
-            this->_mouseCl = true;
+    {
             this->Set_Style();
             _color->_backgroundColorMainRec = _color->_backgroundColorPressed;
-            update();
-            emit this->SendWidg(this);
+            emit ClickToWidget(this);
         }
     }
+            update();
 }
 void Last_Files_Widget::mouseReleaseEvent(QMouseEvent *e)
 {
     Q_UNUSED(e);
+    this->_mouseCl = false;
     if(this->_Active_Stat){}
     else
     {
-        this->_mouseCl = false;
+
         this->Set_Style();
         _color->_backgroundColorMainRec = _color->_backgroundColorEnter;
-        update();
     }
+            update();
 }
 
 //Widgets
@@ -167,6 +165,24 @@ void Last_Files_Widget::Set_Style()
         this->_filepathL->setStyleSheet(_color->_mouseIdle);
     }
 }
+void Last_Files_Widget::ActiveStatusStyleSheet()
+{
+    _color->_backgroundColorMainRec = _color->_backgroundColorEnter;
+    //Elements Inside
+    this->_lastEditL->setStyleSheet(_color->_mouseIn);
+    this->_filenameL->setStyleSheet(_color->_mouseIn);
+    this->_filepathL->setStyleSheet(_color->_mouseIn);
+    update();
+}
+void Last_Files_Widget::DisActiveStatusStyleSheet()
+{
+    _color->_backgroundColorMainRec = _color->_backgroundColorIdle;
+    //Elements Inside
+    this->_lastEditL->setStyleSheet(_color->_mouseIdle);
+    this->_filenameL->setStyleSheet(_color->_mouseIdle);
+    this->_filepathL->setStyleSheet(_color->_mouseIdle);
+    update();
+}
 //Set Value
 void Last_Files_Widget::Set_Value()
 {
@@ -181,4 +197,24 @@ void Last_Files_Widget::Main_Functions()
     this->Set_Value();
     this->Set_Style();
     this->add_Widgets();
+}
+//Active Status
+void Last_Files_Widget::SetActiveStatus()
+{
+    this->_Active_Stat = true;
+    this->ActiveStatusStyleSheet();
+}
+void Last_Files_Widget::SetDisActiveStatus()
+{
+    this->_Active_Stat = false;
+    this->DisActiveStatusStyleSheet();
+}
+//Get Values
+QString Last_Files_Widget::GetFullFileWay()
+{
+    return this->_file_wayABS;
+}
+bool Last_Files_Widget::GetStatus()
+{
+    return this->_Active_Stat;
 }

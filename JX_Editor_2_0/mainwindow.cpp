@@ -15,25 +15,101 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+//Set Memory to widgets
 void MainWindow::Set_Mamory()
 {
     this->_openbutton = new Custom_Left_Buttom(false,true,false); //Open Button
     this->_savebutton = new Custom_Left_Buttom(true,false,false); //Save Button
     this->_settingbutton = new Custom_Left_Buttom(false,false,true);
-    this->last = new Last_Files_Widget("","","","");
     this->fileInfo = new WorkFile();
 }
+//Add main widgets
 void MainWindow::Add_Elements()
 {
     ui->LeftButtonsW->layout()->addWidget(_openbutton);
     ui->LeftButtonsW->layout()->addWidget(_savebutton);
     ui->SettingsW->layout()->addWidget(_settingbutton);
-    ui->LastFilesInW->layout()->addWidget(last);
 
 }
+// Click to open button
 void MainWindow::ClickedOpenButtom(WorkFile *e)
 {
-    //(QString _name, QString _way,QString _wayABS, QString _time)
-    Last_Files_Widget * lastw = new Last_Files_Widget(e->Get_fileName(),e->Get_wayWithOutFile(),e->Get_fullFileWay()," " + e->Get_TimeLastEdit() + " ");
-    ui->ActiveFileW->layout()->addWidget(lastw);
+    if(this->CheckRepeat(e->Get_fullFileWay()))
+    {
+        this->SetActiveWidget(e->Get_fullFileWay());
+    }
+    else
+    {
+        Last_Files_Widget * lastw = new Last_Files_Widget(e->Get_fileName(),e->Get_wayWithOutFile(),e->Get_fullFileWay()," " + e->Get_TimeLastEdit() + " ");
+        connect(lastw,&Last_Files_Widget::ClickToWidget,this,&MainWindow::ClickToWidgetLastFile);
+        this->_lastfiles.push_front(lastw);
+        this->_filesWay.push_front(e->Get_fullFileWay());
+        this->UpdateWidgets(lastw);
+
+    }
+
+
+}
+//Click to Not Active LastFileWidget
+void MainWindow::ClickToWidgetLastFile(Last_Files_Widget *_last)
+{
+    int a = 0;
+    for(auto i = this->_lastfiles.begin();i < this->_lastfiles.end();i++)
+    {
+        if(i[a] == _last)
+        {
+            i[a]->SetActiveStatus();
+        }
+        else
+        {
+            i[a]->SetDisActiveStatus();
+        }
+    }
+}
+//Update LastFileWidgets
+void MainWindow::UpdateWidgets(Last_Files_Widget *_OpenFile)
+{
+    for(auto i = this->_lastfiles.begin();i < this->_lastfiles.end();i++)
+    {
+        if(i[0] == _OpenFile)
+        {
+            i[0]->SetActiveStatus();
+        }
+        else
+        {
+            i[0]->SetDisActiveStatus();
+        }
+        ui->LastFilesInW->layout()->addWidget(i[0]);
+    }
+}
+//CheckRepeats
+bool MainWindow::CheckRepeat(QString _fileway)
+{
+    for(auto i = this->_filesWay.begin();i < this->_filesWay.end();i++)
+    {
+        if(i[0] == _fileway)
+        {
+            return true;
+        }
+        else
+        {
+            continue;
+        }
+    }
+    return false;
+}
+// SetAciveWidget
+void MainWindow::SetActiveWidget(QString _fileway)
+{
+    for(auto i = this->_lastfiles.begin();i < this->_lastfiles.end();i++)
+    {
+        if(i[0]->GetFullFileWay() == _fileway)
+        {
+            i[0]->SetActiveStatus();
+        }
+        else
+        {
+            i[0]->SetDisActiveStatus();
+        }
+    }
 }

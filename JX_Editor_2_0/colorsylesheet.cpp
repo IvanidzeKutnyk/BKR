@@ -12,12 +12,12 @@ ColorSyleSheet::ColorSyleSheet()
     this->_logoSaveButton = "";
     this->_logoSettButton = "";
     // Last_Files_Widget
-    this->_backgroundColorEnter = "#2110ff";
-    this->_backgroundColorIdle = "#7070ff";
-    this->_backgroundColorPressed = "#3c80ff";
+    this->_backgroundColorEnter = "#A1A1F6";
+    this->_backgroundColorIdle = "#7070FF";
+    this->_backgroundColorPressed = "#C1C1F2";
     this->_backgroundColorMainRec = this->_backgroundColorIdle;
-    this->_mouseIdle = "background-color:#759aef;border-radius: 5px;";
-    this->_mouseEnter = "background-color:#a7baf3;border-radius: 5px;";
-    this->_mouseIn = "background-color:#88a1eb;border-radius: 5px;";
+    this->_mouseIdle = "background-color:#9C9CF5;border-radius: 5px;";
+    this->_mouseEnter = "background-color:#DBDBF6;border-radius: 5px;";
+    this->_mouseIn = "background-color:#BEBEFF;border-radius: 5px;";
 
 }
