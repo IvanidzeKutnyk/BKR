@@ -28,6 +28,9 @@ public:
     QString _mouseEnter;
     QString _mouseIn;
     QString _mouseIdle;
+    //Paintfileinfo
+    //QColor
+
 private:
 };
 

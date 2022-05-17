@@ -44,6 +44,10 @@ public:
     QWidget *ActiveFileW;
     QGridLayout *gridLayout_2;
     QWidget *RightPartW;
+    QVBoxLayout *verticalLayout_6;
+    QWidget *MainFileInfo;
+    QVBoxLayout *verticalLayout_7;
+    QSpacerItem *verticalSpacer_3;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -153,6 +157,23 @@ public:
 
         RightPartW = new QWidget(centralwidget);
         RightPartW->setObjectName(QString::fromUtf8("RightPartW"));
+        verticalLayout_6 = new QVBoxLayout(RightPartW);
+        verticalLayout_6->setSpacing(0);
+        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
+        MainFileInfo = new QWidget(RightPartW);
+        MainFileInfo->setObjectName(QString::fromUtf8("MainFileInfo"));
+        verticalLayout_7 = new QVBoxLayout(MainFileInfo);
+        verticalLayout_7->setSpacing(0);
+        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
+        verticalLayout_7->setContentsMargins(0, 0, 0, 0);
+
+        verticalLayout_6->addWidget(MainFileInfo);
+
+        verticalSpacer_3 = new QSpacerItem(20, 670, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_6->addItem(verticalSpacer_3);
+
 
         horizontalLayout->addWidget(RightPartW);
 
