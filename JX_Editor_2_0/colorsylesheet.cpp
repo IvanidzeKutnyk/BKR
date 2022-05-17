@@ -19,5 +19,10 @@ ColorSyleSheet::ColorSyleSheet()
     this->_mouseIdle = "background-color:#9C9CF5;border-radius: 5px;";
     this->_mouseEnter = "background-color:#DBDBF6;border-radius: 5px;";
     this->_mouseIn = "background-color:#BEBEFF;border-radius: 5px;";
-
+    //Paintfileinfo
+    this->_backgroundMainWidgets = "";
+    this->_backgroundStringWidgets = "";
+    this->_backgroundIntWidgets = "";
+    this->_backgroundFloatWidgets = "";
+    this->_backgroundMassiveWidgets = "";
 }

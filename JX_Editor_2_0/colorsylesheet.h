@@ -29,7 +29,11 @@ public:
     QString _mouseIn;
     QString _mouseIdle;
     //Paintfileinfo
-    //QColor
+    QColor _backgroundMainWidgets;
+    QColor _backgroundStringWidgets;
+    QColor _backgroundIntWidgets;
+    QColor _backgroundFloatWidgets;
+    QColor _backgroundMassiveWidgets;
 
 private:
 };

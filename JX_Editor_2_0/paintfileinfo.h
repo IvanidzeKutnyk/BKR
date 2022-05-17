@@ -5,6 +5,8 @@
 #include <QString>
 #include <QPainter>
 #include <QWidget>
+#include <QVBoxLayout>
+#include <QLineEdit>
 #include "colorsylesheet.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -16,9 +18,10 @@ public:
     //virtual QSize sizeHint() const override;
     void Set_Memory();
 protected:
-     //virtual void paintEvent(QPaintEvent *) override;
+    void Add_Main_Widget();
 private:
     ColorSyleSheet * _color;
+    QVBoxLayout * _mainlayout;
 };
 
 #endif // PAINTFILEINFO_H
