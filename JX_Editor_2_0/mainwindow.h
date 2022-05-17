@@ -33,6 +33,7 @@ private:
     void UpdateWidgets(Last_Files_Widget *);
     bool CheckRepeat(QString);
     void SetActiveWidget(QString);
+    void HideShowWidgets();
 private:
     Ui::MainWindow *ui;
 

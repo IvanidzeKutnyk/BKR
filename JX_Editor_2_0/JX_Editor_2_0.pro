@@ -14,6 +14,7 @@ SOURCES += \
     last_files_widget.cpp \
     main.cpp \
     mainwindow.cpp \
+    paintfileinfo.cpp \
     workfile.cpp
 
 HEADERS += \
@@ -21,6 +22,7 @@ HEADERS += \
     custom_left_buttom.h \
     last_files_widget.h \
     mainwindow.h \
+    paintfileinfo.h \
     workfile.h
 
 FORMS += \

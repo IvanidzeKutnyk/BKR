@@ -29,7 +29,6 @@ void MainWindow::Add_Elements()
     ui->LeftButtonsW->layout()->addWidget(_openbutton);
     ui->LeftButtonsW->layout()->addWidget(_savebutton);
     ui->SettingsW->layout()->addWidget(_settingbutton);
-
 }
 // Click to open button
 void MainWindow::ClickedOpenButtom(WorkFile *e)
@@ -37,6 +36,16 @@ void MainWindow::ClickedOpenButtom(WorkFile *e)
     if(this->CheckRepeat(e->Get_fullFileWay()))
     {
         this->SetActiveWidget(e->Get_fullFileWay());
+         for(auto i = this->_lastfiles.begin();i < this->_lastfiles.end();i++)
+         {
+             if(i[0]->GetFullFileWay() == e->Get_fullFileWay())
+             {
+                 Last_Files_Widget * temp = i[0];
+                 this->_lastfiles.erase(i);
+                 this->_lastfiles.push_front(temp);
+             }
+         }
+         this->HideShowWidgets();
     }
     else
     {
@@ -45,26 +54,26 @@ void MainWindow::ClickedOpenButtom(WorkFile *e)
         this->_lastfiles.push_front(lastw);
         this->_filesWay.push_front(e->Get_fullFileWay());
         this->UpdateWidgets(lastw);
-
     }
-
-
 }
 //Click to Not Active LastFileWidget
 void MainWindow::ClickToWidgetLastFile(Last_Files_Widget *_last)
 {
-    int a = 0;
     for(auto i = this->_lastfiles.begin();i < this->_lastfiles.end();i++)
     {
-        if(i[a] == _last)
-        {
-            i[a]->SetActiveStatus();
-        }
-        else
-        {
-            i[a]->SetDisActiveStatus();
-        }
+       if(i[0] == _last)
+       {
+           i[0]->SetActiveStatus();
+           Last_Files_Widget * temp = i[0];
+           this->_lastfiles.erase(i);
+           this->_lastfiles.push_front(temp);
+       }
+       else
+       {
+           i[0]->SetDisActiveStatus();
+       }
     }
+    this->HideShowWidgets();
 }
 //Update LastFileWidgets
 void MainWindow::UpdateWidgets(Last_Files_Widget *_OpenFile)
@@ -112,4 +121,17 @@ void MainWindow::SetActiveWidget(QString _fileway)
             i[0]->SetDisActiveStatus();
         }
     }
+}
+//Update Widgets after Click
+void MainWindow::HideShowWidgets()
+{
+    for(auto i = this->_lastfiles.begin();i < this->_lastfiles.end();i++)
+    {
+        ui->LastFilesInW->layout()->removeWidget(i[0]);
+    }
+    for(auto i = this->_lastfiles.begin();i < this->_lastfiles.end();i++)
+    {
+        ui->LastFilesInW->layout()->addWidget(i[0]);
+    }
+
 }

@@ -139,8 +139,8 @@ public:
 
         ActiveFileW = new QWidget(CentralPartW);
         ActiveFileW->setObjectName(QString::fromUtf8("ActiveFileW"));
-        ActiveFileW->setMinimumSize(QSize(0, 70));
-        ActiveFileW->setMaximumSize(QSize(16777215, 70));
+        ActiveFileW->setMinimumSize(QSize(0, 20));
+        ActiveFileW->setMaximumSize(QSize(16777215, 20));
         gridLayout_2 = new QGridLayout(ActiveFileW);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setHorizontalSpacing(0);
