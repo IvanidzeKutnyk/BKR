@@ -33,7 +33,11 @@ void MainWindow::Add_Elements()
 // Click to open button
 void MainWindow::ClickedOpenButtom(WorkFile *e)
 {
-    if(this->CheckRepeat(e->Get_fullFileWay()))
+    if(e->Get_fullFileWay().isEmpty())
+    {
+
+    }
+    else if(this->CheckRepeat(e->Get_fullFileWay()))
     {
         this->SetActiveWidget(e->Get_fullFileWay());
          for(auto i = this->_lastfiles.begin();i < this->_lastfiles.end();i++)
