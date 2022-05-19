@@ -22,6 +22,7 @@ void MainWindow::Set_Mamory()
     this->_savebutton = new Custom_Left_Buttom(true,false,false); //Save Button
     this->_settingbutton = new Custom_Left_Buttom(false,false,true);
     this->fileInfo = new WorkFile();
+    this->jsonfileoutput = new AnalizeJsonFile("G:\\QTProjects\\BKR\\TestFiles\\TestMain.json");
 }
 //Add main widgets
 void MainWindow::Add_Elements()
@@ -40,6 +41,7 @@ void MainWindow::ClickedOpenButtom(WorkFile *e)
     else if(this->CheckRepeat(e->Get_fullFileWay()))
     {
         this->SetActiveWidget(e->Get_fullFileWay());
+
          for(auto i = this->_lastfiles.begin();i < this->_lastfiles.end();i++)
          {
              if(i[0]->GetFullFileWay() == e->Get_fullFileWay())

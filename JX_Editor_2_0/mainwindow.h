@@ -6,6 +6,7 @@
 #include "custom_left_buttom.h"
 #include "last_files_widget.h"
 #include "workfile.h"
+#include "analizejsonfile.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -29,6 +30,7 @@ private:
     WorkFile *fileInfo;
     QVector<Last_Files_Widget*> _lastfiles;
     QStringList _filesWay;
+    AnalizeJsonFile *jsonfileoutput;
 private:
     void UpdateWidgets(Last_Files_Widget *);
     bool CheckRepeat(QString);
