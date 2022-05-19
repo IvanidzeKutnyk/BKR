@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../JX_Editor_2_0/workfile.h"
+#include "../../JX_Editor_2_0/WorkWithFile/workfile.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

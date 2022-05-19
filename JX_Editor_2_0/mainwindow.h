@@ -3,10 +3,10 @@
 //Library Start +++++++++++++++++++++++++++++++++++++++++++++
 #include <QMainWindow>
 #include <QVector>
-#include "custom_left_buttom.h"
-#include "last_files_widget.h"
-#include "workfile.h"
-#include "analizejsonfile.h"
+#include "Widgets/custom_left_buttom.h"
+#include "Widgets/last_files_widget.h"
+#include "WorkWithFile/workfile.h"
+#include "WorkWithFile/analizejsonfile.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

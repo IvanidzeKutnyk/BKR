@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../JX_Editor_2_0/custom_left_buttom.h"
+#include "../../JX_Editor_2_0/Widgets/custom_left_buttom.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

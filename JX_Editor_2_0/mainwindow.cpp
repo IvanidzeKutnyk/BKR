@@ -22,7 +22,7 @@ void MainWindow::Set_Mamory()
     this->_savebutton = new Custom_Left_Buttom(true,false,false); //Save Button
     this->_settingbutton = new Custom_Left_Buttom(false,false,true);
     this->fileInfo = new WorkFile();
-    this->jsonfileoutput = new AnalizeJsonFile("G:\\QTProjects\\BKR\\TestFiles\\TestMain.json");
+    this->jsonfileoutput = new AnalizeJsonFile("G:\\QTProjects\\BKR\\TestFiles\\.json");
 }
 //Add main widgets
 void MainWindow::Add_Elements()

@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../JX_Editor_2_0/last_files_widget.h"
+#include "../../JX_Editor_2_0/Widgets/last_files_widget.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
