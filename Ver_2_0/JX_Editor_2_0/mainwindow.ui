@@ -116,7 +116,7 @@
            <number>3</number>
           </property>
           <property name="bottomMargin">
-           <number>3</number>
+           <number>1</number>
           </property>
          </layout>
         </widget>
@@ -167,6 +167,11 @@
            <width>16777215</width>
            <height>70</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-image: url(:/iconsLogo/Icons/MainLogo.svg);
+background-position: center;
+background-repeat: no-repeat;</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_3">
           <property name="leftMargin">

@@ -1,4 +1,4 @@
-#include "last_files_widget.h"
+        #include "last_files_widget.h"
 
 Last_Files_Widget::Last_Files_Widget(){}
 Last_Files_Widget::Last_Files_Widget(QString _name, QString _way,QString _wayABS, QString _time)
@@ -132,7 +132,7 @@ void Last_Files_Widget::add_Widgets()
     this->_rightPartW->layout()->addWidget(this->_lastEditW);
     this->_lastEditW->layout()->addItem(new QSpacerItem(0,0,QSizePolicy::Expanding,QSizePolicy::Maximum));
     this->_lastEditW->layout()->addWidget(this->_lastEditL);
-    this->_leftPartW->setStyleSheet("background-image: url(:/icons/FileIcon.svg);background-position: center;background-repeat: no-repeat;");
+    this->_leftPartW->setStyleSheet("background-image: url(:/iconsLogo/Icons/FileIcon.svg);background-position: center;background-repeat: no-repeat;");
 
 }
 //Set StyleSheet

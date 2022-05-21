@@ -8,9 +8,17 @@ ColorSyleSheet::ColorSyleSheet()
     this->_colorbackgroundbigrecPressed = "#AFB0BF";
     this->_colorbackgroundbigrecEnter = "#7B7D92";
 
-    this->_logoOpenButton = "";
-    this->_logoSaveButton = "";
-    this->_logoSettButton = "";
+    this->_logoOpenButton_Idle = ":/CustLeftButton/Icons/CustomLB/OpenLogo_IDLE.svg";
+    this->_logoOpenButton_Enter = ":/CustLeftButton/Icons/CustomLB/OpenLogo_ENTER.svg";
+    this->_logoOpenButton_Pressed = ":/CustLeftButton/Icons/CustomLB/OpenLogo_PRESSED.svg";
+
+    this->_logoSaveButton_Idle = ":/CustLeftButton/Icons/CustomLB/SaveLogo_IDLE.svg";
+    this->_logoSaveButton_Enter = ":/CustLeftButton/Icons/CustomLB/SaveLogo_ENTER.svg";
+    this->_logoSaveButton_Pressed = ":/CustLeftButton/Icons/CustomLB/SaveLogo_PRESSED.svg";
+
+    this->_logoSettButton_Idle = ":/CustLeftButton/Icons/CustomLB/SettingsLogo_IDLE.svg";
+    this->_logoSettButton_Enter = ":/CustLeftButton/Icons/CustomLB/SettingsLogo_ENTER.svg";
+    this->_logoSettButton_Pressed = ":/CustLeftButton/Icons/CustomLB/SettingsLogo_PRESSED.svg";
     // Last_Files_Widget
     this->_backgroundColorEnter = "#A1A1F6";
     this->_backgroundColorIdle = "#7070FF";

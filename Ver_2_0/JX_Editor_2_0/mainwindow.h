@@ -36,6 +36,7 @@ private:
     bool CheckRepeat(QString);
     void SetActiveWidget(QString);
     void HideShowWidgets();
+    void CheckOverFlow();
 private:
     Ui::MainWindow *ui;
 

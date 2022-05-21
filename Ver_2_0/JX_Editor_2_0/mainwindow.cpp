@@ -34,6 +34,7 @@ void MainWindow::Add_Elements()
 // Click to open button
 void MainWindow::ClickedOpenButtom(WorkFile *e)
 {
+
     if(e->Get_fullFileWay().isEmpty())
     {
 
@@ -55,12 +56,14 @@ void MainWindow::ClickedOpenButtom(WorkFile *e)
     }
     else
     {
+        this->CheckOverFlow();
         Last_Files_Widget * lastw = new Last_Files_Widget(e->Get_fileName(),e->Get_wayWithOutFile(),e->Get_fullFileWay()," " + e->Get_TimeLastEdit() + " ");
         connect(lastw,&Last_Files_Widget::ClickToWidget,this,&MainWindow::ClickToWidgetLastFile);
         this->_lastfiles.push_front(lastw);
         this->_filesWay.push_front(e->Get_fullFileWay());
         this->UpdateWidgets(lastw);
     }
+
 }
 //Click to Not Active LastFileWidget
 void MainWindow::ClickToWidgetLastFile(Last_Files_Widget *_last)
@@ -140,4 +143,24 @@ void MainWindow::HideShowWidgets()
         ui->LastFilesInW->layout()->addWidget(i[0]);
     }
 
+}
+//Check OverFlow
+void MainWindow::CheckOverFlow()
+{
+    if(this->_lastfiles.size() == 7)
+    {
+        for(auto i = this->_lastfiles.begin();i < this->_lastfiles.end();i++)
+        {
+            ui->LastFilesInW->layout()->removeWidget(i[0]);
+        }
+        this->_lastfiles.pop_back();
+        this->_filesWay.pop_back();
+        for(auto i = this->_lastfiles.begin();i < this->_lastfiles.end();i++)
+        {
+            ui->LastFilesInW->layout()->addWidget(i[0]);
+        }
+    }
+    else{
+        qDebug()<<this->_lastfiles;
+    }
 }

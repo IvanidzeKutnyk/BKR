@@ -17,9 +17,20 @@ public:
     QColor _colorbackgroundbigrecIdle;
     QColor _colorbackgroundbigrecSelected;
 
-    QString _logoOpenButton;
-    QString _logoSaveButton;
-    QString _logoSettButton;
+
+
+    QString _logoOpenButton_Idle;
+    QString _logoOpenButton_Enter;
+    QString _logoOpenButton_Pressed;
+
+    QString _logoSaveButton_Idle;
+    QString _logoSaveButton_Enter;
+    QString _logoSaveButton_Pressed;
+
+    QString _logoSettButton_Idle;
+    QString _logoSettButton_Enter;
+    QString _logoSettButton_Pressed;
+
     // Last_Files_Widget
     QColor _backgroundColorEnter;
     QColor _backgroundColorPressed;

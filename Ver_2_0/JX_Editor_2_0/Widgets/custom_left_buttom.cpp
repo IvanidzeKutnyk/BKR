@@ -59,6 +59,7 @@ void Custom_Left_Buttom::enterEvent(QEvent *e)
     //---------
     this->_mousein = true;
     _color->_colorbackgroundbigrecSelected = _color->_colorbackgroundbigrecEnter;
+    this->Add_Image();
     update();
     //qDebug()<<"IN";
 }
@@ -68,6 +69,7 @@ void Custom_Left_Buttom::leaveEvent(QEvent *e)
     //---------
     this->_mousein = false;
     _color->_colorbackgroundbigrecSelected = _color->_colorbackgroundbigrecIdle;
+    this->Add_Image();
     update();
     //qDebug()<<"OUT";
 }
@@ -77,6 +79,7 @@ void Custom_Left_Buttom::mousePressEvent(QMouseEvent *e)
     //---------
     _color->_colorbackgroundbigrecSelected = _color->_colorbackgroundbigrecPressed;
     this->_clicked = true;
+    this->Add_Image();
     update();
     if(this->_open_bool == true)
     {
@@ -90,6 +93,7 @@ void Custom_Left_Buttom::mouseReleaseEvent(QMouseEvent *e)
     //---------
     _color->_colorbackgroundbigrecSelected = _color->_colorbackgroundbigrecEnter;
     this->_clicked = false;
+    this->Add_Image();
     update();
 }
 //Set Memory
@@ -101,20 +105,50 @@ void Custom_Left_Buttom::SetMemory()
 //Add Image
 QString Custom_Left_Buttom::Add_Image()
 {
-    if(this->_open_bool)
+    if(this->_open_bool == true) //OpenButton
     {
-        return this->_color->_logoOpenButton;
+        if(this->_mousein == false)
+        {
+            return this->_color->_logoOpenButton_Idle;
+        }
+        else if(this->_mousein == true && this->_clicked == false)
+        {
+            return this->_color->_logoOpenButton_Enter;
+        }
+        else if(this->_mousein == true && this->_clicked == true)
+        {
+            return this->_color->_logoOpenButton_Pressed;
+        }
     }
-    else if (this->_save_bool)
+    else if(this->_save_bool == true) //SaveButton
     {
-        return this->_color->_logoSaveButton;
+        if(this->_mousein == false)
+        {
+            return this->_color->_logoSaveButton_Idle;
+        }
+        else if(this->_mousein == true && this->_clicked == false)
+        {
+            return this->_color->_logoSaveButton_Enter;
+        }
+        else if(this->_mousein == true && this->_clicked == true)
+        {
+            return this->_color->_logoSaveButton_Pressed;
+        }
     }
-    else if (this->_sett_bool)
+    else if(this->_sett_bool == true) //SettButton
     {
-        return this->_color->_logoSettButton;
+        if(this->_mousein == false)
+        {
+            return this->_color->_logoSettButton_Idle;
+        }
+        else if(this->_mousein == true && this->_clicked == false)
+        {
+            return this->_color->_logoSettButton_Enter;
+        }
+        else if(this->_mousein == true && this->_clicked == true)
+        {
+            return this->_color->_logoSettButton_Pressed;
+        }
     }
-    else
-    {
-       return "";
-    }
+    return "";
 }

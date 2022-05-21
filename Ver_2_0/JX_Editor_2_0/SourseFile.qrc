@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/iconsLogo">
+        <file>Icons/FileIcon.svg</file>
+        <file>Icons/MainLogo.svg</file>
+    </qresource>
+    <qresource prefix="/CustLeftButton">
+        <file>Icons/CustomLB/OpenLogo_ENTER.svg</file>
+        <file>Icons/CustomLB/OpenLogo_IDLE.svg</file>
+        <file>Icons/CustomLB/OpenLogo_PRESSED.svg</file>
+        <file>Icons/CustomLB/SaveLogo_ENTER.svg</file>
+        <file>Icons/CustomLB/SaveLogo_IDLE.svg</file>
+        <file>Icons/CustomLB/SaveLogo_PRESSED.svg</file>
+        <file>Icons/CustomLB/SettingsLogo_ENTER.svg</file>
+        <file>Icons/CustomLB/SettingsLogo_IDLE.svg</file>
+        <file>Icons/CustomLB/SettingsLogo_PRESSED.svg</file>
+    </qresource>
+</RCC>
