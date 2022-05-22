@@ -1,6 +1,7 @@
-        #include "last_files_widget.h"
+#include "last_files_widget.h"
 
 Last_Files_Widget::Last_Files_Widget(){}
+//Constr
 Last_Files_Widget::Last_Files_Widget(QString _name, QString _way,QString _wayABS, QString _time)
 {
     this->_height = 70;
@@ -18,22 +19,18 @@ Last_Files_Widget::Last_Files_Widget(QString _name, QString _way,QString _wayABS
 //PaintFunction
 void Last_Files_Widget::paintEvent(QPaintEvent *)
 {
-
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing,true);
 
     //BackGround
     painter.setPen(_color->_backgroundColorMainRec);
     painter.setBrush(_color->_backgroundColorMainRec);
-
     painter.drawRoundedRect(QRectF(0,
                                    0,
                                    this->width(),
                                    this->height()),
                             this->_radius,
                             this->_radius);
-
-
 }
 //SetMemory
 void Last_Files_Widget::Set_Memory()
@@ -46,8 +43,8 @@ void Last_Files_Widget::Set_Memory()
     this->_filenameL = new QLabel();
     this->_filepathL = new QLabel();
     this->_lastEditL = new QLabel();
+    //QColor
     this->_color = new ColorSyleSheet();
-
 }
 //Mouse Event
 void Last_Files_Widget::enterEvent(QEvent *e)
@@ -60,7 +57,7 @@ void Last_Files_Widget::enterEvent(QEvent *e)
         this->Set_Style();
         _color->_backgroundColorMainRec = _color->_backgroundColorEnter;
     }
-            update();
+    update();
 }
 void Last_Files_Widget::leaveEvent(QEvent *e)
 {
@@ -72,7 +69,7 @@ void Last_Files_Widget::leaveEvent(QEvent *e)
         this->Set_Style();
         _color->_backgroundColorMainRec = _color->_backgroundColorIdle;
     }
-            update();
+    update();
 }
 void Last_Files_Widget::mousePressEvent(QMouseEvent *e)
 {
@@ -87,7 +84,7 @@ void Last_Files_Widget::mousePressEvent(QMouseEvent *e)
             emit ClickToWidget(this);
         }
     }
-            update();
+    update();
 }
 void Last_Files_Widget::mouseReleaseEvent(QMouseEvent *e)
 {
@@ -96,13 +93,11 @@ void Last_Files_Widget::mouseReleaseEvent(QMouseEvent *e)
     if(this->_Active_Stat){}
     else
     {
-
         this->Set_Style();
         _color->_backgroundColorMainRec = _color->_backgroundColorEnter;
     }
-            update();
+    update();
 }
-
 //Widgets
 void Last_Files_Widget::add_Widgets()
 {
@@ -123,7 +118,6 @@ void Last_Files_Widget::add_Widgets()
     this->_leftPartW->setLayout(new QHBoxLayout());
         //Widgets
     this->_leftPartW->setFixedWidth(this->_height);
-
     //Adding
     this->layout()->addWidget(this->_leftPartW);
     this->layout()->addWidget(this->_rightPartW);
@@ -144,7 +138,6 @@ void Last_Files_Widget::Set_Style()
     this->_filepathL->setAlignment(Qt::AlignLeft);
     this->_lastEditL->setIndent(5);
     this->_lastEditL->setAlignment(Qt::AlignCenter);
-
      if(this->_mouseCl == true) // Mouse click in
     {
         this->_lastEditL->setStyleSheet(_color->_mouseEnter);

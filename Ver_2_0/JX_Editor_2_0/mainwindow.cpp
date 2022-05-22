@@ -37,7 +37,7 @@ void MainWindow::ClickedOpenButtom(WorkFile *e)
 
     if(e->Get_fullFileWay().isEmpty())
     {
-
+        qDebug()<<"File_Way empty";
     }
     else if(this->CheckRepeat(e->Get_fullFileWay()))
     {
@@ -63,7 +63,6 @@ void MainWindow::ClickedOpenButtom(WorkFile *e)
         this->_filesWay.push_front(e->Get_fullFileWay());
         this->UpdateWidgets(lastw);
     }
-
 }
 //Click to Not Active LastFileWidget
 void MainWindow::ClickToWidgetLastFile(Last_Files_Widget *_last)
@@ -161,6 +160,6 @@ void MainWindow::CheckOverFlow()
         }
     }
     else{
-        qDebug()<<this->_lastfiles;
+        //qDebug()<<this->_lastfiles;
     }
 }
