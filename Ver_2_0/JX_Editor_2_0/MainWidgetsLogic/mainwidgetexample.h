@@ -11,8 +11,11 @@
 #include <QSpacerItem>
 #include <QFont>
 #include <QFontMetrics>
-#include "ColorStyle/colorstylesheet.h"
+#include <QPainter>
+#include <QEvent>
+#include <QMouseEvent>
 #include <QDebug>
+#include "ColorStyle/colorstylesheet.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 
 class MainWidgetExample : public QWidget
@@ -22,17 +25,12 @@ public:
     explicit MainWidgetExample(QWidget *parent = nullptr);
     ~MainWidgetExample();
 public:
-    //ADV Widgets
-    void Set_Memory_Adv();
-    void AddWidgetAdvenced();
-    //Simple Widgets
-    void Set_Memory_Simp();
-    void AddWidgetSimple();
+    //Widgets
+    void Set_Memory();
+    void AddWidget();
     //Else
     void Add_Son(MainWidgetExample *);
     void ResizeLineEdit();
-    void SimpleWidget();
-    void AdvWidget();
     //StyleSheet
     void SetStyleSheetSimple();
     //Test Function
@@ -49,8 +47,11 @@ protected:
     //Label
     QLabel *_label;
     ColorStyleSheet *_color;
+protected:
+     virtual void paintEvent(QPaintEvent *) override;
 private:
     QVector<MainWidgetExample *> _sons;
+    bool _fullWidget;
 private slots:
     void TextChanged();
 };

@@ -34,6 +34,8 @@ ColorStyleSheet::ColorStyleSheet()
     this->_backgroundFloatWidgets = "";
     this->_backgroundMassiveWidgets = "";
     //MainWidgetExample
+    this->_backgrounddefault = "";
+    this->_bordercolordefault = "";
     this->StyleSheetLineEdit = "QLineEdit"
                                "{"
                                     "border-radius: 4px;"
@@ -42,12 +44,12 @@ ColorStyleSheet::ColorStyleSheet()
                                     "padding-left: 10px;"
                                     "padding-right: 10px"
                                "}"
-                                               "QLineEdit:hover"
-                                                       "{"
-                                                           "background-color: rgb(221, 223, 226);"
-                                                       "}"
-                                                   "QLineEdit:focus"
-                                                       "{"
-                                                           "background-color: rgb(215, 220, 226);"
-                                                       "}";
+                                "QLineEdit:hover"
+                               "{"
+                                "background-color: rgb(221, 223, 226);"
+                               "}"
+                               "QLineEdit:focus"
+                               "{"
+                                "background-color: rgb(215, 220, 226);"
+                               "}";
 }

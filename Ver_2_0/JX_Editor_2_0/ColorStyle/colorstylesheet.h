@@ -47,6 +47,8 @@ public:
     QColor _backgroundMassiveWidgets;
     //MainWidgetExample
     QString StyleSheetLineEdit;
+    QColor _backgrounddefault;
+    QColor _bordercolordefault;
 private:
 };
 
