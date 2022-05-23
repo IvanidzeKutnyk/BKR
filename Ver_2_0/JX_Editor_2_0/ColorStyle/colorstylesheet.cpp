@@ -34,8 +34,11 @@ ColorStyleSheet::ColorStyleSheet()
     this->_backgroundFloatWidgets = "";
     this->_backgroundMassiveWidgets = "";
     //MainWidgetExample
-    this->_backgrounddefault = "";
-    this->_bordercolordefault = "";
+    this->_bordercolordefault = "#000000";
+    this->_colorbackgroundPressed = "#C1C1F2";
+    this->_colorbackgroundEnter = "#A1A1F6";
+    this->_colorbackgroundIdle = "#7070FF";
+    this->_colorbackgroundSelected = this->_colorbackgroundIdle;
     this->StyleSheetLineEdit = "QLineEdit"
                                "{"
                                     "border-radius: 4px;"

@@ -21,7 +21,6 @@ private:
     QJsonObject  _currentJsonObject;
     QJsonDocument _Jdoc;
 private:
-    void SetMemory();
     void OpenReadFile();
     void Analize(QJsonObject _obj);
 };

@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "MainWidgetsLogic/mainwidgetexample.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -9,8 +8,12 @@ MainWindow::MainWindow(QWidget *parent)
     this->Set_Mamory();
     connect(_openbutton,&Custom_Left_Buttom::SendFileInfoAfterClick,this,&MainWindow::ClickedOpenButtom);
     this->Add_Elements();
-    MainWidgetExample * example = new MainWidgetExample();
-    ui->MainFileInfo->layout()->addWidget(example);
+   this->_module = new MainWidgetControlModule();
+   this->_module1 = new MainWidgetControlModule();
+   this->_module->PushWidgets(MainWidgetControlModule::WidgetType::ADVANCEDTYPE);
+   this->_module1->PushWidgets(MainWidgetControlModule::WidgetType::SIMPLETYPE);
+   ui->InputInfo->layout()->addWidget(_module1);
+   ui->InputInfo->layout()->addWidget(_module);
 }
 
 MainWindow::~MainWindow()

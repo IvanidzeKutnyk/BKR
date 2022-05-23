@@ -7,7 +7,6 @@ AnalizeJsonFile::AnalizeJsonFile(QString _fullfileway)
     this->OpenReadFile();
     this->Analize(this->_currentJsonObject);
 }
-void AnalizeJsonFile::SetMemory(){}
 void AnalizeJsonFile::OpenReadFile()
 {
     QFile _file(this->_fullfileway);
@@ -28,6 +27,8 @@ void AnalizeJsonFile::Analize(QJsonObject _obj)
         if(_ita.value().isBool())
          {
             qDebug()<<_ita.key()<<" "<<_ita.value().toBool();
+            //MainWINDOW::Instance().loadElement(ENUM::ENUM)
+            //{}
         }
         else if(_ita.value().isDouble())
          {

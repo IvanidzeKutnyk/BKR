@@ -444,9 +444,16 @@ debug\moc_mainwidgetcontrolmodule.cpp: ..\JX_Editor_2_0\MainWidgetsLogic\mainwid
 		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QSpacerItem \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\QFont \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\QFontMetrics \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QPainter \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpainter.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QEvent \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QMouseEvent \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QDebug \
 		..\JX_Editor_2_0\ColorStyle\colorstylesheet.h \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\QColor \
 		C:\Qt\5.15.2\msvc2019\include\QtCore\QString \
+		..\JX_Editor_2_0\MainWidgetsLogic\advancedtypewidget.h \
+		..\JX_Editor_2_0\MainWidgetsLogic\singletypewidget.h \
 		debug\moc_predefs.h \
 		C:\Qt\5.15.2\msvc2019\bin\moc.exe
 	C:\Qt\5.15.2\msvc2019\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include G:/QTProjects/BKR/Ver_2_0/build-JX_Editor_2_0-Desktop_Qt_5_15_2_MSVC2019_32bit-Debug/debug/moc_predefs.h -IC:/Qt/5.15.2/msvc2019/mkspecs/win32-msvc -IG:/QTProjects/BKR/Ver_2_0/JX_Editor_2_0 -IC:/Qt/5.15.2/msvc2019/include -IC:/Qt/5.15.2/msvc2019/include/QtWidgets -IC:/Qt/5.15.2/msvc2019/include/QtGui -IC:/Qt/5.15.2/msvc2019/include/QtANGLE -IC:/Qt/5.15.2/msvc2019/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\JX_Editor_2_0\MainWidgetsLogic\mainwidgetcontrolmodule.h -o debug\moc_mainwidgetcontrolmodule.cpp
@@ -836,6 +843,11 @@ debug\moc_mainwidgetexample.cpp: ..\JX_Editor_2_0\MainWidgetsLogic\mainwidgetexa
 		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QSpacerItem \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\QFont \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\QFontMetrics \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QPainter \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpainter.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QEvent \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QMouseEvent \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QDebug \
 		..\JX_Editor_2_0\ColorStyle\colorstylesheet.h \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\QColor \
 		C:\Qt\5.15.2\msvc2019\include\QtCore\QString \
@@ -1003,6 +1015,18 @@ debug\moc_mainwindow.cpp: ..\JX_Editor_2_0\mainwindow.h \
 		C:\Qt\5.15.2\msvc2019\include\QtCore\QJsonArray \
 		C:\Qt\5.15.2\msvc2019\include\QtCore\qjsonarray.h \
 		C:\Qt\5.15.2\msvc2019\include\QtCore\QJsonValue \
+		..\JX_Editor_2_0\MainWidgetsLogic\mainwidgetcontrolmodule.h \
+		..\JX_Editor_2_0\MainWidgetsLogic\mainwidgetexample.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QLineEdit \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtextcursor.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtextformat.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QVBoxLayout \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QSpacerItem \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QFont \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QFontMetrics \
+		..\JX_Editor_2_0\MainWidgetsLogic\advancedtypewidget.h \
+		..\JX_Editor_2_0\MainWidgetsLogic\singletypewidget.h \
 		debug\moc_predefs.h \
 		C:\Qt\5.15.2\msvc2019\bin\moc.exe
 	C:\Qt\5.15.2\msvc2019\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include G:/QTProjects/BKR/Ver_2_0/build-JX_Editor_2_0-Desktop_Qt_5_15_2_MSVC2019_32bit-Debug/debug/moc_predefs.h -IC:/Qt/5.15.2/msvc2019/mkspecs/win32-msvc -IG:/QTProjects/BKR/Ver_2_0/JX_Editor_2_0 -IC:/Qt/5.15.2/msvc2019/include -IC:/Qt/5.15.2/msvc2019/include/QtWidgets -IC:/Qt/5.15.2/msvc2019/include/QtGui -IC:/Qt/5.15.2/msvc2019/include/QtANGLE -IC:/Qt/5.15.2/msvc2019/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\JX_Editor_2_0\mainwindow.h -o debug\moc_mainwindow.cpp
@@ -1271,9 +1295,16 @@ debug\mainwidgetcontrolmodule.obj: ..\JX_Editor_2_0\MainWidgetsLogic\mainwidgetc
 		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QSpacerItem \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\QFont \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\QFontMetrics \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QPainter \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpainter.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QEvent \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QMouseEvent \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QDebug \
 		..\JX_Editor_2_0\ColorStyle\colorstylesheet.h \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\QColor \
-		C:\Qt\5.15.2\msvc2019\include\QtCore\QString
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QString \
+		..\JX_Editor_2_0\MainWidgetsLogic\advancedtypewidget.h \
+		..\JX_Editor_2_0\MainWidgetsLogic\singletypewidget.h
 
 debug\analizejsonfile.obj: ..\JX_Editor_2_0\WorkWithFile\analizejsonfile.cpp ..\JX_Editor_2_0\WorkWithFile\analizejsonfile.h \
 		C:\Qt\5.15.2\msvc2019\include\QtCore\QString \
@@ -1669,7 +1700,138 @@ debug\last_files_widget.obj: ..\JX_Editor_2_0\Widgets\last_files_widget.cpp ..\J
 		..\JX_Editor_2_0\ColorStyle\colorstylesheet.h \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\QColor
 
-debug\advancedtypewidget.obj: ..\JX_Editor_2_0\MainWidgetsLogic\advancedtypewidget.cpp ..\JX_Editor_2_0\MainWidgetsLogic\advancedtypewidget.h
+debug\advancedtypewidget.obj: ..\JX_Editor_2_0\MainWidgetsLogic\advancedtypewidget.cpp ..\JX_Editor_2_0\MainWidgetsLogic\advancedtypewidget.h \
+		..\JX_Editor_2_0\MainWidgetsLogic\mainwidgetexample.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QWidget \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qwidget.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qtwidgetsglobal.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtguiglobal.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qglobal.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qconfig-bootstrapped.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qconfig.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qtcore-config.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qsysinfo.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qlogging.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qflags.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qatomic.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qmutex.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qnumeric.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qversiontagging.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtgui-config.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qtwidgets-config.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qnamespace.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qobject.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qstring.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qchar.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qbytearray.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qrefcount.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qarraydata.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qstringliteral.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qstringalgorithms.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qstringview.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qlist.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qalgorithms.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qiterator.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qhashfunctions.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qpair.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qvector.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qcontainertools_impl.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qpoint.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qstringlist.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qregexp.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qcoreevent.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qmetatype.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qobject_impl.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qmargins.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qrect.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qsize.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpalette.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qcolor.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qrgb.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qrgba64.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qbrush.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qmatrix.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpolygon.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qregion.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qdatastream.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qiodevice.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qline.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtransform.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qimage.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpixelformat.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpixmap.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qshareddata.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qhash.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qfont.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qfontinfo.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qcursor.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qkeysequence.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qevent.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qvariant.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qmap.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qdebug.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qtextstream.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qlocale.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qset.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qurl.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qurlquery.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qfile.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qfiledevice.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qvector2d.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QLineEdit \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qframe.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtextcursor.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtextformat.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpen.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtextoption.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QVector \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QLabel \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qlabel.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QVBoxLayout \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qlayout.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QSpacerItem \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QFont \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QFontMetrics \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QPainter \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpainter.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QEvent \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QMouseEvent \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QDebug \
+		..\JX_Editor_2_0\ColorStyle\colorstylesheet.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QColor \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QString
 
 debug\main.obj: ..\JX_Editor_2_0\main.cpp ..\JX_Editor_2_0\mainwindow.h \
 		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QMainWindow \
@@ -1831,6 +1993,18 @@ debug\main.obj: ..\JX_Editor_2_0\main.cpp ..\JX_Editor_2_0\mainwindow.h \
 		C:\Qt\5.15.2\msvc2019\include\QtCore\QJsonArray \
 		C:\Qt\5.15.2\msvc2019\include\QtCore\qjsonarray.h \
 		C:\Qt\5.15.2\msvc2019\include\QtCore\QJsonValue \
+		..\JX_Editor_2_0\MainWidgetsLogic\mainwidgetcontrolmodule.h \
+		..\JX_Editor_2_0\MainWidgetsLogic\mainwidgetexample.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QLineEdit \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtextcursor.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtextformat.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QVBoxLayout \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QSpacerItem \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QFont \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QFontMetrics \
+		..\JX_Editor_2_0\MainWidgetsLogic\advancedtypewidget.h \
+		..\JX_Editor_2_0\MainWidgetsLogic\singletypewidget.h \
 		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QApplication \
 		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qapplication.h \
 		C:\Qt\5.15.2\msvc2019\include\QtCore\qcoreapplication.h \
@@ -1962,6 +2136,11 @@ debug\mainwidgetexample.obj: ..\JX_Editor_2_0\MainWidgetsLogic\mainwidgetexample
 		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QSpacerItem \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\QFont \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\QFontMetrics \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QPainter \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpainter.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QEvent \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QMouseEvent \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QDebug \
 		..\JX_Editor_2_0\ColorStyle\colorstylesheet.h \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\QColor \
 		C:\Qt\5.15.2\msvc2019\include\QtCore\QString
@@ -2126,25 +2305,19 @@ debug\mainwindow.obj: ..\JX_Editor_2_0\mainwindow.cpp ..\JX_Editor_2_0\mainwindo
 		C:\Qt\5.15.2\msvc2019\include\QtCore\QJsonArray \
 		C:\Qt\5.15.2\msvc2019\include\QtCore\qjsonarray.h \
 		C:\Qt\5.15.2\msvc2019\include\QtCore\QJsonValue \
-		ui_mainwindow.h \
-		C:\Qt\5.15.2\msvc2019\include\QtCore\QVariant \
-		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QApplication \
-		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qapplication.h \
-		C:\Qt\5.15.2\msvc2019\include\QtCore\qcoreapplication.h \
-		C:\Qt\5.15.2\msvc2019\include\QtCore\qeventloop.h \
-		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.15.2\msvc2019\include\QtGui\qguiapplication.h \
-		C:\Qt\5.15.2\msvc2019\include\QtGui\qinputmethod.h \
-		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QGridLayout \
-		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QSpacerItem \
-		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QVBoxLayout \
+		..\JX_Editor_2_0\MainWidgetsLogic\mainwidgetcontrolmodule.h \
 		..\JX_Editor_2_0\MainWidgetsLogic\mainwidgetexample.h \
 		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QLineEdit \
 		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qlineedit.h \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\qtextcursor.h \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\qtextformat.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QVBoxLayout \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QSpacerItem \
 		C:\Qt\5.15.2\msvc2019\include\QtGui\QFont \
-		C:\Qt\5.15.2\msvc2019\include\QtGui\QFontMetrics
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QFontMetrics \
+		..\JX_Editor_2_0\MainWidgetsLogic\advancedtypewidget.h \
+		..\JX_Editor_2_0\MainWidgetsLogic\singletypewidget.h \
+		ui_mainwindow.h
 
 debug\workfile.obj: ..\JX_Editor_2_0\WorkWithFile\workfile.cpp ..\JX_Editor_2_0\WorkWithFile\workfile.h \
 		C:\Qt\5.15.2\msvc2019\include\QtCore\QFileInfo \
@@ -2260,7 +2433,138 @@ debug\workfile.obj: ..\JX_Editor_2_0\WorkWithFile\workfile.cpp ..\JX_Editor_2_0\
 		C:\Qt\5.15.2\msvc2019\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.15.2\msvc2019\include\QtCore\QDebug
 
-debug\singletypewidget.obj: ..\JX_Editor_2_0\MainWidgetsLogic\singletypewidget.cpp ..\JX_Editor_2_0\MainWidgetsLogic\singletypewidget.h
+debug\singletypewidget.obj: ..\JX_Editor_2_0\MainWidgetsLogic\singletypewidget.cpp ..\JX_Editor_2_0\MainWidgetsLogic\singletypewidget.h \
+		..\JX_Editor_2_0\MainWidgetsLogic\mainwidgetexample.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QWidget \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qwidget.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qtwidgetsglobal.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtguiglobal.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qglobal.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qconfig-bootstrapped.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qconfig.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qtcore-config.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qsysinfo.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qlogging.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qflags.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qatomic.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qmutex.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qnumeric.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qversiontagging.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtgui-config.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qtwidgets-config.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qnamespace.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qobject.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qstring.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qchar.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qbytearray.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qrefcount.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qarraydata.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qstringliteral.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qstringalgorithms.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qstringview.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qlist.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qalgorithms.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qiterator.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qhashfunctions.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qpair.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qvector.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qcontainertools_impl.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qpoint.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qstringlist.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qregexp.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qcoreevent.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qmetatype.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qobject_impl.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qmargins.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qrect.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qsize.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpalette.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qcolor.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qrgb.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qrgba64.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qbrush.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qmatrix.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpolygon.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qregion.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qdatastream.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qiodevice.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qline.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtransform.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qimage.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpixelformat.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpixmap.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qshareddata.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qhash.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qfont.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qfontinfo.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qcursor.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qkeysequence.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qevent.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qvariant.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qmap.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qdebug.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qtextstream.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qlocale.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qset.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qurl.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qurlquery.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qfile.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\qfiledevice.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qvector2d.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QLineEdit \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qframe.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtextcursor.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtextformat.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpen.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qtextoption.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QVector \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QLabel \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qlabel.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QVBoxLayout \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qlayout.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QSpacerItem \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QFont \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QFontMetrics \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QPainter \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qpainter.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QEvent \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QMouseEvent \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QDebug \
+		..\JX_Editor_2_0\ColorStyle\colorstylesheet.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\QColor \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QString
 
 debug\qrc_SourseFile.obj: debug\qrc_SourseFile.cpp 
 

@@ -35,6 +35,7 @@ public:
     void SetStyleSheetSimple();
     //Test Function
     void TestSetText();
+    void SetFullWidget(bool);
 
 protected:
     //Widgets
@@ -48,7 +49,11 @@ protected:
     QLabel *_label;
     ColorStyleSheet *_color;
 protected:
-     virtual void paintEvent(QPaintEvent *) override;
+    virtual void paintEvent(QPaintEvent *) override;
+    virtual void enterEvent(QEvent *) override;
+    virtual void leaveEvent(QEvent *) override;
+    virtual void mousePressEvent(QMouseEvent *) override;
+    virtual void mouseReleaseEvent(QMouseEvent *) override;
 private:
     QVector<MainWidgetExample *> _sons;
     bool _fullWidget;

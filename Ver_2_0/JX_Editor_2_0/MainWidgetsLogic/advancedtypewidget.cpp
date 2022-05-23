@@ -1,6 +1,7 @@
 #include "advancedtypewidget.h"
 
-AdvancedTypeWidget::AdvancedTypeWidget()
+AdvancedTypeWidget::AdvancedTypeWidget(QWidget *parent)
+    :MainWidgetExample(parent)
 {
 
 }

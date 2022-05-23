@@ -7,6 +7,7 @@
 #include "Widgets/last_files_widget.h"
 #include "WorkWithFile/workfile.h"
 #include "WorkWithFile/analizejsonfile.h"
+#include "MainWidgetsLogic/mainwidgetcontrolmodule.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -31,6 +32,8 @@ private:
     QVector<Last_Files_Widget*> _lastfiles;
     QStringList _filesWay;
     AnalizeJsonFile *jsonfileoutput;
+    MainWidgetControlModule * _module;
+    MainWidgetControlModule * _module1;
 private:
     void UpdateWidgets(Last_Files_Widget *);
     bool CheckRepeat(QString);

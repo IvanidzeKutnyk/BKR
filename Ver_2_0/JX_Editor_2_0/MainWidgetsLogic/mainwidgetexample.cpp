@@ -3,8 +3,7 @@
 MainWidgetExample::MainWidgetExample(QWidget *parent)
     : QWidget{parent}
 {
-    this->_fullWidget = false;
-TestSetText();
+//TestSetText();
 }
 MainWidgetExample::~MainWidgetExample()
 {
@@ -12,10 +11,14 @@ MainWidgetExample::~MainWidgetExample()
 void MainWidgetExample::paintEvent(QPaintEvent *e)
 {
     Q_UNUSED(e);
-    QPainter painter;
+    QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing,true);
     painter.setPen(this->_color->_bordercolordefault);
-    painter.setBrush(this->_backgrounddefault);
+    painter.setBrush(this->_color->_colorbackgroundSelected);
+    painter.drawRoundedRect(QRectF(0,
+                                   0,
+                                   this->width(),
+                                   this->height()),5,5);
 }
 //SetMemory
 void MainWidgetExample::Set_Memory()
@@ -100,8 +103,14 @@ void MainWidgetExample::SetStyleSheetSimple()
         //StyleSheet
    this->setStyleSheet(this->_color->StyleSheetLineEdit);
     //Size
-   this->_titlewidget->setFixedHeight(50);
+    this->_titlewidget->layout()->setContentsMargins(0,0,0,0);
+   this->_titlewidget->setFixedHeight(30);
 
+}
+//Set
+void MainWidgetExample::SetFullWidget(bool _value)
+{
+    this->_fullWidget = _value;
 }
 //Test
 void MainWidgetExample::TestSetText()
@@ -119,4 +128,25 @@ void MainWidgetExample::TestSetText()
 void MainWidgetExample::TextChanged()
 {
     this->ResizeLineEdit();
+}
+//MouseEvents
+void MainWidgetExample::enterEvent(QEvent *)
+{
+    this->_color->_colorbackgroundSelected = this->_color->_colorbackgroundEnter;
+    update();
+}
+void MainWidgetExample::leaveEvent(QEvent *)
+{
+     this->_color->_colorbackgroundSelected = this->_color->_colorbackgroundIdle;
+    update();
+}
+void MainWidgetExample::mousePressEvent(QMouseEvent *)
+{
+     this->_color->_colorbackgroundSelected = this->_color->_colorbackgroundPressed;
+    update();
+}
+void MainWidgetExample::mouseReleaseEvent(QMouseEvent *)
+{
+    this->_color->_colorbackgroundSelected = this->_color->_colorbackgroundEnter;
+    update();
 }
