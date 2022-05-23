@@ -14,7 +14,7 @@
 #include <QFileInfo>
 #include <QDateTime>
 #include <QFileDialog>
-#include "ColorStyle/colorsylesheet.h"
+#include "ColorStyle/colorstylesheet.h"
 #include "WorkWithFile/workfile.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -41,7 +41,7 @@ private:
     int _width;
     int _round;
 
-    ColorSyleSheet * _color;
+    ColorStyleSheet * _color;
     WorkFile * _workfile;
 
     bool _open_bool;

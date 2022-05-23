@@ -1,6 +1,6 @@
 #include "advancedtypewidget.h"
 
-AdvancedTypeWidget::AdvancedTypeWidget("Key","Value")
+AdvancedTypeWidget::AdvancedTypeWidget()
 {
 
 }

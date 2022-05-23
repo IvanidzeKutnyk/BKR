@@ -44,7 +44,7 @@ void Last_Files_Widget::Set_Memory()
     this->_filepathL = new QLabel();
     this->_lastEditL = new QLabel();
     //QColor
-    this->_color = new ColorSyleSheet();
+    this->_color = new ColorStyleSheet();
 }
 //Mouse Event
 void Last_Files_Widget::enterEvent(QEvent *e)

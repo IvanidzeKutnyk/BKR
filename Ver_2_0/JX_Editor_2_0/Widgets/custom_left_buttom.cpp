@@ -99,7 +99,7 @@ void Custom_Left_Buttom::mouseReleaseEvent(QMouseEvent *e)
 //Set Memory
 void Custom_Left_Buttom::SetMemory()
 {
-    this->_color = new ColorSyleSheet ();
+    this->_color = new ColorStyleSheet ();
     this->_workfile = new WorkFile();
 }
 //Add Image

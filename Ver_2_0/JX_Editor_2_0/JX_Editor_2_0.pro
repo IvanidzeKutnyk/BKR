@@ -11,7 +11,7 @@ CONFIG += c++17
 SOURCES += \
     MainWidgetsLogic/mainwidgetcontrolmodule.cpp \
     WorkWithFile\analizejsonfile.cpp \
-    ColorStyle\colorsylesheet.cpp \
+    ColorStyle\colorstylesheet.cpp \
     Widgets\custom_left_buttom.cpp \
     Widgets\last_files_widget.cpp \
     MainWidgetsLogic\advancedtypewidget.cpp \
@@ -24,7 +24,7 @@ SOURCES += \
 HEADERS += \
     MainWidgetsLogic/mainwidgetcontrolmodule.h \
     WorkWithFile\analizejsonfile.h \
-    ColorStyle\colorsylesheet.h \
+    ColorStyle\colorstylesheet.h \
     Widgets\custom_left_buttom.h \
     Widgets\last_files_widget.h \
     MainWidgetsLogic\advancedtypewidget.h \

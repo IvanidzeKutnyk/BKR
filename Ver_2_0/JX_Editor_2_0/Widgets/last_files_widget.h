@@ -11,7 +11,7 @@
 #include <QPainter>
 #include <QDebug>
 #include <QHBoxLayout>
-#include "ColorStyle/colorsylesheet.h"
+#include "ColorStyle/colorstylesheet.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 
 class Last_Files_Widget : public QWidget
@@ -48,7 +48,7 @@ private:
     bool _mouseEnt_Lev;
     bool _mouseCl;
 
-    ColorSyleSheet *_color;
+    ColorStyleSheet *_color;
 
     QString _file_name;
     QString _file_way;
