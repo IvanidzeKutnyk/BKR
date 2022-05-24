@@ -39,6 +39,12 @@ ColorStyleSheet::ColorStyleSheet()
     this->_colorbackgroundEnter = "#A1A1F6";
     this->_colorbackgroundIdle = "#7070FF";
     this->_colorbackgroundSelected = this->_colorbackgroundIdle;
+    //Elements
+        //RootWidget
+    this->_RootWidgetColor = "#C1C1F2";
+        //Types
+    this->_intType_Idle = "#A6C6F7";
+    this->_intType_Enter = "#D3E5FF";
     this->StyleSheetLineEdit = "QLineEdit"
                                "{"
                                     "border-radius: 4px;"

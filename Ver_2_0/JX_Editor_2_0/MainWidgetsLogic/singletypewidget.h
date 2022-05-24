@@ -2,12 +2,24 @@
 #define SINGLETYPEWIDGET_H
 
 //Library Start +++++++++++++++++++++++++++++++++++++++++++++
-#include <MainWidgetsLogic/mainwidgetexample.h>
+#include "mainwidgetexample.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 class SingleTypeWidget : public MainWidgetExample
 {
 public:
-    SingleTypeWidget(QJsonObject&,QWidget *parent = nullptr);
+    enum class SINGLETYPE
+    {
+        BOOL,
+        INT,
+        STRING,
+        DOUBLE
+    };
+
+    SingleTypeWidget(SINGLETYPE, QJsonValue, QJsonValue, QWidget *parent = nullptr);
+    void SetColors();
+void MainFunctions();
+private:
+    SINGLETYPE _type;
 };
 
 #endif // SINGLETYPEWIDGET_H

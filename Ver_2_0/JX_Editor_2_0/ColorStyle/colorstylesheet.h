@@ -48,10 +48,25 @@ public:
     //MainWidgetExample
     QString StyleSheetLineEdit;
     QColor _bordercolordefault;
+
     QColor _colorbackgroundPressed;
     QColor _colorbackgroundEnter;
     QColor _colorbackgroundIdle;
     QColor _colorbackgroundSelected;
+
+    QColor _RootWidgetColor;
+
+    QColor _intType_Idle;
+    QColor _intType_Enter;
+
+    QColor _doubleType_Idle;
+    QColor _doubleType_Enter;
+
+    QColor _stringType_Idle;
+    QColor _stringType_Enter;
+
+    QColor _boolType_Idle;
+    QColor _boolType_Enter;
 private:
 };
 

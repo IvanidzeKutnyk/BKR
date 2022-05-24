@@ -2,13 +2,17 @@
 #define ADVANCEDTYPEWIDGET_H
 
 //Library Start +++++++++++++++++++++++++++++++++++++++++++++
-#include <MainWidgetsLogic/mainwidgetexample.h>
+#include "mainwidgetexample.h"
+#include "QJsonArray"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 
 class AdvancedTypeWidget :public MainWidgetExample
 {
 public:
-    AdvancedTypeWidget(QJsonObject&,QWidget *parent = nullptr);
+    AdvancedTypeWidget(QJsonValue,QWidget *parent = nullptr);
+    AdvancedTypeWidget(QWidget *parent = nullptr);
+
+    void FirstObject();
 };
 
 #endif // ADVANCEDTYPEWIDGET_H

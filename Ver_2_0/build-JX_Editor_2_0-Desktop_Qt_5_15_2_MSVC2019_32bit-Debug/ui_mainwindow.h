@@ -184,6 +184,7 @@ public:
         InputInfo->setObjectName(QString::fromUtf8("InputInfo"));
         verticalLayout_7 = new QVBoxLayout(InputInfo);
         verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
+        verticalLayout_7->setContentsMargins(2, 2, 2, 2);
 
         gridLayout_4->addWidget(InputInfo, 0, 0, 1, 1);
 

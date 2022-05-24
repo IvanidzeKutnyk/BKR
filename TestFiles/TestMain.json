@@ -1,25 +1,5 @@
 {
-  "Cost111": 5090,
-  "Upgrades": 
-  [
-    {
-      "AltReward": {
-             "Item": "",
-              "Amount": 1
-        },
-  
-    "Cost": 5090,
-    "Kind": 1,
-    "Amount": 9
-  
-    }
-  ],
-  "Upgrades12": [
-      "Amount11",
-      "Amount22",
-      "rarara",
-    {
-      "Amount22": 9
-    }
-  ]
+  "Cost111": true,
+  "Cost112": 25,
+  "Cost113": "Name"
 }

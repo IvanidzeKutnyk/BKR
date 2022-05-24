@@ -1,4 +1,6 @@
 #include "mainwidgetexample.h"
+#include "advancedtypewidget.h"
+#include "singletypewidget.h"
 
 MainWidgetExample::MainWidgetExample(QWidget *parent)
     : QWidget{parent}
@@ -16,7 +18,7 @@ void MainWidgetExample::paintEvent(QPaintEvent *e)
     painter.drawRoundedRect(QRectF(0,
                                    0,
                                    this->width(),
-                                   this->height()),5,5);
+                                   this->height()),this->_round,this->_round);
 }
 //SetMemory
 void MainWidgetExample::Set_Memory()
@@ -52,9 +54,10 @@ void MainWidgetExample::AddWidget()
         this->_titlewidget->layout()->addWidget(this->_value);
         this->_titlewidget->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
         //Info Widget
-        this->_infowidget->setLayout(new QVBoxLayout());
-        this->_infowidget->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+        this->_infowidget->setLayout(new QHBoxLayout());
         this->_infowidget->layout()->addWidget(this->_inputwidget);
+        this->_infowidget->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+        this->_inputwidget->setLayout(new QVBoxLayout());
     }
     else
     {
@@ -73,10 +76,7 @@ void MainWidgetExample::AddWidget()
     connect(this->_key,&QLineEdit::textChanged,this,&MainWidgetExample::TextChanged);
     connect(this->_value,&QLineEdit::textChanged,this,&MainWidgetExample::TextChanged);
 }
-//Add elements into info widget
-void MainWidgetExample::Add_Son(MainWidgetExample * _son)
-{
-}
+
 //Resize LineEdit
 void MainWidgetExample::ResizeLineEdit()
 {
@@ -148,52 +148,41 @@ void MainWidgetExample::mouseReleaseEvent(QMouseEvent *)
     update();
 }
 
-void MainWidgetExample::SetFileWay(QString _str)
-{
-    this->_fullfileway = _str;
-}
-void MainWidgetExample::OpenReadFile()
-{
-    QFile _file(this->_fullfileway);
-    if(!_file.open(QIODevice::ReadOnly))
-    {
-        qDebug()<<"File Open Error";
-    }
-    this->_fileinputdata = _file.readAll();
-    this->_Jdoc = QJsonDocument::fromJson(this->_fileinputdata.toUtf8());
-    this->_currentJsonObject = this->_Jdoc.object();
-    _file.close();
-}
-void MainWidgetExample::LoadObject(QJsonObject& value)
+void MainWidgetExample::LoadObject(QJsonObject value)
 {
     for(auto _ita = value.begin(); _ita != value.end(); _ita++)
     {
+        MainWidgetExample * el = nullptr;
         if(_ita.value().isBool())
         {
-            MainWidgetExample * el = new MainWidgetExample();
-            this->_elements.push_back(el);
-            this->layout()->addWidget(el);
+            el = new SingleTypeWidget(SingleTypeWidget::SINGLETYPE::BOOL, (QJsonValue)_ita.key(), (QJsonValue)_ita.value());
         }
         else if(_ita.value().isDouble())
         {
-            this->_elements.push_back(new SingleTypeWidget(value));
+            el = new SingleTypeWidget(SingleTypeWidget::SINGLETYPE::DOUBLE, (QJsonValue)_ita.key(), (QJsonValue)_ita.value());
         }
         else if(_ita.value().isString())
         {
-            this->_elements.push_back(new SingleTypeWidget(value));
+            el = new SingleTypeWidget(SingleTypeWidget::SINGLETYPE::STRING, (QJsonValue)_ita.key(), (QJsonValue)_ita.value());
         }
         else if(_ita.value().isArray())
         {
-            MainWidgetExample *arrayElement = new AdvancedElement();
-            arrayElement->LoadObject(value);
-            this->_elements.push_back(arrayElement);
+            el = new AdvancedTypeWidget(_ita.key());
+            for (auto it = _ita.value().toArray().begin(); it != _ita.value().toArray().end(); it++)
+            {
+                el->LoadObject(it->toObject());
+            }
         }
         else if(_ita.value().isObject())
         {
-            MainWidgetExample *arrayElement = new AdvancedElement();
-            arrayElement->LoadObject(value);
-            this->_elements.push_back(arrayElement);
+            el = new AdvancedTypeWidget(_ita.key());
+            el->LoadObject(_ita.value().toObject());
         }
+        this->_elements.push_back(el);
+        this->_inputwidget->layout()->addWidget(el);
     }
-
+}
+void MainWidgetExample::SetRound(int _a)
+{
+    this->_round = _a;
 }

@@ -24,7 +24,7 @@ public:
 
     void Set_Mamory();
     void Add_Elements();
-    void FirstLoadObject(QJsonObject&);
+    void FirstLoadObject(QJsonObject);
 
 private:
     // custom_left_buttom
@@ -40,6 +40,8 @@ private:
     void SetActiveWidget(QString);
     void HideShowWidgets();
     void CheckOverFlow();
+    void SetFileWay(QString);
+    QJsonObject OpenReadFile(QString);
 private:
     Ui::MainWindow *ui;
     MainWidgetExample *_root;

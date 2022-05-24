@@ -20,9 +20,8 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QJsonValue>
+#include <string>
 #include "ColorStyle/colorstylesheet.h"
-#include "MainWidgetsLogic/advancedtypewidget.h"
-#include "MainWidgetsLogic/singletypewidget.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 
 class MainWidgetExample : public QWidget
@@ -43,15 +42,9 @@ public:
     //Test Function
     void TestSetText();
     void SetFullWidget(bool);
-private:
-        QString _fullfileway;
-        QString _fileinputdata;
-        QJsonObject  _currentJsonObject;
-        QJsonDocument _Jdoc;
-private:
-        void SetFileWay(QString);
-        void OpenReadFile();
-        void LoadObject(QJsonObject&);
+    void LoadObject(QJsonObject);
+    void SetRound(int);
+
 protected:
     //Widgets
     QWidget *_inputwidget;
@@ -72,6 +65,7 @@ protected:
 private:
     QVector<MainWidgetExample *> _elements;
     bool _fullWidget;
+    int _round;
 private slots:
     void TextChanged();
 };

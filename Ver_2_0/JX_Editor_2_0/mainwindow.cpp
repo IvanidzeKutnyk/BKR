@@ -60,6 +60,7 @@ void MainWindow::ClickedOpenButtom(WorkFile *e)
         this->_lastfiles.push_front(lastw);
         this->_filesWay.push_front(e->Get_fullFileWay());
         this->UpdateWidgets(lastw);
+        FirstLoadObject(OpenReadFile(e->Get_fullFileWay()));
     }
 }
 //Click to Not Active LastFileWidget
@@ -162,7 +163,23 @@ void MainWindow::CheckOverFlow()
     }
 }
 
-void MainWindow::FirstLoadObject(QJsonObject &_obj)
+void MainWindow::FirstLoadObject(QJsonObject _obj)
 {
-    this->_root = new AdvancedTypeWidget();
+   this->_root = new AdvancedTypeWidget();
+   ui->InputInfo->layout()->addWidget(this->_root);
+   _root->LoadObject(_obj);
 }
+QJsonObject MainWindow::OpenReadFile(QString _filename)
+{
+    QFile _file(_filename);
+    if(!_file.open(QIODevice::ReadOnly))
+    {
+        qDebug()<<"File Open Error";
+    }
+    QString _fileinputdata = _file.readAll();
+    QJsonDocument _Jdoc = QJsonDocument::fromJson(_fileinputdata.toUtf8());
+    QJsonObject _currentJsonObject = _Jdoc.object();
+    _file.close();
+    return _currentJsonObject;
+}
+

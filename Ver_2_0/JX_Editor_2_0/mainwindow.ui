@@ -315,7 +315,20 @@ background-repeat: no-repeat;</string>
            </item>
            <item row="0" column="0">
             <widget class="QWidget" name="InputInfo" native="true">
-             <layout class="QVBoxLayout" name="verticalLayout_7"/>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <property name="leftMargin">
+               <number>2</number>
+              </property>
+              <property name="topMargin">
+               <number>2</number>
+              </property>
+              <property name="rightMargin">
+               <number>2</number>
+              </property>
+              <property name="bottomMargin">
+               <number>2</number>
+              </property>
+             </layout>
             </widget>
            </item>
           </layout>
