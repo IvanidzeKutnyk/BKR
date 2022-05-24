@@ -1,5 +1,42 @@
 #include "singletypewidget.h"
 
+SingleTypeWidget::SingleTypeWidget(SINGLETYPE _typein, QJsonValue _value,QWidget *parent)
+    :MainWidgetExample(parent)
+{
+    this->MainFunctions();
+    switch (_typein) {
+    case SINGLETYPE::BOOL:
+    {
+      this->_type = SINGLETYPE::BOOL;
+            this->_key->hide();
+            this->_value->setText(_value.toBool() == true ? "true" : "false");
+            this->_label->setText(" : ");
+       break;
+
+    }
+    case SINGLETYPE::DOUBLE:
+    {
+        this->_type = SINGLETYPE::DOUBLE;
+
+            this->_key->hide();
+            this->_value->setText(std::to_string(_value.toDouble()).c_str());
+            this->_label->setText(" : ");
+        break;
+    }
+    case SINGLETYPE::STRING:
+    {
+        this->_type = SINGLETYPE::STRING;
+
+            this->_key->hide();
+            this->_value->setText(_value.toString());
+            this->_label->setText(" : ");
+        break;
+    }
+   }
+
+    SetColors();
+}
+
 SingleTypeWidget::SingleTypeWidget(SINGLETYPE _typein, QJsonValue _key, QJsonValue _value,QWidget *parent)
     :MainWidgetExample(parent)
 {
@@ -56,11 +93,9 @@ SingleTypeWidget::SingleTypeWidget(SINGLETYPE _typein, QJsonValue _key, QJsonVal
              this->_label->setText(" : ");
         break;
     }
-    case SINGLETYPE::INT:
-        this->_type = SINGLETYPE::INT;
-       break;
    }
     SetColors();
+    this->ResizeWidgets();
 }
 void SingleTypeWidget::MainFunctions()
 {
@@ -76,25 +111,27 @@ void SingleTypeWidget::SetColors()
     {
     case SINGLETYPE::BOOL:
     {
-
+        this->_color->_colorbackgroundPressed = this->_color->_boolType_Enter;
+        this->_color->_colorbackgroundEnter = this->_color->_boolType_Enter;
+        this->_color->_colorbackgroundIdle = this->_color->_boolType_Idle;
+        this->_color->_colorbackgroundSelected = this->_color->_boolType_Idle;
        break;
 
-    }
-    case SINGLETYPE::INT:
-    {
-
-        break;
     }
     case SINGLETYPE::STRING:
     {
-
+        this->_color->_colorbackgroundPressed = this->_color->_stringType_Enter;
+        this->_color->_colorbackgroundEnter = this->_color->_stringType_Enter;
+        this->_color->_colorbackgroundIdle = this->_color->_stringType_Idle;
+        this->_color->_colorbackgroundSelected = this->_color->_stringType_Idle;
         break;
     }
     case SINGLETYPE::DOUBLE:
-        this->_color->_colorbackgroundPressed = this->_color->_intType_Enter;
-        this->_color->_colorbackgroundEnter = this->_color->_intType_Enter;
-        this->_color->_colorbackgroundIdle = this->_color->_intType_Idle;
-        this->_color->_colorbackgroundSelected = this->_color->_intType_Idle;
+        this->_color->_colorbackgroundPressed = this->_color->_doubleType_Enter;
+        this->_color->_colorbackgroundEnter = this->_color->_doubleType_Enter;
+        this->_color->_colorbackgroundIdle = this->_color->_doubleType_Idle;
+        this->_color->_colorbackgroundSelected = this->_color->_doubleType_Idle;
        break;
    }
+
 }

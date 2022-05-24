@@ -12,8 +12,10 @@ void MainWidgetExample::paintEvent(QPaintEvent *e)
 {
     Q_UNUSED(e);
     QPainter painter(this);
+    QPen pen(this->_color->_bordercolordefault);
+    pen.setCosmetic(true);
     painter.setRenderHint(QPainter::Antialiasing,true);
-    painter.setPen(this->_color->_bordercolordefault);
+    painter.setPen(pen);
     painter.setBrush(this->_color->_colorbackgroundSelected);
     painter.drawRoundedRect(QRectF(0,
                                    0,
@@ -55,8 +57,8 @@ void MainWidgetExample::AddWidget()
         this->_titlewidget->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
         //Info Widget
         this->_infowidget->setLayout(new QHBoxLayout());
-        this->_infowidget->layout()->addWidget(this->_inputwidget);
         this->_infowidget->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+        this->_infowidget->layout()->addWidget(this->_inputwidget);  
         this->_inputwidget->setLayout(new QVBoxLayout());
     }
     else
@@ -125,6 +127,7 @@ void MainWidgetExample::TestSetText()
 void MainWidgetExample::TextChanged()
 {
     this->ResizeLineEdit();
+    this->ResizeWidgets();
 }
 //MouseEvents
 void MainWidgetExample::enterEvent(QEvent *)
@@ -167,22 +170,70 @@ void MainWidgetExample::LoadObject(QJsonObject value)
         }
         else if(_ita.value().isArray())
         {
-            el = new AdvancedTypeWidget(_ita.key());
-            for (auto it = _ita.value().toArray().begin(); it != _ita.value().toArray().end(); it++)
-            {
-                el->LoadObject(it->toObject());
-            }
+            el = new AdvancedTypeWidget(AdvancedTypeWidget::ADVANCEDTYPE::MASSIVE,_ita.key());
+            el->LoadMassive(_ita.value().toArray());
         }
         else if(_ita.value().isObject())
         {
-            el = new AdvancedTypeWidget(_ita.key());
+            el = new AdvancedTypeWidget(AdvancedTypeWidget::ADVANCEDTYPE::OBJECT,_ita.key());
             el->LoadObject(_ita.value().toObject());
         }
         this->_elements.push_back(el);
         this->_inputwidget->layout()->addWidget(el);
     }
 }
+void MainWidgetExample::LoadMassive(QJsonArray value)
+{
+    MainWidgetExample * el = nullptr;
+    for(auto tb = value.begin(); tb != value.end();tb++)
+{
+        if(tb->isString())
+        {
+            el = new SingleTypeWidget(SingleTypeWidget::SINGLETYPE::STRING, (QJsonValue)tb->toString());
+        }
+        else if(tb->isBool())
+        {
+            el = new SingleTypeWidget(SingleTypeWidget::SINGLETYPE::BOOL, (QJsonValue)tb->toBool());
+        }
+        if(tb->isDouble())
+        {
+            el = new SingleTypeWidget(SingleTypeWidget::SINGLETYPE::DOUBLE, (QJsonValue)tb->toDouble());
+        }
+        if(tb->isObject())
+        {
+            qDebug()<<"OBJ";
+            QJsonObject a = tb->toObject();
+            el = new AdvancedTypeWidget(AdvancedTypeWidget::ADVANCEDTYPE::OBJECT);
+            el->LoadObject(tb->toObject());
+        }
+
+        if(el == nullptr)
+        {
+            qDebug()<<"NULLPTR";
+        }
+        else
+        {
+        this->_elements.push_back(el);
+        this->_inputwidget->layout()->addWidget(el);
+        }
+    }
+}
 void MainWidgetExample::SetRound(int _a)
 {
     this->_round = _a;
+}
+void MainWidgetExample::ResizeWidgets()
+{
+
+    QString textk = this->_key->text();
+    QString textv = this->_value->text();
+    QString textl = this->_label->text();
+    QFontMetrics fmk(this->_key->font());
+    QFontMetrics fmv(this->_value->font());
+    QFontMetrics fml(this->_label->font());
+    int pixelsWideK = fmk.width(textk) + 25;
+    int pixelsWideV = fmv.width(textv) + 25;
+    int pixelsWideL = fml.width(textl) + 30;
+
+    this->setFixedWidth(pixelsWideK + pixelsWideV + pixelsWideL);
 }

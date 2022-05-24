@@ -111,7 +111,7 @@
       "MainPony": {
         "Pony": "Pony_Twilight_Sparkle",
         "Animations": [
-          "arena_pony_kick_main",
+    "arena_pony_kick_main",
           "arena_pony_magic_main",
           "gen_interact_high_04",
           "apple_idle_01_r"

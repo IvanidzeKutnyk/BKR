@@ -43,8 +43,9 @@ public:
     void TestSetText();
     void SetFullWidget(bool);
     void LoadObject(QJsonObject);
+    void LoadMassive(QJsonArray);
     void SetRound(int);
-
+    void ResizeWidgets();
 protected:
     //Widgets
     QWidget *_inputwidget;

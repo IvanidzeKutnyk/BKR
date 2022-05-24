@@ -43,8 +43,20 @@ ColorStyleSheet::ColorStyleSheet()
         //RootWidget
     this->_RootWidgetColor = "#C1C1F2";
         //Types
-    this->_intType_Idle = "#A6C6F7";
-    this->_intType_Enter = "#D3E5FF";
+    this->_doubleType_Idle = "#91BA77";
+    this->_doubleType_Enter = "#B1D999";
+
+    this->_stringType_Idle = "#A48375";
+    this->_stringType_Enter = "#C39F8F";
+
+    this->_boolType_Idle = "#7FA5C8";
+    this->_boolType_Enter = "#9AC0E3";
+
+    this->_massiveType_Idle = "#CAB445";
+    this->_massiveType_Enter = "#E7CF5A";
+
+    this->_objectType_Idle = "#A57CC0";
+    this->_objectType_Enter = "#B896CE";
     this->StyleSheetLineEdit = "QLineEdit"
                                "{"
                                     "border-radius: 4px;"

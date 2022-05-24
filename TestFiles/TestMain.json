@@ -1,5 +1,218 @@
 {
-  "Cost111": true,
-  "Cost112": 25,
-  "Cost113": "Name"
+  "Parameters": [
+    {
+      "TLS_ID": "Siege_Of_The_Crystal_Empire_TLS_2",
+      "MainPony": {
+        "Pony": "Pony_Sombra",
+        "Animations": [
+          "arena_pony_kick_main",
+          "arena_pony_magic_main",
+          "gen_interact_high_04",
+          "apple_idle_01_r"
+        ],
+        "VictoryAnimations": [
+          "arena_pony_win"
+        ],
+        "DefeatAnimations": [
+          "arena_pony_defeat"
+        ],
+        "SpawnAnimation": "arena_pony_jumpout",
+        "Scale": 2.5,
+        "PosZ": 50.0,
+        "RotationX": 15.0,
+        "RotationY": 120.0,
+        "Mirror": false,
+        "BossId": ""
+      },
+      "Helpers": [
+        {
+          "Pony": "Pony_Radiant_Hope",
+          "Animations": [
+            "arena_pony_kick",
+            "arena_pony_magic",
+            "gen_interact_high_04",
+            "apple_idle_01_r"
+          ],
+          "VictoryAnimations": [
+            "gen_interact_levelup_03"
+          ],
+          "DefeatAnimations": [
+            "arena_pony_defeat"
+          ],
+          "SpawnAnimation": "arena_pony_jumpout",
+          "Scale": 1.0,
+          "PosZ": 200.0,
+          "RotationX": 15.0,
+          "RotationY": 120.0,
+          "Mirror": false,
+          "BossId": ""
+        },
+        {
+          "Pony": "Pony_Shadow_Lock",
+          "Animations": [
+            "arena_pony_kick",
+            "arena_pony_magic",
+            "gen_interact_high_04",
+            "apple_idle_01_r"
+          ],
+          "VictoryAnimations": [
+            "gen_interact_levelup_03"
+          ],
+          "DefeatAnimations": [
+            "arena_pony_defeat"
+          ],
+          "SpawnAnimation": "arena_pony_jumpout",
+          "Scale": 1.0,
+          "PosZ": 100.0,
+          "RotationX": 15.0,
+          "RotationY": 120.0,
+          "Mirror": false,
+          "BossId": ""
+        },
+        {
+          "Pony": "Pony_Chrysalis",
+          "Animations": [
+            "arena_pony_princess",
+            "gen_snap_01"
+          ],
+          "VictoryAnimations": [
+            "chrysalis_laugh"
+          ],
+          "DefeatAnimations": [
+            "chrysalis_defeat"
+          ],
+          "SpawnAnimation": "arena_pony_fly_entance",
+          "Scale": 1.0,
+          "PosZ": 0.0,
+          "RotationX": 15.0,
+          "RotationY": 60.0,
+          "Mirror": true,
+          "BossId": ""
+        }
+      ],
+      "CurrencyIapName": "TLS_Currency_Shadow_Crystals",
+      "CurrencyIcon": "gui/gnr_ico_token_tl_currency_smoky_crystal.png",
+      "CurrencyIconFreemBar": "gui/gnr_ico_sotce_tls_smoky_crystal_iap.png",
+      "CurrencyName": "STR_QSI_SOTCE_TLS_ARENA_SHADOW_CRYSTALS",
+      "PowerIcon": "gui/gnr_ico_tls_arena_power_icon_radiant_sombra.png",
+      "UsedSet": "SET_Sombra_TLS_MAIN",
+      "Music": "evt_bgm_chrysalis_battle",
+      "LeaderboardCurrency": "",
+      "ClickerDisplayData": {
+        "CooldownObject": "mlp_arena_clicker_idle",
+        "ActiveObject": "mlp_arena_clicker_active",
+        "ClickSound": "evt_attack_fish",
+        "TutorialClicks": 0
+      },
+      "LeaderboardBosses": []
+    },
+    {
+      "TLS_ID": "School_Raze_TLS",
+      "MainPony": {
+        "Pony": "Pony_Twilight_Sparkle",
+        "Animations": [
+    "arena_pony_kick_main",
+          "arena_pony_magic_main",
+          "gen_interact_high_04",
+          "apple_idle_01_r"
+        ],
+        "VictoryAnimations": [
+          "arena_pony_win"
+        ],
+        "DefeatAnimations": [
+          "arena_pony_defeat"
+        ],
+        "SpawnAnimation": "arena_pony_jumpout",
+        "Scale": 2.5,
+        "PosZ": 50.0,
+        "RotationX": 15.0,
+        "RotationY": 120.0,
+        "Mirror": true,
+        "BossId": ""
+      },
+      "Helpers": [
+        {
+          "Pony": "Pony_Ocellus",
+          "Animations": [
+            "arena_pony_kick",
+            "arena_pony_magic",
+            "gen_interact_high_04",
+            "apple_idle_01_r"
+          ],
+          "VictoryAnimations": [
+            "gen_interact_levelup_03"
+          ],
+          "DefeatAnimations": [
+            "arena_pony_defeat"
+          ],
+          "SpawnAnimation": "arena_pony_jumpout",
+          "Scale": 1.0,
+          "PosZ": 200.0,
+          "RotationX": 15.0,
+          "RotationY": 120.0,
+          "Mirror": false,
+          "BossId": ""
+        },
+        {
+          "Pony": "Pony_Gallus",
+          "Animations": [
+            "arena_pony_kick",
+            "arena_pony_magic",
+            "gen_interact_high_04",
+            "apple_idle_01_r"
+          ],
+          "VictoryAnimations": [
+            "gen_interact_levelup_03"
+          ],
+          "DefeatAnimations": [
+            "arena_pony_defeat"
+          ],
+          "SpawnAnimation": "arena_pony_jumpout",
+          "Scale": 1.5,
+          "PosZ": 100.0,
+          "RotationX": 15.0,
+          "RotationY": 120.0,
+          "Mirror": false,
+          "BossId": ""
+        },
+        {
+          "Pony": "Pony_Sandbar",
+          "Animations": [
+            "arena_pony_kick",
+            "arena_pony_magic",
+            "gen_interact_high_04",
+            "apple_idle_01_r"
+          ],
+          "VictoryAnimations": [
+            "gen_interact_levelup_03"
+          ],
+          "DefeatAnimations": [
+            "arena_pony_defeat"
+          ],
+          "SpawnAnimation": "arena_pony_jumpout",
+          "Scale": 1.0,
+          "PosZ": 0.0,
+          "RotationX": 15.0,
+          "RotationY": 120.0,
+          "Mirror": false,
+          "BossId": ""
+        }
+      ],
+      "CurrencyIapName": "TLS_Currency_Magic_Coin",
+      "CurrencyIcon": "gnr_ico_token_tl_currency_magic_coin.png",
+      "CurrencyIconFreemBar": "gui/gnr_ico_sotce_tls_magic_coin_iap.png",
+      "CurrencyName": "STR_QSI_SR_TLS_ARENA_MAGIC_COIN",
+      "PowerIcon": "gui/gnr_ico_tls_arena_power_icon_school_raze.png",
+      "UsedSet": "SET_Twilight_TLS_MAIN",
+      "Music": "evt_bgm_chrysalis_battle",
+      "LeaderboardCurrency": "",
+      "ClickerDisplayData": {
+        "CooldownObject": "tls_arena_school_raze_clicker_idle",
+        "ActiveObject": "tls_arena_school_raze_clicker_active",
+        "ClickSound": "ev_sfx_mc_ui_upgrade",
+        "TutorialClicks": 15
+      },
+      "LeaderboardBosses": []
+    }
+  ]
 }

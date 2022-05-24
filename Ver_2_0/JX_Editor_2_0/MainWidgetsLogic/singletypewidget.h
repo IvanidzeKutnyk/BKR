@@ -10,11 +10,10 @@ public:
     enum class SINGLETYPE
     {
         BOOL,
-        INT,
         STRING,
         DOUBLE
     };
-
+    SingleTypeWidget(SINGLETYPE, QJsonValue, QWidget *parent = nullptr);
     SingleTypeWidget(SINGLETYPE, QJsonValue, QJsonValue, QWidget *parent = nullptr);
     void SetColors();
 void MainFunctions();

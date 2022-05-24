@@ -56,9 +56,6 @@ public:
 
     QColor _RootWidgetColor;
 
-    QColor _intType_Idle;
-    QColor _intType_Enter;
-
     QColor _doubleType_Idle;
     QColor _doubleType_Enter;
 
@@ -67,6 +64,12 @@ public:
 
     QColor _boolType_Idle;
     QColor _boolType_Enter;
+
+    QColor _massiveType_Idle;
+    QColor _massiveType_Enter;
+
+    QColor _objectType_Idle;
+    QColor _objectType_Enter;
 private:
 };
 
