@@ -14,8 +14,15 @@
 #include <QPainter>
 #include <QEvent>
 #include <QMouseEvent>
+#include <QFile>
+#include <QJsonDocument>
 #include <QDebug>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QJsonValue>
 #include "ColorStyle/colorstylesheet.h"
+#include "MainWidgetsLogic/advancedtypewidget.h"
+#include "MainWidgetsLogic/singletypewidget.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 
 class MainWidgetExample : public QWidget
@@ -36,7 +43,15 @@ public:
     //Test Function
     void TestSetText();
     void SetFullWidget(bool);
-
+private:
+        QString _fullfileway;
+        QString _fileinputdata;
+        QJsonObject  _currentJsonObject;
+        QJsonDocument _Jdoc;
+private:
+        void SetFileWay(QString);
+        void OpenReadFile();
+        void LoadObject(QJsonObject&);
 protected:
     //Widgets
     QWidget *_inputwidget;
@@ -55,7 +70,7 @@ protected:
     virtual void mousePressEvent(QMouseEvent *) override;
     virtual void mouseReleaseEvent(QMouseEvent *) override;
 private:
-    QVector<MainWidgetExample *> _sons;
+    QVector<MainWidgetExample *> _elements;
     bool _fullWidget;
 private slots:
     void TextChanged();

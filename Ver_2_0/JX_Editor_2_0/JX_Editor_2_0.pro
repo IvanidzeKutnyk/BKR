@@ -9,7 +9,6 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    WorkWithFile\analizejsonfile.cpp \
     ColorStyle\colorstylesheet.cpp \
     Widgets\custom_left_buttom.cpp \
     Widgets\last_files_widget.cpp \
@@ -21,7 +20,6 @@ SOURCES += \
     MainWidgetsLogic\singletypewidget.cpp
 
 HEADERS += \
-    WorkWithFile\analizejsonfile.h \
     ColorStyle\colorstylesheet.h \
     Widgets\custom_left_buttom.h \
     Widgets\last_files_widget.h \

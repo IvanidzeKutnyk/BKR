@@ -1,6 +1,6 @@
 #include "advancedtypewidget.h"
 
-AdvancedTypeWidget::AdvancedTypeWidget(QWidget *parent)
+AdvancedTypeWidget::AdvancedTypeWidget(QJsonObject& _value,QWidget *parent)
     :MainWidgetExample(parent)
 {
 

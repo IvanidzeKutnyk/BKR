@@ -8,12 +8,6 @@ MainWindow::MainWindow(QWidget *parent)
     this->Set_Mamory();
     connect(_openbutton,&Custom_Left_Buttom::SendFileInfoAfterClick,this,&MainWindow::ClickedOpenButtom);
     this->Add_Elements();
-   this->_module = new MainWidgetControlModule();
-   this->_module1 = new MainWidgetControlModule();
-   this->_module->PushWidgets(MainWidgetControlModule::WidgetType::ADVANCEDTYPE);
-   this->_module1->PushWidgets(MainWidgetControlModule::WidgetType::SIMPLETYPE);
-   ui->InputInfo->layout()->addWidget(_module1);
-   ui->InputInfo->layout()->addWidget(_module);
 }
 
 MainWindow::~MainWindow()
@@ -27,7 +21,6 @@ void MainWindow::Set_Mamory()
     this->_savebutton = new Custom_Left_Buttom(true,false,false); //Save Button
     this->_settingbutton = new Custom_Left_Buttom(false,false,true);
     this->fileInfo = new WorkFile();
-    this->jsonfileoutput = new AnalizeJsonFile("G:\\QTProjects\\BKR\\TestFiles\\.json");
 }
 //Add main widgets
 void MainWindow::Add_Elements()
@@ -167,4 +160,9 @@ void MainWindow::CheckOverFlow()
     else{
         //qDebug()<<this->_lastfiles;
     }
+}
+
+void MainWindow::FirstLoadObject(QJsonObject &_obj)
+{
+    this->_root = new AdvancedTypeWidget();
 }

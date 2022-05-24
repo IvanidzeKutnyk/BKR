@@ -8,7 +8,7 @@
 class AdvancedTypeWidget :public MainWidgetExample
 {
 public:
-    AdvancedTypeWidget(QWidget *parent = nullptr);
+    AdvancedTypeWidget(QJsonObject&,QWidget *parent = nullptr);
 };
 
 #endif // ADVANCEDTYPEWIDGET_H

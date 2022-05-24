@@ -3,11 +3,13 @@
 //Library Start +++++++++++++++++++++++++++++++++++++++++++++
 #include <QMainWindow>
 #include <QVector>
+#include <QJsonObject>
 #include "Widgets/custom_left_buttom.h"
 #include "Widgets/last_files_widget.h"
 #include "WorkWithFile/workfile.h"
-#include "WorkWithFile/analizejsonfile.h"
-#include "MainWidgetsLogic/mainwidgetcontrolmodule.h"
+#include "MainWidgetsLogic/mainwidgetexample.h"
+#include "MainWidgetsLogic/advancedtypewidget.h"
+#include "MainWidgetsLogic/singletypewidget.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,6 +24,7 @@ public:
 
     void Set_Mamory();
     void Add_Elements();
+    void FirstLoadObject(QJsonObject&);
 
 private:
     // custom_left_buttom
@@ -31,9 +34,6 @@ private:
     WorkFile *fileInfo;
     QVector<Last_Files_Widget*> _lastfiles;
     QStringList _filesWay;
-    AnalizeJsonFile *jsonfileoutput;
-    MainWidgetControlModule * _module;
-    MainWidgetControlModule * _module1;
 private:
     void UpdateWidgets(Last_Files_Widget *);
     bool CheckRepeat(QString);
@@ -42,6 +42,7 @@ private:
     void CheckOverFlow();
 private:
     Ui::MainWindow *ui;
+    MainWidgetExample *_root;
 
 public slots:
     void ClickedOpenButtom(WorkFile *);

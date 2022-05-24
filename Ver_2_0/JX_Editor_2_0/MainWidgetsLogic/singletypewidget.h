@@ -7,7 +7,7 @@
 class SingleTypeWidget : public MainWidgetExample
 {
 public:
-    SingleTypeWidget(QWidget *parent = nullptr);
+    SingleTypeWidget(QJsonObject&,QWidget *parent = nullptr);
 };
 
 #endif // SINGLETYPEWIDGET_H

@@ -2,9 +2,7 @@
 
 MainWidgetExample::MainWidgetExample(QWidget *parent)
     : QWidget{parent}
-{
-//TestSetText();
-}
+{}
 MainWidgetExample::~MainWidgetExample()
 {
 }
@@ -78,7 +76,6 @@ void MainWidgetExample::AddWidget()
 //Add elements into info widget
 void MainWidgetExample::Add_Son(MainWidgetExample * _son)
 {
-    this->_sons.push_front(_son);
 }
 //Resize LineEdit
 void MainWidgetExample::ResizeLineEdit()
@@ -149,4 +146,54 @@ void MainWidgetExample::mouseReleaseEvent(QMouseEvent *)
 {
     this->_color->_colorbackgroundSelected = this->_color->_colorbackgroundEnter;
     update();
+}
+
+void MainWidgetExample::SetFileWay(QString _str)
+{
+    this->_fullfileway = _str;
+}
+void MainWidgetExample::OpenReadFile()
+{
+    QFile _file(this->_fullfileway);
+    if(!_file.open(QIODevice::ReadOnly))
+    {
+        qDebug()<<"File Open Error";
+    }
+    this->_fileinputdata = _file.readAll();
+    this->_Jdoc = QJsonDocument::fromJson(this->_fileinputdata.toUtf8());
+    this->_currentJsonObject = this->_Jdoc.object();
+    _file.close();
+}
+void MainWidgetExample::LoadObject(QJsonObject& value)
+{
+    for(auto _ita = value.begin(); _ita != value.end(); _ita++)
+    {
+        if(_ita.value().isBool())
+        {
+            MainWidgetExample * el = new MainWidgetExample();
+            this->_elements.push_back(el);
+            this->layout()->addWidget(el);
+        }
+        else if(_ita.value().isDouble())
+        {
+            this->_elements.push_back(new SingleTypeWidget(value));
+        }
+        else if(_ita.value().isString())
+        {
+            this->_elements.push_back(new SingleTypeWidget(value));
+        }
+        else if(_ita.value().isArray())
+        {
+            MainWidgetExample *arrayElement = new AdvancedElement();
+            arrayElement->LoadObject(value);
+            this->_elements.push_back(arrayElement);
+        }
+        else if(_ita.value().isObject())
+        {
+            MainWidgetExample *arrayElement = new AdvancedElement();
+            arrayElement->LoadObject(value);
+            this->_elements.push_back(arrayElement);
+        }
+    }
+
 }
