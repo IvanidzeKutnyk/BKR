@@ -7,18 +7,11 @@
 class SingleTypeWidget : public MainWidgetExample
 {
 public:
-    enum class SINGLETYPE
-    {
-        BOOL,
-        STRING,
-        DOUBLE
-    };
-    SingleTypeWidget(SINGLETYPE, QJsonValue, QWidget *parent = nullptr);
-    SingleTypeWidget(SINGLETYPE, QJsonValue, QJsonValue, QWidget *parent = nullptr);
+    SingleTypeWidget(TYPES, QJsonValue, QWidget *parent = nullptr);
+    SingleTypeWidget(TYPES, QJsonValue, QJsonValue, QWidget *parent = nullptr);
     void SetColors();
-void MainFunctions();
-private:
-    SINGLETYPE _type;
+    void MainFunctions();
+
 };
 
 #endif // SINGLETYPEWIDGET_H

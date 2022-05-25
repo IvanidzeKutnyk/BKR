@@ -57,7 +57,7 @@ void MainWidgetExample::AddWidget()
         this->_titlewidget->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
         //Info Widget
         this->_infowidget->setLayout(new QHBoxLayout());
-        this->_infowidget->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+        //this->_infowidget->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
         this->_infowidget->layout()->addWidget(this->_inputwidget);  
         this->_inputwidget->setLayout(new QVBoxLayout());
     }
@@ -111,18 +111,6 @@ void MainWidgetExample::SetFullWidget(bool _value)
 {
     this->_fullWidget = _value;
 }
-//Test
-void MainWidgetExample::TestSetText()
-{
-    this->Set_Memory();
-    this->_key->setText("Hello");
-    this->_label->setText(" : ");
-    this->_value->setText("myText");
-
-    this->AddWidget();
-    this->SetStyleSheetSimple();
-
-}
 //Slot When text Changed
 void MainWidgetExample::TextChanged()
 {
@@ -158,25 +146,27 @@ void MainWidgetExample::LoadObject(QJsonObject value)
         MainWidgetExample * el = nullptr;
         if(_ita.value().isBool())
         {
-            el = new SingleTypeWidget(SingleTypeWidget::SINGLETYPE::BOOL, (QJsonValue)_ita.key(), (QJsonValue)_ita.value());
+            el = new SingleTypeWidget(SingleTypeWidget::TYPES::BOOL, (QJsonValue)_ita.key(), (QJsonValue)_ita.value());
         }
         else if(_ita.value().isDouble())
         {
-            el = new SingleTypeWidget(SingleTypeWidget::SINGLETYPE::DOUBLE, (QJsonValue)_ita.key(), (QJsonValue)_ita.value());
+            el = new SingleTypeWidget(SingleTypeWidget::TYPES::DOUBLE, (QJsonValue)_ita.key(), (QJsonValue)_ita.value());
         }
         else if(_ita.value().isString())
         {
-            el = new SingleTypeWidget(SingleTypeWidget::SINGLETYPE::STRING, (QJsonValue)_ita.key(), (QJsonValue)_ita.value());
+            el = new SingleTypeWidget(SingleTypeWidget::TYPES::STRING, (QJsonValue)_ita.key(), (QJsonValue)_ita.value());
         }
         else if(_ita.value().isArray())
         {
-            el = new AdvancedTypeWidget(AdvancedTypeWidget::ADVANCEDTYPE::MASSIVE,_ita.key());
+            el = new AdvancedTypeWidget(AdvancedTypeWidget::TYPES::MASSIVE,_ita.key());
             el->LoadMassive(_ita.value().toArray());
+            el->ResizeWidgets();
         }
         else if(_ita.value().isObject())
         {
-            el = new AdvancedTypeWidget(AdvancedTypeWidget::ADVANCEDTYPE::OBJECT,_ita.key());
+            el = new AdvancedTypeWidget(AdvancedTypeWidget::TYPES::OBJECT,_ita.key());
             el->LoadObject(_ita.value().toObject());
+            el->ResizeWidgets();
         }
         this->_elements.push_back(el);
         this->_inputwidget->layout()->addWidget(el);
@@ -189,21 +179,21 @@ void MainWidgetExample::LoadMassive(QJsonArray value)
 {
         if(tb->isString())
         {
-            el = new SingleTypeWidget(SingleTypeWidget::SINGLETYPE::STRING, (QJsonValue)tb->toString());
+            el = new SingleTypeWidget(SingleTypeWidget::TYPES::STRING, (QJsonValue)tb->toString());
         }
         else if(tb->isBool())
         {
-            el = new SingleTypeWidget(SingleTypeWidget::SINGLETYPE::BOOL, (QJsonValue)tb->toBool());
+            el = new SingleTypeWidget(SingleTypeWidget::TYPES::BOOL, (QJsonValue)tb->toBool());
         }
         if(tb->isDouble())
         {
-            el = new SingleTypeWidget(SingleTypeWidget::SINGLETYPE::DOUBLE, (QJsonValue)tb->toDouble());
+            el = new SingleTypeWidget(SingleTypeWidget::TYPES::DOUBLE, (QJsonValue)tb->toDouble());
         }
         if(tb->isObject())
         {
             qDebug()<<"OBJ";
             QJsonObject a = tb->toObject();
-            el = new AdvancedTypeWidget(AdvancedTypeWidget::ADVANCEDTYPE::OBJECT);
+            el = new AdvancedTypeWidget(AdvancedTypeWidget::TYPES::OBJECT);
             el->LoadObject(tb->toObject());
         }
 
@@ -224,16 +214,46 @@ void MainWidgetExample::SetRound(int _a)
 }
 void MainWidgetExample::ResizeWidgets()
 {
+    switch(this->_type)
+    {
+    case TYPES::BOOL:
+        case TYPES::DOUBLE:
+            case TYPES::STRING:
+            {
+                QString textk = this->_key->text();
+                QString textv = this->_value->text();
+                QString textl = this->_label->text();
+                QFontMetrics fmk(this->_key->font());
+                QFontMetrics fmv(this->_value->font());
+                QFontMetrics fml(this->_label->font());
+                int pixelsWideK = fmk.width(textk) + 25;
+                int pixelsWideV = fmv.width(textv) + 25;
+                int pixelsWideL = fml.width(textl) + 30;
 
-    QString textk = this->_key->text();
-    QString textv = this->_value->text();
-    QString textl = this->_label->text();
-    QFontMetrics fmk(this->_key->font());
-    QFontMetrics fmv(this->_value->font());
-    QFontMetrics fml(this->_label->font());
-    int pixelsWideK = fmk.width(textk) + 25;
-    int pixelsWideV = fmv.width(textv) + 25;
-    int pixelsWideL = fml.width(textl) + 30;
+                this->setFixedWidth(pixelsWideK + pixelsWideV + pixelsWideL);
+                break;
+            }
+        case TYPES::OBJECT:
+        {       int max = 0;
+                for(auto _ita = this->_elements.begin(); _ita != this->_elements.end(); _ita++)
+                {
+                    if((*_ita)->width()> max)
+                    {
+                        max = (*_ita)->width();
+                        this->setFixedWidth(max + 200);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+            qDebug()<<max;
+            break;
+        }
+            case TYPES::MASSIVE:
+            {
+                break;
+            }
+    }
 
-    this->setFixedWidth(pixelsWideK + pixelsWideV + pixelsWideL);
 }

@@ -300,6 +300,18 @@ background-repeat: no-repeat;</string>
            </rect>
           </property>
           <layout class="QGridLayout" name="gridLayout_4">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item row="1" column="0">
             <spacer name="verticalSpacer_3">
              <property name="orientation">

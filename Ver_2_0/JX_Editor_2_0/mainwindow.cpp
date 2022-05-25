@@ -74,6 +74,7 @@ void MainWindow::ClickToWidgetLastFile(Last_Files_Widget *_last)
            Last_Files_Widget * temp = i[0];
            this->_lastfiles.erase(i);
            this->_lastfiles.push_front(temp);
+           FirstLoadObject(OpenReadFile(_last->GetFullFileWay()));
        }
        else
        {

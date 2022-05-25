@@ -176,6 +176,7 @@ public:
         scrollAreaWidgetContents->setGeometry(QRect(0, 0, 933, 671));
         gridLayout_4 = new QGridLayout(scrollAreaWidgetContents);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
+        gridLayout_4->setContentsMargins(0, 0, 0, 0);
         verticalSpacer_3 = new QSpacerItem(20, 626, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout_4->addItem(verticalSpacer_3, 1, 0, 1, 1);

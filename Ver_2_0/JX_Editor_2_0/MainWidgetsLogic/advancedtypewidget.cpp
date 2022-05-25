@@ -1,15 +1,15 @@
 #include "advancedtypewidget.h"
 
-AdvancedTypeWidget::AdvancedTypeWidget(ADVANCEDTYPE _typein,QJsonValue _value,QWidget *parent)
+AdvancedTypeWidget::AdvancedTypeWidget(TYPES _typein,QJsonValue _value,QWidget *parent)
     :MainWidgetExample(parent)
 {
     SetMemory();
     switch (_typein) {
-    case AdvancedTypeWidget::ADVANCEDTYPE::MASSIVE:
-        this->_type = ADVANCEDTYPE::MASSIVE;
+    case AdvancedTypeWidget::TYPES::MASSIVE:
+        this->_type = TYPES::MASSIVE;
         break;
-    case AdvancedTypeWidget::ADVANCEDTYPE::OBJECT:
-        this->_type = ADVANCEDTYPE::OBJECT;
+    case AdvancedTypeWidget::TYPES::OBJECT:
+        this->_type = TYPES::OBJECT;
         break;
     }
     SetColors();
@@ -17,16 +17,16 @@ AdvancedTypeWidget::AdvancedTypeWidget(ADVANCEDTYPE _typein,QJsonValue _value,QW
     this->_label->setText(" : ");
     this->_key->setText(_value.toString());
 }
-AdvancedTypeWidget::AdvancedTypeWidget(ADVANCEDTYPE _typein,QWidget *parent)
+AdvancedTypeWidget::AdvancedTypeWidget(TYPES _typein,QWidget *parent)
     :MainWidgetExample(parent)
 {
     SetMemory();
     switch (_typein) {
-    case AdvancedTypeWidget::ADVANCEDTYPE::MASSIVE:
-        this->_type = ADVANCEDTYPE::MASSIVE;
+    case AdvancedTypeWidget::TYPES::MASSIVE:
+        this->_type = TYPES::MASSIVE;
         break;
-    case AdvancedTypeWidget::ADVANCEDTYPE::OBJECT:
-        this->_type = ADVANCEDTYPE::OBJECT;
+    case AdvancedTypeWidget::TYPES::OBJECT:
+        this->_type = TYPES::OBJECT;
         break;
     }
     SetColors();
@@ -63,14 +63,14 @@ void AdvancedTypeWidget::SetMemory()
 void AdvancedTypeWidget::SetColors()
 {
     switch (_type) {
-    case AdvancedTypeWidget::ADVANCEDTYPE::MASSIVE:
+    case AdvancedTypeWidget::TYPES::MASSIVE:
         this->_color->_colorbackgroundPressed = this->_color->_massiveType_Enter;
         this->_color->_colorbackgroundEnter = this->_color->_massiveType_Enter;
         this->_color->_colorbackgroundIdle = this->_color->_massiveType_Idle;
         this->_color->_colorbackgroundSelected = this->_color->_massiveType_Idle;
         this->SetRound(10);
         break;
-    case AdvancedTypeWidget::ADVANCEDTYPE::OBJECT:
+    case AdvancedTypeWidget::TYPES::OBJECT:
         this->_color->_colorbackgroundPressed = this->_color->_objectType_Enter;
         this->_color->_colorbackgroundEnter = this->_color->_objectType_Enter;
         this->_color->_colorbackgroundIdle = this->_color->_objectType_Idle;

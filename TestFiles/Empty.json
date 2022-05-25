@@ -1,3 +1,31 @@
 {
-    "TLS_ID": "School_Raze_TLS"
+    "CurrencyIapName": "TLS_Currency_Shadow_Crystals",
+    "CurrencyIcon": "gui/gnr_ico_token_tl_currency_smoky_crystal.png",
+    "CurrencyIconFreemBar": "gui/gnr_ico_sotce_tls_smoky_crystal_iap.png",
+    "CurrencyName": "STR_QSI_SOTCE_TLS_ARENA_SHADOW_CRYSTALS",
+    "PowerIcon": "gui/gnr_ico_tls_arena_power_icon_radiant_sombra.png",
+    "UsedSet": "SET_Sombra_TLS_MAIN",
+    "Music": "evt_bgm_chrysalis_battle",
+    "MainPony": {
+        "Pony": "Pony_Sombra",
+        "Animations": [
+          "arena_pony_kick_main",
+          "arena_pony_magic_main",
+          "gen_interact_high_04",
+          "apple_idle_01_r"
+        ],
+        "VictoryAnimations": [
+          "arena_pony_win"
+        ],
+        "DefeatAnimations": [
+          "arena_pony_defeat"
+        ],
+        "SpawnAnimation": "arena_pony_jumpout",
+        "Scale": 2.5,
+        "PosZ": 50.0,
+        "RotationX": 15.0,
+        "RotationY": 120.0,
+        "Mirror": false,
+        "BossId": ""
+      }
 }

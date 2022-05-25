@@ -28,25 +28,35 @@ class MainWidgetExample : public QWidget
 {
     Q_OBJECT
 public:
+    enum class TYPES
+    {
+        MASSIVE,
+        OBJECT,
+        BOOL,
+        STRING,
+        DOUBLE
+    };
     explicit MainWidgetExample(QWidget *parent = nullptr);
     ~MainWidgetExample();
 public:
+
     //Widgets
     void Set_Memory();
     void AddWidget();
     //Else
     void Add_Son(MainWidgetExample *);
+    //Resize elements
     void ResizeLineEdit();
+    void ResizeWidgets();
     //StyleSheet
     void SetStyleSheetSimple();
-    //Test Function
-    void TestSetText();
     void SetFullWidget(bool);
     void LoadObject(QJsonObject);
     void LoadMassive(QJsonArray);
     void SetRound(int);
-    void ResizeWidgets();
+
 protected:
+    TYPES _type;
     //Widgets
     QWidget *_inputwidget;
     QWidget *_titlewidget;
@@ -63,8 +73,9 @@ protected:
     virtual void leaveEvent(QEvent *) override;
     virtual void mousePressEvent(QMouseEvent *) override;
     virtual void mouseReleaseEvent(QMouseEvent *) override;
-private:
     QVector<MainWidgetExample *> _elements;
+private:
+
     bool _fullWidget;
     int _round;
 private slots:

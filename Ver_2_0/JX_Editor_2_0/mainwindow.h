@@ -42,6 +42,7 @@ private:
     void CheckOverFlow();
     void SetFileWay(QString);
     QJsonObject OpenReadFile(QString);
+    void ClearLayout();
 private:
     Ui::MainWindow *ui;
     MainWidgetExample *_root;
