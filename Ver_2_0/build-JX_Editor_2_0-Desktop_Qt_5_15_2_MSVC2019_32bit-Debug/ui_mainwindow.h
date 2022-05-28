@@ -14,7 +14,6 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -46,12 +45,6 @@ public:
     QGridLayout *gridLayout_2;
     QWidget *RightPartW;
     QVBoxLayout *verticalLayout_6;
-    QScrollArea *scrollArea;
-    QWidget *scrollAreaWidgetContents;
-    QGridLayout *gridLayout_4;
-    QSpacerItem *verticalSpacer_3;
-    QWidget *InputInfo;
-    QVBoxLayout *verticalLayout_7;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -168,31 +161,6 @@ public:
         verticalLayout_6->setSpacing(0);
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
         verticalLayout_6->setContentsMargins(0, 0, 0, 0);
-        scrollArea = new QScrollArea(RightPartW);
-        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
-        scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 933, 671));
-        gridLayout_4 = new QGridLayout(scrollAreaWidgetContents);
-        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        gridLayout_4->setContentsMargins(0, 0, 0, 0);
-        verticalSpacer_3 = new QSpacerItem(20, 626, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_4->addItem(verticalSpacer_3, 1, 0, 1, 1);
-
-        InputInfo = new QWidget(scrollAreaWidgetContents);
-        InputInfo->setObjectName(QString::fromUtf8("InputInfo"));
-        verticalLayout_7 = new QVBoxLayout(InputInfo);
-        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
-        verticalLayout_7->setContentsMargins(2, 2, 2, 2);
-
-        gridLayout_4->addWidget(InputInfo, 0, 0, 1, 1);
-
-        scrollArea->setWidget(scrollAreaWidgetContents);
-
-        verticalLayout_6->addWidget(scrollArea);
-
 
         horizontalLayout->addWidget(RightPartW);
 

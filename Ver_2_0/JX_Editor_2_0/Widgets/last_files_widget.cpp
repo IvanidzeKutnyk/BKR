@@ -211,3 +211,20 @@ bool Last_Files_Widget::GetStatus()
 {
     return this->_Active_Stat;
 }
+void Last_Files_Widget::Set_Index(int _ind)
+{
+    this->_Index = _ind;
+}
+int Last_Files_Widget::Get_Index()
+{
+    return this->_Index;
+}
+
+void Last_Files_Widget::Set_Root(QWidget * _root)
+{
+    this->_mainwidgetroot = _root;
+}
+QWidget* Last_Files_Widget::Get_Root()
+{
+    return this->_mainwidgetroot;
+}

@@ -8,6 +8,10 @@
 #include "Widgets/last_files_widget.h"
 #include "WorkWithFile/workfile.h"
 #include "MainWidgetsLogic/mainwidgetexample.h"
+#include <QStackedWidget>
+#include <QScrollArea>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
 #include "MainWidgetsLogic/advancedtypewidget.h"
 #include "MainWidgetsLogic/singletypewidget.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
@@ -24,7 +28,7 @@ public:
 
     void Set_Mamory();
     void Add_Elements();
-    void FirstLoadObject(QJsonObject);
+    void FirstLoadObject(QJsonObject,Last_Files_Widget*);
 
 private:
     // custom_left_buttom
@@ -46,6 +50,7 @@ private:
 private:
     Ui::MainWindow *ui;
     MainWidgetExample *_root;
+    QStackedWidget *_stackedWidget;
 
 public slots:
     void ClickedOpenButtom(WorkFile *);

@@ -12,6 +12,7 @@
 #include <QDebug>
 #include <QHBoxLayout>
 #include "ColorStyle/colorstylesheet.h"
+#include "MainWidgetsLogic/mainwidgetexample.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 
 class Last_Files_Widget : public QWidget
@@ -26,6 +27,14 @@ public:
 
     QString GetFullFileWay();
     bool GetStatus();
+
+
+    void Set_Root(QWidget *);
+    QWidget* Get_Root();
+    void Set_Index(int);
+    int Get_Index();
+
+
 protected:
     virtual void paintEvent(QPaintEvent *) override;
     virtual void enterEvent(QEvent *) override;
@@ -39,8 +48,10 @@ protected:
     void Set_Memory();
 
 
+
     void ActiveStatusStyleSheet();
     void DisActiveStatusStyleSheet();
+
 private:
     int _height;
     int _radius;
@@ -62,6 +73,9 @@ private:
     QLabel *_filepathL;
     QLabel *_lastEditL;
     bool _Active_Stat;
+
+    int _Index;
+    QWidget * _mainwidgetroot;
 signals:
     void ClickToWidget(Last_Files_Widget *);
 public slots:

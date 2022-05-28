@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->Set_Mamory();
     connect(_openbutton,&Custom_Left_Buttom::SendFileInfoAfterClick,this,&MainWindow::ClickedOpenButtom);
     this->Add_Elements();
+    ui->RightPartW->layout()->addWidget(this->_stackedWidget);
 }
 
 MainWindow::~MainWindow()
@@ -20,6 +21,7 @@ void MainWindow::Set_Mamory()
     this->_openbutton = new Custom_Left_Buttom(false,true,false); //Open Button
     this->_savebutton = new Custom_Left_Buttom(true,false,false); //Save Button
     this->_settingbutton = new Custom_Left_Buttom(false,false,true);
+    this->_stackedWidget = new QStackedWidget();
     this->fileInfo = new WorkFile();
 }
 //Add main widgets
@@ -46,6 +48,7 @@ void MainWindow::ClickedOpenButtom(WorkFile *e)
              if(i[0]->GetFullFileWay() == e->Get_fullFileWay())
              {
                  Last_Files_Widget * temp = i[0];
+                  this->_stackedWidget->setCurrentWidget(temp->Get_Root());
                  this->_lastfiles.erase(i);
                  this->_lastfiles.push_front(temp);
              }
@@ -60,7 +63,7 @@ void MainWindow::ClickedOpenButtom(WorkFile *e)
         this->_lastfiles.push_front(lastw);
         this->_filesWay.push_front(e->Get_fullFileWay());
         this->UpdateWidgets(lastw);
-        FirstLoadObject(OpenReadFile(e->Get_fullFileWay()));
+        FirstLoadObject(OpenReadFile(e->Get_fullFileWay()), lastw);
     }
 }
 //Click to Not Active LastFileWidget
@@ -74,7 +77,7 @@ void MainWindow::ClickToWidgetLastFile(Last_Files_Widget *_last)
            Last_Files_Widget * temp = i[0];
            this->_lastfiles.erase(i);
            this->_lastfiles.push_front(temp);
-           FirstLoadObject(OpenReadFile(_last->GetFullFileWay()));
+           this->_stackedWidget->setCurrentWidget(_last->Get_Root());
        }
        else
        {
@@ -164,10 +167,39 @@ void MainWindow::CheckOverFlow()
     }
 }
 
-void MainWindow::FirstLoadObject(QJsonObject _obj)
+void MainWindow::FirstLoadObject(QJsonObject _obj, Last_Files_Widget* last)
 {
-   this->_root = new AdvancedTypeWidget();
-   ui->InputInfo->layout()->addWidget(this->_root);
+    this->_root = new AdvancedTypeWidget();
+
+    QWidget* _mainW = new QWidget();
+    _mainW->setLayout(new QHBoxLayout());
+
+    QScrollArea* _area = new QScrollArea();
+    QWidget* _areascrollw = new QWidget();
+
+    _area->setWidgetResizable(true);
+    _area->setWidget(_areascrollw);
+    _areascrollw->setLayout(new QVBoxLayout());
+
+    QWidget* _fW = new QWidget();
+    _fW->setLayout(new QHBoxLayout());
+    _fW->layout()->addWidget(_root);
+
+
+    QWidget* _sW = new QWidget();
+    _sW->setLayout(new QHBoxLayout());
+    _sW->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+
+    _areascrollw->layout()->addWidget(_fW);
+    _areascrollw->layout()->addWidget(_sW);
+
+    _mainW->layout()->addWidget(_area);
+
+
+   this->_stackedWidget->addWidget(_mainW);
+   last->Set_Root(_mainW);
+   last->Set_Index(_stackedWidget->indexOf(_mainW));
+   _stackedWidget->setCurrentWidget(_mainW);
    _root->LoadObject(_obj);
 }
 QJsonObject MainWindow::OpenReadFile(QString _filename)
