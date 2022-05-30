@@ -14,6 +14,7 @@
 #include <QVBoxLayout>
 #include "MainWidgetsLogic/advancedtypewidget.h"
 #include "MainWidgetsLogic/singletypewidget.h"
+#include "MainWidgetsLogic/xmlsimpleobject.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -40,12 +41,9 @@ private:
     QStringList _filesWay;
 private:
     void UpdateWidgets(Last_Files_Widget *);
-    bool CheckRepeat(QString);
-    void SetActiveWidget(QString);
     void HideShowWidgets();
     void CheckOverFlow();
     void SetFileWay(QString);
-    QJsonObject OpenReadFile(QString);
     void ClearLayout();
 private:
     Ui::MainWindow *ui;

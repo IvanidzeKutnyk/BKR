@@ -19,8 +19,10 @@ public:
      QString Get_wayWithOutFile();
      QString Get_fileName();
      QString Get_TimeLastEdit();
+     QString Get_Suff();
 private:
     QString _fullFileWay;
+    QString _suff;
     QString _wayWithOutFile;
     QString _fileName;
     QString _TimeLastEdit;

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--cookbook with no DTD-->
+<cookbook>
+    <recipe>
+        <ingredientList>
+            <ingredient>flour</ingredient>
+            <ingredient>water</ingredient>
+            <ingredient>yeast</ingredient>
+            <ingredient>salt</ingredient>
+        </ingredientList>
+        <instructions>Instructions to make bread.</instructions>
+    </recipe>
+    <recipe1 title="Pancake" title1="Pancake1">
+        <ingredientList>
+            <ingredient>flour</ingredient>
+            <ingredient>salt</ingredient>
+            <ingredient>egg</ingredient>
+            <ingredient>milk</ingredient>
+            <ingredient>oil</ingredient>
+        </ingredientList>
+        <instructions>Instructions to make pancakes.</instructions>
+    </recipe1>
+</cookbook>

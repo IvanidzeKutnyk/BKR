@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "controlwidgetmodule.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -34,14 +35,15 @@ void MainWindow::Add_Elements()
 // Click to open button
 void MainWindow::ClickedOpenButtom(WorkFile *e)
 {
-
-    if(e->Get_fullFileWay().isEmpty())
+    if(e->Get_Suff() == "json")
+    {
+        if(e->Get_fullFileWay().isEmpty())
     {
         qDebug()<<"File_Way empty";
     }
-    else if(this->CheckRepeat(e->Get_fullFileWay()))
+        else if(ControlWidgetModule::CheckRepeat(e->Get_fullFileWay(),&_filesWay))
     {
-        this->SetActiveWidget(e->Get_fullFileWay());
+        ControlWidgetModule::SetActiveWidget(e->Get_fullFileWay(),&_lastfiles);
 
          for(auto i = this->_lastfiles.begin();i < this->_lastfiles.end();i++)
          {
@@ -55,7 +57,7 @@ void MainWindow::ClickedOpenButtom(WorkFile *e)
          }
          this->HideShowWidgets();
     }
-    else
+        else
     {
         this->CheckOverFlow();
         Last_Files_Widget * lastw = new Last_Files_Widget(e->Get_fileName(),e->Get_wayWithOutFile(),e->Get_fullFileWay()," " + e->Get_TimeLastEdit() + " ");
@@ -63,7 +65,80 @@ void MainWindow::ClickedOpenButtom(WorkFile *e)
         this->_lastfiles.push_front(lastw);
         this->_filesWay.push_front(e->Get_fullFileWay());
         this->UpdateWidgets(lastw);
-        FirstLoadObject(OpenReadFile(e->Get_fullFileWay()), lastw);
+        FirstLoadObject(ControlWidgetModule::OpenReadFile(e->Get_fullFileWay()), lastw);
+    }
+    }
+    else if(e->Get_Suff()  == "xml")
+    {
+        if(e->Get_fullFileWay().isEmpty())
+        {
+            qDebug()<<"File_Way empty";
+        }
+        else if(ControlWidgetModule::CheckRepeat(e->Get_fullFileWay(),&_filesWay))
+    {
+        ControlWidgetModule::SetActiveWidget(e->Get_fullFileWay(),&_lastfiles);
+
+         for(auto i = this->_lastfiles.begin();i < this->_lastfiles.end();i++)
+         {
+             if(i[0]->GetFullFileWay() == e->Get_fullFileWay())
+             {
+                 Last_Files_Widget * temp = i[0];
+                  this->_stackedWidget->setCurrentWidget(temp->Get_Root());
+                 this->_lastfiles.erase(i);
+                 this->_lastfiles.push_front(temp);
+             }
+         }
+         this->HideShowWidgets();
+    }
+        else
+    {
+        this->CheckOverFlow();
+        Last_Files_Widget * lastw = new Last_Files_Widget(e->Get_fileName(),e->Get_wayWithOutFile(),e->Get_fullFileWay()," " + e->Get_TimeLastEdit() + " ");
+        connect(lastw,&Last_Files_Widget::ClickToWidget,this,&MainWindow::ClickToWidgetLastFile);
+        this->_lastfiles.push_front(lastw);
+        this->_filesWay.push_front(e->Get_fullFileWay());
+        this->UpdateWidgets(lastw);
+
+        this->_root = new XmlSimpleObject();
+        QWidget* _mainW = new QWidget();
+        QScrollArea* _area = new QScrollArea();
+        QWidget* _areascrollw = new QWidget();
+        QWidget* _fW = new QWidget();
+        QWidget* _sW = new QWidget();
+
+        _mainW->setLayout(new QHBoxLayout());
+
+
+        _area->setWidgetResizable(true);
+        _area->setWidget(_areascrollw);
+        _areascrollw->setLayout(new QVBoxLayout());
+
+
+        _fW->setLayout(new QHBoxLayout());
+        _fW->layout()->addWidget(_root);
+
+
+        _sW->setLayout(new QHBoxLayout());
+        _sW->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+
+        _areascrollw->layout()->addWidget(_fW);
+        _areascrollw->layout()->addWidget(_sW);
+
+        _mainW->layout()->addWidget(_area);
+        _mainW->layout()->setContentsMargins(0,0,0,0);
+        _fW->layout()->setContentsMargins(1,1,1,1);
+        _areascrollw->layout()->setContentsMargins(0,0,0,0);
+
+
+       this->_stackedWidget->addWidget(_mainW);
+       lastw->Set_Root(_mainW);
+       lastw->Set_Index(_stackedWidget->indexOf(_mainW));
+       _stackedWidget->setCurrentWidget(_mainW);
+    }
+    }
+    else
+    {
+
     }
 }
 //Click to Not Active LastFileWidget
@@ -102,37 +177,6 @@ void MainWindow::UpdateWidgets(Last_Files_Widget *_OpenFile)
         ui->LastFilesInW->layout()->addWidget(i[0]);
     }
 }
-//CheckRepeats
-bool MainWindow::CheckRepeat(QString _fileway)
-{
-    for(auto i = this->_filesWay.begin();i < this->_filesWay.end();i++)
-    {
-        if(i[0] == _fileway)
-        {
-            return true;
-        }
-        else
-        {
-            continue;
-        }
-    }
-    return false;
-}
-// SetAciveWidget
-void MainWindow::SetActiveWidget(QString _fileway)
-{
-    for(auto i = this->_lastfiles.begin();i < this->_lastfiles.end();i++)
-    {
-        if(i[0]->GetFullFileWay() == _fileway)
-        {
-            i[0]->SetActiveStatus();
-        }
-        else
-        {
-            i[0]->SetDisActiveStatus();
-        }
-    }
-}
 //Update Widgets after Click
 void MainWindow::HideShowWidgets()
 {
@@ -162,31 +206,33 @@ void MainWindow::CheckOverFlow()
             ui->LastFilesInW->layout()->addWidget(i[0]);
         }
     }
-    else{
-        //qDebug()<<this->_lastfiles;
+    else
+    {
+
     }
 }
 
 void MainWindow::FirstLoadObject(QJsonObject _obj, Last_Files_Widget* last)
 {
     this->_root = new AdvancedTypeWidget();
-
     QWidget* _mainW = new QWidget();
-    _mainW->setLayout(new QHBoxLayout());
-
     QScrollArea* _area = new QScrollArea();
     QWidget* _areascrollw = new QWidget();
+    QWidget* _fW = new QWidget();
+    QWidget* _sW = new QWidget();
+
+    _mainW->setLayout(new QHBoxLayout());
+
 
     _area->setWidgetResizable(true);
     _area->setWidget(_areascrollw);
     _areascrollw->setLayout(new QVBoxLayout());
 
-    QWidget* _fW = new QWidget();
+
     _fW->setLayout(new QHBoxLayout());
     _fW->layout()->addWidget(_root);
 
 
-    QWidget* _sW = new QWidget();
     _sW->setLayout(new QHBoxLayout());
     _sW->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
 
@@ -194,6 +240,9 @@ void MainWindow::FirstLoadObject(QJsonObject _obj, Last_Files_Widget* last)
     _areascrollw->layout()->addWidget(_sW);
 
     _mainW->layout()->addWidget(_area);
+    _mainW->layout()->setContentsMargins(0,0,0,0);
+    _fW->layout()->setContentsMargins(1,1,1,1);
+    _areascrollw->layout()->setContentsMargins(0,0,0,0);
 
 
    this->_stackedWidget->addWidget(_mainW);
@@ -201,18 +250,5 @@ void MainWindow::FirstLoadObject(QJsonObject _obj, Last_Files_Widget* last)
    last->Set_Index(_stackedWidget->indexOf(_mainW));
    _stackedWidget->setCurrentWidget(_mainW);
    _root->LoadObject(_obj);
-}
-QJsonObject MainWindow::OpenReadFile(QString _filename)
-{
-    QFile _file(_filename);
-    if(!_file.open(QIODevice::ReadOnly))
-    {
-        qDebug()<<"File Open Error";
-    }
-    QString _fileinputdata = _file.readAll();
-    QJsonDocument _Jdoc = QJsonDocument::fromJson(_fileinputdata.toUtf8());
-    QJsonObject _currentJsonObject = _Jdoc.object();
-    _file.close();
-    return _currentJsonObject;
 }
 

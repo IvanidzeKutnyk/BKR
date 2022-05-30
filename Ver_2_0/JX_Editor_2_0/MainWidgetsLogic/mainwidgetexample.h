@@ -36,6 +36,11 @@ public:
         STRING,
         DOUBLE
     };
+    enum class XMLTYPE
+    {
+        TEGADVANCED,
+        TEGSIMPLE
+    };
     explicit MainWidgetExample(QWidget *parent = nullptr);
     ~MainWidgetExample();
 public:

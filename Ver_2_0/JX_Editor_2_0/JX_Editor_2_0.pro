@@ -10,9 +10,11 @@ CONFIG += c++17
 
 SOURCES += \
     ColorStyle\colorstylesheet.cpp \
+    MainWidgetsLogic/xmlsimpleobject.cpp \
     Widgets\custom_left_buttom.cpp \
     Widgets\last_files_widget.cpp \
     MainWidgetsLogic\advancedtypewidget.cpp \
+    controlwidgetmodule.cpp \
     main.cpp \
     MainWidgetsLogic\mainwidgetexample.cpp \
     mainwindow.cpp \
@@ -21,10 +23,12 @@ SOURCES += \
 
 HEADERS += \
     ColorStyle\colorstylesheet.h \
+    MainWidgetsLogic/xmlsimpleobject.h \
     Widgets\custom_left_buttom.h \
     Widgets\last_files_widget.h \
     MainWidgetsLogic\advancedtypewidget.h \
     MainWidgetsLogic\mainwidgetexample.h \
+    controlwidgetmodule.h \
     mainwindow.h \
     WorkWithFile\workfile.h \
     MainWidgetsLogic\singletypewidget.h
