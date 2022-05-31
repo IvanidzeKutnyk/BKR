@@ -10,7 +10,7 @@
         </ingredientList>
         <instructions>Instructions to make bread.</instructions>
     </recipe>
-    <recipe1 title="Pancake" title1="Pancake1">
+    <recipe1>
         <ingredientList>
             <ingredient>flour</ingredient>
             <ingredient>salt</ingredient>

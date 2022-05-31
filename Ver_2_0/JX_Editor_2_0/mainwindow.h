@@ -12,9 +12,12 @@
 #include <QScrollArea>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QtXml>
+#include <QDomDocument>
 #include "MainWidgetsLogic/advancedtypewidget.h"
 #include "MainWidgetsLogic/singletypewidget.h"
 #include "MainWidgetsLogic/xmlsimpleobject.h"
+#include "MainWidgetsLogic/xmladvancedobject.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -30,6 +33,7 @@ public:
     void Set_Mamory();
     void Add_Elements();
     void FirstLoadObject(QJsonObject,Last_Files_Widget*);
+    void FirstLoadXML(QDomDocument,Last_Files_Widget*);
 
 private:
     // custom_left_buttom

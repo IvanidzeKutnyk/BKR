@@ -92,48 +92,13 @@ void MainWindow::ClickedOpenButtom(WorkFile *e)
     }
         else
     {
-        this->CheckOverFlow();
-        Last_Files_Widget * lastw = new Last_Files_Widget(e->Get_fileName(),e->Get_wayWithOutFile(),e->Get_fullFileWay()," " + e->Get_TimeLastEdit() + " ");
-        connect(lastw,&Last_Files_Widget::ClickToWidget,this,&MainWindow::ClickToWidgetLastFile);
-        this->_lastfiles.push_front(lastw);
-        this->_filesWay.push_front(e->Get_fullFileWay());
-        this->UpdateWidgets(lastw);
-
-        this->_root = new XmlSimpleObject();
-        QWidget* _mainW = new QWidget();
-        QScrollArea* _area = new QScrollArea();
-        QWidget* _areascrollw = new QWidget();
-        QWidget* _fW = new QWidget();
-        QWidget* _sW = new QWidget();
-
-        _mainW->setLayout(new QHBoxLayout());
-
-
-        _area->setWidgetResizable(true);
-        _area->setWidget(_areascrollw);
-        _areascrollw->setLayout(new QVBoxLayout());
-
-
-        _fW->setLayout(new QHBoxLayout());
-        _fW->layout()->addWidget(_root);
-
-
-        _sW->setLayout(new QHBoxLayout());
-        _sW->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
-
-        _areascrollw->layout()->addWidget(_fW);
-        _areascrollw->layout()->addWidget(_sW);
-
-        _mainW->layout()->addWidget(_area);
-        _mainW->layout()->setContentsMargins(0,0,0,0);
-        _fW->layout()->setContentsMargins(1,1,1,1);
-        _areascrollw->layout()->setContentsMargins(0,0,0,0);
-
-
-       this->_stackedWidget->addWidget(_mainW);
-       lastw->Set_Root(_mainW);
-       lastw->Set_Index(_stackedWidget->indexOf(_mainW));
-       _stackedWidget->setCurrentWidget(_mainW);
+            this->CheckOverFlow();
+            Last_Files_Widget * lastw = new Last_Files_Widget(e->Get_fileName(),e->Get_wayWithOutFile(),e->Get_fullFileWay()," " + e->Get_TimeLastEdit() + " ");
+            connect(lastw,&Last_Files_Widget::ClickToWidget,this,&MainWindow::ClickToWidgetLastFile);
+            this->_lastfiles.push_front(lastw);
+            this->_filesWay.push_front(e->Get_fullFileWay());
+            this->UpdateWidgets(lastw);
+            FirstLoadXML(ControlWidgetModule::OpenReadFileXML(e->Get_fullFileWay()), lastw);
     }
     }
     else
@@ -211,7 +176,46 @@ void MainWindow::CheckOverFlow()
 
     }
 }
+void MainWindow::FirstLoadXML(QDomDocument _doc, Last_Files_Widget * _last)
+{
+    this->_root = new xmladvancedobject();
+    QWidget* _mainW = new QWidget();
+    QScrollArea* _area = new QScrollArea();
+    QWidget* _areascrollw = new QWidget();
+    QWidget* _fW = new QWidget();
+    QWidget* _sW = new QWidget();
 
+    _mainW->setLayout(new QHBoxLayout());
+
+
+    _area->setWidgetResizable(true);
+    _area->setWidget(_areascrollw);
+    _areascrollw->setLayout(new QVBoxLayout());
+
+
+    _fW->setLayout(new QHBoxLayout());
+    _fW->layout()->addWidget(_root);
+
+
+    _sW->setLayout(new QHBoxLayout());
+    _sW->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+
+    _areascrollw->layout()->addWidget(_fW);
+    _areascrollw->layout()->addWidget(_sW);
+
+    _mainW->layout()->addWidget(_area);
+    _mainW->layout()->setContentsMargins(0,0,0,0);
+    _fW->layout()->setContentsMargins(1,1,1,1);
+    _areascrollw->layout()->setContentsMargins(0,0,0,0);
+
+
+   this->_stackedWidget->addWidget(_mainW);
+   _last->Set_Root(_mainW);
+   _last->Set_Index(_stackedWidget->indexOf(_mainW));
+   _stackedWidget->setCurrentWidget(_mainW);
+    QDomElement taskElement = _doc.documentElement().firstChild().toElement();
+   _root->LoadXML(taskElement);
+}
 void MainWindow::FirstLoadObject(QJsonObject _obj, Last_Files_Widget* last)
 {
     this->_root = new AdvancedTypeWidget();

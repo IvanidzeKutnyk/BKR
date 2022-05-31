@@ -21,6 +21,7 @@
 #include <QJsonArray>
 #include <QJsonValue>
 #include <string>
+#include <QDomElement>
 #include "ColorStyle/colorstylesheet.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -35,11 +36,6 @@ public:
         BOOL,
         STRING,
         DOUBLE
-    };
-    enum class XMLTYPE
-    {
-        TEGADVANCED,
-        TEGSIMPLE
     };
     explicit MainWidgetExample(QWidget *parent = nullptr);
     ~MainWidgetExample();
@@ -58,6 +54,7 @@ public:
     void SetFullWidget(bool);
     void LoadObject(QJsonObject);
     void LoadMassive(QJsonArray);
+    void LoadXML(QDomElement);
     void SetRound(int);
 
 protected:

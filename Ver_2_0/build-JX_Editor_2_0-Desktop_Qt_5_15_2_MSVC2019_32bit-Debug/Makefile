@@ -262,12 +262,14 @@ Makefile: ..\JX_Editor_2_0\JX_Editor_2_0.pro C:\Qt\5.15.2\msvc2019\mkspecs\win32
 		..\JX_Editor_2_0\JX_Editor_2_0.pro \
 		C:\Qt\5.15.2\msvc2019\lib\Qt5Widgets.prl \
 		C:\Qt\5.15.2\msvc2019\lib\Qt5Gui.prl \
+		C:\Qt\5.15.2\msvc2019\lib\Qt5Xml.prl \
 		C:\Qt\5.15.2\msvc2019\lib\Qt5Core.prl \
 		C:\Qt\5.15.2\msvc2019\lib\qtmain.prl \
 		C:\Qt\5.15.2\msvc2019\mkspecs\features\build_pass.prf \
 		..\JX_Editor_2_0\SourseFile.qrc \
 		C:\Qt\5.15.2\msvc2019\lib\Qt5Widgetsd.prl \
 		C:\Qt\5.15.2\msvc2019\lib\Qt5Guid.prl \
+		C:\Qt\5.15.2\msvc2019\lib\Qt5Xmld.prl \
 		C:\Qt\5.15.2\msvc2019\lib\Qt5Cored.prl \
 		C:\Qt\5.15.2\msvc2019\lib\qtmaind.prl
 	$(QMAKE) -o Makefile ..\JX_Editor_2_0\JX_Editor_2_0.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -449,12 +451,14 @@ C:\Qt\5.15.2\msvc2019\mkspecs\features\lex.prf:
 ..\JX_Editor_2_0\JX_Editor_2_0.pro:
 C:\Qt\5.15.2\msvc2019\lib\Qt5Widgets.prl:
 C:\Qt\5.15.2\msvc2019\lib\Qt5Gui.prl:
+C:\Qt\5.15.2\msvc2019\lib\Qt5Xml.prl:
 C:\Qt\5.15.2\msvc2019\lib\Qt5Core.prl:
 C:\Qt\5.15.2\msvc2019\lib\qtmain.prl:
 C:\Qt\5.15.2\msvc2019\mkspecs\features\build_pass.prf:
 ..\JX_Editor_2_0\SourseFile.qrc:
 C:\Qt\5.15.2\msvc2019\lib\Qt5Widgetsd.prl:
 C:\Qt\5.15.2\msvc2019\lib\Qt5Guid.prl:
+C:\Qt\5.15.2\msvc2019\lib\Qt5Xmld.prl:
 C:\Qt\5.15.2\msvc2019\lib\Qt5Cored.prl:
 C:\Qt\5.15.2\msvc2019\lib\qtmaind.prl:
 qmake: FORCE

@@ -1,22 +1,19 @@
 #include "xmlsimpleobject.h"
 
-XmlSimpleObject::XmlSimpleObject(QWidget *parent)
-:MainWidgetExample(parent)
+XmlSimpleObject::XmlSimpleObject(QString _teg, QString _value,QWidget *parent)
 {
-        FirstObject();
-        this->_color->_colorbackgroundPressed = this->_color->_RootWidgetColor;
-        this->_color->_colorbackgroundEnter = this->_color->_RootWidgetColor;
-        this->_color->_colorbackgroundIdle = this->_color->_RootWidgetColor;
-        this->_color->_colorbackgroundSelected = this->_color->_RootWidgetColor;
+    MainFunctions();
+    this->_key->setText(_teg);
+    this->_value->setText(_value);
+    this->_label->setText(" : ");
+    this->ResizeWidgets();
+
 }
-void XmlSimpleObject::FirstObject()
+void XmlSimpleObject::MainFunctions()
 {
-    this->SetFullWidget(true);
+    this->SetFullWidget(false);
     this->Set_Memory();
     this->AddWidget();
     this->SetStyleSheetSimple();
-    this->_value->hide();
-    this->_label->setText(" : ");
-    this->_key->setText("ROOT_XML");
-    this->SetRound(5);
+    this->SetRound(10);
 }

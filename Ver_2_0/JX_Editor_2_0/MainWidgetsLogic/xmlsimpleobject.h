@@ -8,11 +8,10 @@
 class XmlSimpleObject  :public MainWidgetExample
 {
 public:
-    XmlSimpleObject(XMLTYPE);
-    XmlSimpleObject(QWidget *parent = nullptr);
+    XmlSimpleObject(QString, QString,QWidget *parent = nullptr);
 public:
-   void FirstObject();
-
+   void SetColors();
+   void MainFunctions();
 };
 
 #endif // XMLSIMPLEOBJECT_H

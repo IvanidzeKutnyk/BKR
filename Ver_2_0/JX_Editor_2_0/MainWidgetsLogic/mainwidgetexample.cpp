@@ -1,6 +1,8 @@
 #include "mainwidgetexample.h"
 #include "advancedtypewidget.h"
 #include "singletypewidget.h"
+#include "xmlsimpleobject.h"
+#include "xmladvancedobject.h"
 
 MainWidgetExample::MainWidgetExample(QWidget *parent)
     : QWidget{parent}
@@ -58,7 +60,7 @@ void MainWidgetExample::AddWidget()
         //Info Widget
         this->_infowidget->setLayout(new QHBoxLayout());
         //this->_infowidget->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
-        this->_infowidget->layout()->addWidget(this->_inputwidget);  
+        this->_infowidget->layout()->addWidget(this->_inputwidget);
         this->_inputwidget->setLayout(new QVBoxLayout());
     }
     else
@@ -208,6 +210,45 @@ void MainWidgetExample::LoadMassive(QJsonArray value)
         }
     }
 }
+void MainWidgetExample::LoadXML(QDomElement value)
+{
+    while(!value.isNull())
+    {
+        MainWidgetExample * el = nullptr;
+        if(value.firstChild().toElement().isNull())
+        {
+             qDebug()<<value.tagName() << " : " << value.text();
+             el = new XmlSimpleObject(value.tagName(),value.text());
+        }
+        else
+        {
+            if(!value.attributes().isEmpty())
+            {
+               qDebug()<< value.tagName() <<"Start";
+               auto map = value.attributes();
+               for(int i = 0; i < map.length(); i++)
+               {
+                      auto inode = map.item(i);
+                      auto attr = inode.toAttr();
+                      qDebug()<< value.tagName() <<"|"<< attr.name()<<" : "<<attr.value();
+               }
+               LoadXML(value.firstChild().toElement());
+               qDebug()<< value.tagName() <<"End";
+            }
+            else
+            {
+                el = new xmladvancedobject(value.tagName());
+                qDebug()<< value.tagName() <<"Start";
+                el->LoadXML(value.firstChild().toElement());
+                qDebug()<< value.tagName() <<"End";
+            }
+        }
+          value = value.nextSibling().toElement();
+          this->_elements.push_back(el);
+          this->_inputwidget->layout()->addWidget(el);
+    }
+}
+
 void MainWidgetExample::SetRound(int _a)
 {
     this->_round = _a;

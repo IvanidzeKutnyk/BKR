@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     ColorStyle\colorstylesheet.cpp \
+    MainWidgetsLogic/xmladvancedobject.cpp \
     MainWidgetsLogic/xmlsimpleobject.cpp \
     Widgets\custom_left_buttom.cpp \
     Widgets\last_files_widget.cpp \
@@ -23,6 +24,7 @@ SOURCES += \
 
 HEADERS += \
     ColorStyle\colorstylesheet.h \
+    MainWidgetsLogic/xmladvancedobject.h \
     MainWidgetsLogic/xmlsimpleobject.h \
     Widgets\custom_left_buttom.h \
     Widgets\last_files_widget.h \

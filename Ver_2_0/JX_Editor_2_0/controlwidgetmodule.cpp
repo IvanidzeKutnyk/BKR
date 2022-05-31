@@ -17,6 +17,15 @@ QJsonObject ControlWidgetModule::OpenReadFile(QString _filename)
     _file.close();
     return _currentJsonObject;
 }
+QDomDocument ControlWidgetModule::OpenReadFileXML(QString _filename)
+{
+        QFile file(_filename);
+        file.open(QIODevice::ReadOnly);
+        QDomDocument document;
+        document.setContent(&file);
+        file.close();
+        return document;
+}
 bool ControlWidgetModule::CheckRepeat(QString _fileway, QStringList* _filesWay)
 {
     for(auto i = _filesWay->begin();i < _filesWay->end();i++)
