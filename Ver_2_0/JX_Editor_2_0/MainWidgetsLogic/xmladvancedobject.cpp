@@ -4,10 +4,6 @@ xmladvancedobject::xmladvancedobject(QWidget *parent)
 :MainWidgetExample(parent)
 {
         FirstObject();
-        this->_color->_colorbackgroundPressed = this->_color->_RootWidgetColor;
-        this->_color->_colorbackgroundEnter = this->_color->_RootWidgetColor;
-        this->_color->_colorbackgroundIdle = this->_color->_RootWidgetColor;
-        this->_color->_colorbackgroundSelected = this->_color->_RootWidgetColor;
 }
 xmladvancedobject::xmladvancedobject(QString _key,QWidget *parent)
 :MainWidgetExample(parent)
@@ -17,14 +13,13 @@ xmladvancedobject::xmladvancedobject(QString _key,QWidget *parent)
     this->AddWidget();
     this->SetStyleSheetSimple();
 
-    this->_label->setText(" : ");
+    this->_label->hide();
     this->_key->setText(_key);
     this->_value->hide();
+    this->setStyleSheet(this->_color->StyleSheetLineEditObj);
+    this->_color->_bordercolorSelected = this->_color->_bordercolorObject;
 
-    this->_color->_colorbackgroundPressed = this->_color->_RootWidgetColor;
-    this->_color->_colorbackgroundEnter = this->_color->_RootWidgetColor;
-    this->_color->_colorbackgroundIdle = this->_color->_RootWidgetColor;
-    this->_color->_colorbackgroundSelected = this->_color->_RootWidgetColor;
+
 }
 
 void xmladvancedobject::FirstObject()
@@ -34,7 +29,9 @@ void xmladvancedobject::FirstObject()
     this->AddWidget();
     this->SetStyleSheetSimple();
     this->_value->hide();
-    this->_label->setText(" : ");
+    this->_label->hide();
     this->_key->setText("ROOT_XML");
-    this->SetRound(5);
+    this->setStyleSheet(this->_color->StyleSheetLineEditMass);
+    this->_color->_bordercolorSelected = this->_color->_bordercolorMassive;
+
 }

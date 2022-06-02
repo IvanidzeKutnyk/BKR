@@ -80,7 +80,6 @@ void Last_Files_Widget::mousePressEvent(QMouseEvent *e)
     if(e->button() == Qt::LeftButton)
     {
             this->Set_Style();
-            _color->_backgroundColorMainRec = _color->_backgroundColorPressed;
             emit ClickToWidget(this);
         }
     }
@@ -144,13 +143,6 @@ void Last_Files_Widget::Set_Style()
         this->_filenameL->setStyleSheet(_color->_mouseEnter);
         this->_filepathL->setStyleSheet(_color->_mouseEnter);
     }
-    else if(this->_mouseEnt_Lev == true) // Mouse in
-    {
-        this->_lastEditL->setStyleSheet(_color->_mouseIn);
-        this->_filenameL->setStyleSheet(_color->_mouseIn);
-        this->_filepathL->setStyleSheet(_color->_mouseIn);
-
-    }
     else if(this->_mouseEnt_Lev == false) // Mouse out
     {
         this->_lastEditL->setStyleSheet(_color->_mouseIdle);
@@ -160,11 +152,11 @@ void Last_Files_Widget::Set_Style()
 }
 void Last_Files_Widget::ActiveStatusStyleSheet()
 {
-    _color->_backgroundColorMainRec = _color->_backgroundColorEnter;
+    _color->_backgroundColorMainRec = _color->_backgroundColorActive;
     //Elements Inside
-    this->_lastEditL->setStyleSheet(_color->_mouseIn);
-    this->_filenameL->setStyleSheet(_color->_mouseIn);
-    this->_filepathL->setStyleSheet(_color->_mouseIn);
+    this->_lastEditL->setStyleSheet(_color->_mouseActive);
+    this->_filenameL->setStyleSheet(_color->_mouseActive);
+    this->_filepathL->setStyleSheet(_color->_mouseActive);
     update();
 }
 void Last_Files_Widget::DisActiveStatusStyleSheet()

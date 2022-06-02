@@ -14,15 +14,16 @@ void MainWidgetExample::paintEvent(QPaintEvent *e)
 {
     Q_UNUSED(e);
     QPainter painter(this);
-    QPen pen(this->_color->_bordercolordefault);
-    pen.setCosmetic(true);
     painter.setRenderHint(QPainter::Antialiasing,true);
+    QPen pen;
+    pen.setColor(this->_color->_bordercolorSelected);
+    pen.setWidth(5);
     painter.setPen(pen);
-    painter.setBrush(this->_color->_colorbackgroundSelected);
+    painter.setBrush(this->_color->_advancedsimplecolorIdle);
     painter.drawRoundedRect(QRectF(0,
                                    0,
                                    this->width(),
-                                   this->height()),this->_round,this->_round);
+                                   this->height()),10,10);
 }
 //SetMemory
 void MainWidgetExample::Set_Memory()
@@ -32,12 +33,21 @@ void MainWidgetExample::Set_Memory()
     this->_key = new QLineEdit();
     this->_label = new QLabel();
     this->_value = new QLineEdit();
+    this->_value->setObjectName("_value");
+    this->_key->setObjectName("_key");
+    this->_label->setObjectName("_label");
 
     if(this->_fullWidget)
     {
         this->_infowidget = new QWidget();
         this->_inputwidget = new QWidget();
     }
+    _font.setBold(true);
+    _font.setPointSize(10);
+    this->_key->setFont(_font);
+    this->_value->setFont(_font);
+
+
 
 
 }
@@ -59,7 +69,6 @@ void MainWidgetExample::AddWidget()
         this->_titlewidget->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
         //Info Widget
         this->_infowidget->setLayout(new QHBoxLayout());
-        //this->_infowidget->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
         this->_infowidget->layout()->addWidget(this->_inputwidget);
         this->_inputwidget->setLayout(new QVBoxLayout());
     }
@@ -102,7 +111,6 @@ void MainWidgetExample::SetStyleSheetSimple()
    this->_key->setFixedHeight(30);
    this->_value->setFixedHeight(30);
         //StyleSheet
-   this->setStyleSheet(this->_color->StyleSheetLineEdit);
     //Size
     this->_titlewidget->layout()->setContentsMargins(0,0,0,0);
    this->_titlewidget->setFixedHeight(30);
@@ -119,28 +127,6 @@ void MainWidgetExample::TextChanged()
     this->ResizeLineEdit();
     this->ResizeWidgets();
 }
-//MouseEvents
-void MainWidgetExample::enterEvent(QEvent *)
-{
-    this->_color->_colorbackgroundSelected = this->_color->_colorbackgroundEnter;
-    update();
-}
-void MainWidgetExample::leaveEvent(QEvent *)
-{
-     this->_color->_colorbackgroundSelected = this->_color->_colorbackgroundIdle;
-    update();
-}
-void MainWidgetExample::mousePressEvent(QMouseEvent *)
-{
-     this->_color->_colorbackgroundSelected = this->_color->_colorbackgroundPressed;
-    update();
-}
-void MainWidgetExample::mouseReleaseEvent(QMouseEvent *)
-{
-    this->_color->_colorbackgroundSelected = this->_color->_colorbackgroundEnter;
-    update();
-}
-
 void MainWidgetExample::LoadObject(QJsonObject value)
 {
     for(auto _ita = value.begin(); _ita != value.end(); _ita++)
@@ -249,10 +235,6 @@ void MainWidgetExample::LoadXML(QDomElement value)
     }
 }
 
-void MainWidgetExample::SetRound(int _a)
-{
-    this->_round = _a;
-}
 void MainWidgetExample::ResizeWidgets()
 {
     switch(this->_type)
@@ -298,3 +280,4 @@ void MainWidgetExample::ResizeWidgets()
     }
 
 }
+

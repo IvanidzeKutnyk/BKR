@@ -24,6 +24,7 @@ void MainWindow::Set_Mamory()
     this->_settingbutton = new Custom_Left_Buttom(false,false,true);
     this->_stackedWidget = new QStackedWidget();
     this->fileInfo = new WorkFile();
+    this->_color = new ColorStyleSheet();
 }
 //Add main widgets
 void MainWindow::Add_Elements()
@@ -184,6 +185,7 @@ void MainWindow::FirstLoadXML(QDomDocument _doc, Last_Files_Widget * _last)
     QWidget* _areascrollw = new QWidget();
     QWidget* _fW = new QWidget();
     QWidget* _sW = new QWidget();
+     _mainW->setStyleSheet("background-color: rgb(47,49,54);");
 
     _mainW->setLayout(new QHBoxLayout());
 
@@ -198,6 +200,7 @@ void MainWindow::FirstLoadXML(QDomDocument _doc, Last_Files_Widget * _last)
 
 
     _sW->setLayout(new QHBoxLayout());
+    _sW->layout()->setContentsMargins(0,0,0,0);
     _sW->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
 
     _areascrollw->layout()->addWidget(_fW);
@@ -214,7 +217,7 @@ void MainWindow::FirstLoadXML(QDomDocument _doc, Last_Files_Widget * _last)
    _last->Set_Index(_stackedWidget->indexOf(_mainW));
    _stackedWidget->setCurrentWidget(_mainW);
     QDomElement taskElement = _doc.documentElement().firstChild().toElement();
-   _root->LoadXML(taskElement);
+    _root->LoadXML(taskElement);
 }
 void MainWindow::FirstLoadObject(QJsonObject _obj, Last_Files_Widget* last)
 {
@@ -224,7 +227,7 @@ void MainWindow::FirstLoadObject(QJsonObject _obj, Last_Files_Widget* last)
     QWidget* _areascrollw = new QWidget();
     QWidget* _fW = new QWidget();
     QWidget* _sW = new QWidget();
-
+    _mainW->setStyleSheet("background-color: rgb(47,49,54);");
     _mainW->setLayout(new QHBoxLayout());
 
 

@@ -15,7 +15,6 @@ public:
     AdvancedTypeWidget(QWidget *parent = nullptr);
 
     void FirstObject();
-    void SetColors();
     void SetMemory();
 };
 

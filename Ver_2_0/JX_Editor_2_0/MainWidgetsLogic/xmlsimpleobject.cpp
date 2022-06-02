@@ -15,5 +15,5 @@ void XmlSimpleObject::MainFunctions()
     this->Set_Memory();
     this->AddWidget();
     this->SetStyleSheetSimple();
-    this->SetRound(10);
+    this->setStyleSheet(_color->StyleSheetLineEditString);
 }

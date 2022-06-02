@@ -305,7 +305,10 @@ release\qrc_SourseFile.cpp: ..\JX_Editor_2_0\SourseFile.qrc \
 		..\JX_Editor_2_0\Icons\CustomLB\SaveLogo_ENTER.svg \
 		..\JX_Editor_2_0\Icons\CustomLB\SettingsLogo_ENTER.svg \
 		..\JX_Editor_2_0\Icons\CustomLB\OpenLogo_PRESSED.svg \
+		..\JX_Editor_2_0\Icons\CustomLB\Icon_Info_Pressed.svg \
 		..\JX_Editor_2_0\Icons\CustomLB\SaveLogo_PRESSED.svg \
+		..\JX_Editor_2_0\Icons\CustomLB\Icon_Info_Enter.svg \
+		..\JX_Editor_2_0\Icons\CustomLB\Icon_Info_Idle.svg \
 		..\JX_Editor_2_0\Icons\CustomLB\SettingsLogo_PRESSED.svg \
 		..\JX_Editor_2_0\Icons\CustomLB\SaveLogo_IDLE.svg \
 		..\JX_Editor_2_0\Icons\FileIcon.svg \
@@ -2604,7 +2607,8 @@ release\mainwidgetexample.obj: ..\JX_Editor_2_0\MainWidgetsLogic\mainwidgetexamp
 		C:\Qt\5.15.2\msvc2019\include\QtCore\QString \
 		..\JX_Editor_2_0\MainWidgetsLogic\advancedtypewidget.h \
 		..\JX_Editor_2_0\MainWidgetsLogic\singletypewidget.h \
-		..\JX_Editor_2_0\MainWidgetsLogic\xmlsimpleobject.h
+		..\JX_Editor_2_0\MainWidgetsLogic\xmlsimpleobject.h \
+		..\JX_Editor_2_0\MainWidgetsLogic\xmladvancedobject.h
 
 release\mainwindow.obj: ..\JX_Editor_2_0\mainwindow.cpp ..\JX_Editor_2_0\mainwindow.h \
 		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QMainWindow \
@@ -2905,6 +2909,13 @@ release\mainwindow.obj: ..\JX_Editor_2_0\mainwindow.cpp ..\JX_Editor_2_0\mainwin
 		..\JX_Editor_2_0\MainWidgetsLogic\xmlsimpleobject.h \
 		..\JX_Editor_2_0\MainWidgetsLogic\xmladvancedobject.h \
 		ui_mainwindow.h \
+		C:\Qt\5.15.2\msvc2019\include\QtCore\QVariant \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QApplication \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qapplication.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qguiapplication.h \
+		C:\Qt\5.15.2\msvc2019\include\QtGui\qinputmethod.h \
+		C:\Qt\5.15.2\msvc2019\include\QtWidgets\QGridLayout \
 		..\JX_Editor_2_0\controlwidgetmodule.h
 
 release\workfile.obj: ..\JX_Editor_2_0\WorkWithFile\workfile.cpp ..\JX_Editor_2_0\WorkWithFile\workfile.h \

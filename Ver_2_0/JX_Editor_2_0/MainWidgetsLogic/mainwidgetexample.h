@@ -22,6 +22,7 @@
 #include <QJsonValue>
 #include <string>
 #include <QDomElement>
+#include <QFont>
 #include "ColorStyle/colorstylesheet.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -55,7 +56,6 @@ public:
     void LoadObject(QJsonObject);
     void LoadMassive(QJsonArray);
     void LoadXML(QDomElement);
-    void SetRound(int);
 
 protected:
     TYPES _type;
@@ -69,17 +69,14 @@ protected:
     //Label
     QLabel *_label;
     ColorStyleSheet *_color;
+    QFont _font;
 protected:
     virtual void paintEvent(QPaintEvent *) override;
-    virtual void enterEvent(QEvent *) override;
-    virtual void leaveEvent(QEvent *) override;
-    virtual void mousePressEvent(QMouseEvent *) override;
-    virtual void mouseReleaseEvent(QMouseEvent *) override;
+
     QVector<MainWidgetExample *> _elements;
 private:
 
     bool _fullWidget;
-    int _round;
 private slots:
     void TextChanged();
 };

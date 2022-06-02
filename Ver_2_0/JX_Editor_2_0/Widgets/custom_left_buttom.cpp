@@ -84,8 +84,13 @@ void Custom_Left_Buttom::mousePressEvent(QMouseEvent *e)
     if(this->_open_bool == true)
     {
         this->_workfile->OpenFile();
+        emit SendFileInfoAfterClick(_workfile);
     }
-    emit SendFileInfoAfterClick(_workfile);
+    else if(this->_sett_bool == true)
+    {
+
+    }
+
 }
 void Custom_Left_Buttom::mouseReleaseEvent(QMouseEvent *e)
 {

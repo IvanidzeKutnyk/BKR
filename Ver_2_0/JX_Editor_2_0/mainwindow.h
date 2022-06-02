@@ -53,6 +53,7 @@ private:
     Ui::MainWindow *ui;
     MainWidgetExample *_root;
     QStackedWidget *_stackedWidget;
+    ColorStyleSheet *_color;
 
 public slots:
     void ClickedOpenButtom(WorkFile *);

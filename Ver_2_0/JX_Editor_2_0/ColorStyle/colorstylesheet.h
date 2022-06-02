@@ -17,8 +17,6 @@ public:
     QColor _colorbackgroundbigrecIdle;
     QColor _colorbackgroundbigrecSelected;
 
-
-
     QString _logoOpenButton_Idle;
     QString _logoOpenButton_Enter;
     QString _logoOpenButton_Pressed;
@@ -33,11 +31,11 @@ public:
 
     // Last_Files_Widget
     QColor _backgroundColorEnter;
-    QColor _backgroundColorPressed;
     QColor _backgroundColorIdle;
     QColor _backgroundColorMainRec;
+    QColor _backgroundColorActive;
     QString _mouseEnter;
-    QString _mouseIn;
+    QString _mouseActive;
     QString _mouseIdle;
     //Paintfileinfo
     QColor _backgroundMainWidgets;
@@ -46,30 +44,18 @@ public:
     QColor _backgroundFloatWidgets;
     QColor _backgroundMassiveWidgets;
     //MainWidgetExample
-    QString StyleSheetLineEdit;
-    QColor _bordercolordefault;
+    QString StyleSheetLineEditString;
+    QString StyleSheetLineEditDouble;
+    QString StyleSheetLineEditBool;
+    QString StyleSheetLineEditObj;
+    QString StyleSheetLineEditMass;
+    QColor _bordercolorObject;
+    QColor _bordercolorSelected;
+    QColor _bordercolorMassive;
 
-    QColor _colorbackgroundPressed;
-    QColor _colorbackgroundEnter;
-    QColor _colorbackgroundIdle;
-    QColor _colorbackgroundSelected;
+    QColor _advancedsimplecolorIdle;
+    QColor _simplecolorEnter;
 
-    QColor _RootWidgetColor;
-
-    QColor _doubleType_Idle;
-    QColor _doubleType_Enter;
-
-    QColor _stringType_Idle;
-    QColor _stringType_Enter;
-
-    QColor _boolType_Idle;
-    QColor _boolType_Enter;
-
-    QColor _massiveType_Idle;
-    QColor _massiveType_Enter;
-
-    QColor _objectType_Idle;
-    QColor _objectType_Enter;
 private:
 };
 
