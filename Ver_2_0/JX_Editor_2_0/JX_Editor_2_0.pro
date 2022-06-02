@@ -12,6 +12,7 @@ SOURCES += \
     ColorStyle\colorstylesheet.cpp \
     MainWidgetsLogic/xmladvancedobject.cpp \
     MainWidgetsLogic/xmlsimpleobject.cpp \
+    PopUp/add_newfile.cpp \
     Widgets\custom_left_buttom.cpp \
     Widgets\last_files_widget.cpp \
     MainWidgetsLogic\advancedtypewidget.cpp \
@@ -26,6 +27,7 @@ HEADERS += \
     ColorStyle\colorstylesheet.h \
     MainWidgetsLogic/xmladvancedobject.h \
     MainWidgetsLogic/xmlsimpleobject.h \
+    PopUp/add_newfile.h \
     Widgets\custom_left_buttom.h \
     Widgets\last_files_widget.h \
     MainWidgetsLogic\advancedtypewidget.h \
@@ -36,6 +38,7 @@ HEADERS += \
     MainWidgetsLogic\singletypewidget.h
 
 FORMS += \
+    PopUp/add_newfile.ui \
     mainwindow.ui
 
 # Default rules for deployment.

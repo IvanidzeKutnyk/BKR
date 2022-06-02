@@ -23,6 +23,7 @@
 #include <string>
 #include <QDomElement>
 #include <QFont>
+#include <QMenu>
 #include "ColorStyle/colorstylesheet.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -58,6 +59,13 @@ public:
     void LoadXML(QDomElement);
 
 protected:
+    QMenu *pMainMenu;
+    QMenu *pTypesMenu;
+    QAction * pAdvWidget;
+    QAction * pMassWidget;
+    QAction * pStrWidget;
+    QAction * pDoubleWidget;
+    QAction * pBoolWidget;
     TYPES _type;
     //Widgets
     QWidget *_inputwidget;
@@ -72,11 +80,14 @@ protected:
     QFont _font;
 protected:
     virtual void paintEvent(QPaintEvent *) override;
-
+    virtual void mousePressEvent(QMouseEvent *) override;
     QVector<MainWidgetExample *> _elements;
+
 private:
 
     bool _fullWidget;
+public slots:
+        void onTaskBoxContextMenuEvent();
 private slots:
     void TextChanged();
 };

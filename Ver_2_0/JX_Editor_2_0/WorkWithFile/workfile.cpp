@@ -26,3 +26,11 @@ QString WorkFile::Get_fileName(){return this->_fileName;};
 QString WorkFile::Get_wayWithOutFile(){return this->_wayWithOutFile;};
 QString WorkFile::Get_fullFileWay(){return this->_fullFileWay;};
 QString WorkFile::Get_Suff(){return this->_suff;};
+void WorkFile::readinfo()
+{
+    GetInfoFile();
+}
+void WorkFile::SetFullFileWay(QString _fileWay)
+{
+    this->_fullFileWay = _fileWay;
+}

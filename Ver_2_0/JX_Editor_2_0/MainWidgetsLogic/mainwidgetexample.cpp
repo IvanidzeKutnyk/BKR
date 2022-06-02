@@ -37,6 +37,34 @@ void MainWidgetExample::Set_Memory()
     this->_key->setObjectName("_key");
     this->_label->setObjectName("_label");
 
+    this->pMainMenu = new QMenu(this);
+    this->pTypesMenu = new QMenu(this);
+
+    this->pAdvWidget = new QAction("Add Object");
+    this->pMassWidget = new QAction("Add Massive");
+    this->pStrWidget = new QAction("Add String");
+    this->pDoubleWidget = new QAction("Add Number");
+    this->pBoolWidget = new QAction("Add Bool");
+
+        connect(pAdvWidget, SIGNAL(triggered()), this, SLOT(onTaskBoxContextMenuEvent()));
+        connect(pMassWidget, SIGNAL(triggered()), this, SLOT(onTaskBoxContextMenuEvent()));
+        connect(pStrWidget, SIGNAL(triggered()), SLOT(onTaskBoxContextMenuEvent()));
+        connect(pDoubleWidget, SIGNAL(triggered()), this, SLOT(onTaskBoxContextMenuEvent()));
+        connect(pBoolWidget, SIGNAL(triggered()), this, SLOT(onTaskBoxContextMenuEvent()));
+
+        pAdvWidget->setData(1);
+        pMassWidget->setData(2);
+        pStrWidget ->setData(3);
+        pDoubleWidget->setData(4);
+        pBoolWidget->setData(5);
+     pMainMenu->addAction(pAdvWidget);
+     pMainMenu->addAction(pMassWidget);
+     pMainMenu->addMenu(pTypesMenu);
+     pTypesMenu->setTitle("Elements");
+     pTypesMenu->addAction(pStrWidget);
+     pTypesMenu->addAction(pDoubleWidget);
+     pTypesMenu->addAction(pBoolWidget);
+
     if(this->_fullWidget)
     {
         this->_infowidget = new QWidget();
@@ -278,6 +306,44 @@ void MainWidgetExample::ResizeWidgets()
                 break;
             }
     }
-
 }
+void MainWidgetExample::mousePressEvent(QMouseEvent *event)
+{
+    if(event->button() == Qt::RightButton)
+    pMainMenu->exec(cursor().pos());
+}
+void MainWidgetExample::onTaskBoxContextMenuEvent()
+{
+    MainWidgetExample * _object = nullptr;
+    QAction * pEven = qobject_cast <QAction *> (this-> sender ());
+    int iType = pEven->data().toInt();
+    switch (iType)
+    {
+    case 1: //Adv
+           _object = new AdvancedTypeWidget(TYPES::OBJECT,(QJsonValue)" ");
+           this->_elements.push_back(_object);
+           this->_inputwidget->layout()->addWidget(_object);
+           break;
+    case 2: //Mass
+        _object = new AdvancedTypeWidget(TYPES::MASSIVE,(QJsonValue)" ");
+        this->_elements.push_back(_object);
+        this->_inputwidget->layout()->addWidget(_object);
+           break;
+    case 3: //String
+        _object = new SingleTypeWidget(TYPES::STRING,(QJsonValue)" ",(QJsonValue)" ");
+        this->_elements.push_back(_object);
+        this->_inputwidget->layout()->addWidget(_object);
+           break;
+    case 4: //Double
+        _object = new SingleTypeWidget(TYPES::DOUBLE,(QJsonValue)" ",(QJsonValue)" ");
+        this->_elements.push_back(_object);
+        this->_inputwidget->layout()->addWidget(_object);
+           break;
+    case 5: //Bool
+        _object = new SingleTypeWidget(TYPES::BOOL,(QJsonValue)" ",(QJsonValue)" ");
+        this->_elements.push_back(_object);
+        this->_inputwidget->layout()->addWidget(_object);
+           break;
 
+    }
+}

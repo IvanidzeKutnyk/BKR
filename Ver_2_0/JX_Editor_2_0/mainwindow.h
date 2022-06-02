@@ -40,6 +40,7 @@ private:
     Custom_Left_Buttom *_openbutton;
     Custom_Left_Buttom *_savebutton;
     Custom_Left_Buttom *_settingbutton;
+    Custom_Left_Buttom *_addnewfile;
     WorkFile *fileInfo;
     QVector<Last_Files_Widget*> _lastfiles;
     QStringList _filesWay;
@@ -58,5 +59,6 @@ private:
 public slots:
     void ClickedOpenButtom(WorkFile *);
     void ClickToWidgetLastFile(Last_Files_Widget *);
+    void DisactMainWindow();
 };
 #endif // MAINWINDOW_H

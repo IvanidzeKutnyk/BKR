@@ -16,6 +16,7 @@
 #include <QFileDialog>
 #include "ColorStyle/colorstylesheet.h"
 #include "WorkWithFile/workfile.h"
+#include "PopUp/add_newfile.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -24,7 +25,7 @@ class Custom_Left_Buttom : public QWidget
     Q_OBJECT
 public:
     Custom_Left_Buttom();
-    Custom_Left_Buttom(bool _save, bool _open,bool _setting);
+    Custom_Left_Buttom(bool _save, bool _open,bool _setting,bool _newfile);
     virtual QSize sizeHint() const override;
 
 protected:
@@ -43,14 +44,19 @@ private:
 
     ColorStyleSheet * _color;
     WorkFile * _workfile;
+    add_newFile *file;
 
     bool _open_bool;
     bool _save_bool;
     bool _sett_bool;
+    bool _nfile_bool;
     bool _clicked;
     bool _mousein;
 signals:
     void SendFileInfoAfterClick(WorkFile *);
+public slots:
+    void NewFileClick(QString _name,QString _way,QString _type);
+
 
 };
 

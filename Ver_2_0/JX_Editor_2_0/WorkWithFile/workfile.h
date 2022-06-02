@@ -20,6 +20,8 @@ public:
      QString Get_fileName();
      QString Get_TimeLastEdit();
      QString Get_Suff();
+     void readinfo();
+     void SetFullFileWay(QString);
 private:
     QString _fullFileWay;
     QString _suff;

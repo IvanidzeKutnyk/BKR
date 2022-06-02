@@ -8,6 +8,10 @@ ColorStyleSheet::ColorStyleSheet()
     this->_colorbackgroundbigrecPressed = "#AFB0BF";
     this->_colorbackgroundbigrecEnter = "#7B7D92";
 
+    this->_logonewfileButton_Idle = ":/CustLeftButton/Icons/CustomLB/Logo_New_File_Idle.svg";
+    this->_logonewfileButton_Enter = ":/CustLeftButton/Icons/CustomLB/Logo_New_File_Enter.svg";
+    this->_logonewfileButton_Pressed = ":/CustLeftButton/Icons/CustomLB/Logo_New_File_Pressed.svg";
+
     this->_logoOpenButton_Idle = ":/CustLeftButton/Icons/CustomLB/OpenLogo_IDLE.svg";
     this->_logoOpenButton_Enter = ":/CustLeftButton/Icons/CustomLB/OpenLogo_ENTER.svg";
     this->_logoOpenButton_Pressed = ":/CustLeftButton/Icons/CustomLB/OpenLogo_PRESSED.svg";

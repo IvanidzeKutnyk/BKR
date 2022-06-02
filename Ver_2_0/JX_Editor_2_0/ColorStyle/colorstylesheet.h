@@ -21,6 +21,10 @@ public:
     QString _logoOpenButton_Enter;
     QString _logoOpenButton_Pressed;
 
+    QString _logonewfileButton_Idle;
+    QString _logonewfileButton_Enter;
+    QString _logonewfileButton_Pressed;
+
     QString _logoSaveButton_Idle;
     QString _logoSaveButton_Enter;
     QString _logoSaveButton_Pressed;

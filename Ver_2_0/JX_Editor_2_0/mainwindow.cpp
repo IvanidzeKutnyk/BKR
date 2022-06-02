@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->Set_Mamory();
     connect(_openbutton,&Custom_Left_Buttom::SendFileInfoAfterClick,this,&MainWindow::ClickedOpenButtom);
+    connect(_addnewfile,&Custom_Left_Buttom::SendFileInfoAfterClick,this,&MainWindow::ClickedOpenButtom);
     this->Add_Elements();
     ui->RightPartW->layout()->addWidget(this->_stackedWidget);
 }
@@ -19,9 +20,10 @@ MainWindow::~MainWindow()
 //Set Memory to widgets
 void MainWindow::Set_Mamory()
 {
-    this->_openbutton = new Custom_Left_Buttom(false,true,false); //Open Button
-    this->_savebutton = new Custom_Left_Buttom(true,false,false); //Save Button
-    this->_settingbutton = new Custom_Left_Buttom(false,false,true);
+    this->_openbutton = new Custom_Left_Buttom(false,true,false,false); //Open Button
+    this->_savebutton = new Custom_Left_Buttom(true,false,false,false); //Save Button
+    this->_settingbutton = new Custom_Left_Buttom(false,false,true,false);
+    this->_addnewfile = new Custom_Left_Buttom(false,false,false,true);
     this->_stackedWidget = new QStackedWidget();
     this->fileInfo = new WorkFile();
     this->_color = new ColorStyleSheet();
@@ -31,6 +33,7 @@ void MainWindow::Add_Elements()
 {
     ui->LeftButtonsW->layout()->addWidget(_openbutton);
     ui->LeftButtonsW->layout()->addWidget(_savebutton);
+    ui->LeftButtonsW->layout()->addWidget(_addnewfile);
     ui->SettingsW->layout()->addWidget(_settingbutton);
 }
 // Click to open button
@@ -258,4 +261,7 @@ void MainWindow::FirstLoadObject(QJsonObject _obj, Last_Files_Widget* last)
    _stackedWidget->setCurrentWidget(_mainW);
    _root->LoadObject(_obj);
 }
+void MainWindow::DisactMainWindow()
+{
 
+}

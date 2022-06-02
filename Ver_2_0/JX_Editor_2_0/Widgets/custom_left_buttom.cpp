@@ -5,10 +5,11 @@ Custom_Left_Buttom::Custom_Left_Buttom()
 
 }
 
-Custom_Left_Buttom::Custom_Left_Buttom(bool _save, bool _open, bool _setting)
+Custom_Left_Buttom::Custom_Left_Buttom(bool _save, bool _open, bool _setting,bool _newfile)
 {
     this->_save_bool = _save;
     this->_open_bool = _open;
+    this->_nfile_bool = _newfile;
     this->_sett_bool = _setting;
     this->_clicked = false;
     this->_mousein = false;
@@ -90,6 +91,10 @@ void Custom_Left_Buttom::mousePressEvent(QMouseEvent *e)
     {
 
     }
+    else if(this->_nfile_bool == true)
+    {
+        file->show();
+    }
 
 }
 void Custom_Left_Buttom::mouseReleaseEvent(QMouseEvent *e)
@@ -106,6 +111,8 @@ void Custom_Left_Buttom::SetMemory()
 {
     this->_color = new ColorStyleSheet ();
     this->_workfile = new WorkFile();
+    this->file = new  add_newFile();
+    connect(file,&add_newFile::CreatingNewFile,this,&Custom_Left_Buttom::NewFileClick);
 }
 //Add Image
 QString Custom_Left_Buttom::Add_Image()
@@ -140,6 +147,21 @@ QString Custom_Left_Buttom::Add_Image()
             return this->_color->_logoSaveButton_Pressed;
         }
     }
+    else if(this->_nfile_bool == true)
+    {
+        if(this->_mousein == false)
+        {
+            return this->_color->_logonewfileButton_Idle;
+        }
+        else if(this->_mousein == true && this->_clicked == false)
+        {
+            return this->_color->_logonewfileButton_Enter;
+        }
+        else if(this->_mousein == true && this->_clicked == true)
+        {
+            return this->_color->_logonewfileButton_Pressed;
+        }
+    }
     else if(this->_sett_bool == true) //SettButton
     {
         if(this->_mousein == false)
@@ -156,4 +178,20 @@ QString Custom_Left_Buttom::Add_Image()
         }
     }
     return "";
+}
+void Custom_Left_Buttom:: NewFileClick(QString _name,QString _way,QString _type)
+{
+    QString name = _way +"/"+ _name + _type;
+     QFile file(name);
+     if (file.open(QIODevice::ReadWrite))
+     {
+         } else
+     {
+         qDebug() << "file open error";
+     }
+     file.close();
+     this->_workfile->SetFullFileWay(name);
+     this->_workfile->readinfo();
+     emit SendFileInfoAfterClick(_workfile);
+
 }
