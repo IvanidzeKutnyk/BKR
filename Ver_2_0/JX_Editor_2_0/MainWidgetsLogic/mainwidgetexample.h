@@ -21,6 +21,9 @@
 #include <QJsonArray>
 #include <QJsonValue>
 #include <string>
+#include <QDomElement>
+#include <QFont>
+#include <QMenu>
 #include "ColorStyle/colorstylesheet.h"
 //Library END +++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -53,9 +56,16 @@ public:
     void SetFullWidget(bool);
     void LoadObject(QJsonObject);
     void LoadMassive(QJsonArray);
-    void SetRound(int);
+    void LoadXML(QDomElement);
 
 protected:
+    QMenu *pMainMenu;
+    QMenu *pTypesMenu;
+    QAction * pAdvWidget;
+    QAction * pMassWidget;
+    QAction * pStrWidget;
+    QAction * pDoubleWidget;
+    QAction * pBoolWidget;
     TYPES _type;
     //Widgets
     QWidget *_inputwidget;
@@ -67,17 +77,17 @@ protected:
     //Label
     QLabel *_label;
     ColorStyleSheet *_color;
+    QFont _font;
 protected:
     virtual void paintEvent(QPaintEvent *) override;
-    virtual void enterEvent(QEvent *) override;
-    virtual void leaveEvent(QEvent *) override;
     virtual void mousePressEvent(QMouseEvent *) override;
-    virtual void mouseReleaseEvent(QMouseEvent *) override;
     QVector<MainWidgetExample *> _elements;
+
 private:
 
     bool _fullWidget;
-    int _round;
+public slots:
+        void onTaskBoxContextMenuEvent();
 private slots:
     void TextChanged();
 };

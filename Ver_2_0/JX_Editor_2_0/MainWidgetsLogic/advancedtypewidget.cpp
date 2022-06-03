@@ -7,15 +7,19 @@ AdvancedTypeWidget::AdvancedTypeWidget(TYPES _typein,QJsonValue _value,QWidget *
     switch (_typein) {
     case AdvancedTypeWidget::TYPES::MASSIVE:
         this->_type = TYPES::MASSIVE;
+        this->setStyleSheet(this->_color->StyleSheetLineEditMass);
+        this->_color->_bordercolorSelected = this->_color->_bordercolorMassive;
         break;
     case AdvancedTypeWidget::TYPES::OBJECT:
         this->_type = TYPES::OBJECT;
+        this->setStyleSheet(this->_color->StyleSheetLineEditObj);
+        this->_color->_bordercolorSelected = this->_color->_bordercolorObject;
         break;
     }
-    SetColors();
     this->_value->hide();
-    this->_label->setText(" : ");
+    this->_label->hide();
     this->_key->setText(_value.toString());
+
 }
 AdvancedTypeWidget::AdvancedTypeWidget(TYPES _typein,QWidget *parent)
     :MainWidgetExample(parent)
@@ -24,23 +28,22 @@ AdvancedTypeWidget::AdvancedTypeWidget(TYPES _typein,QWidget *parent)
     switch (_typein) {
     case AdvancedTypeWidget::TYPES::MASSIVE:
         this->_type = TYPES::MASSIVE;
+        this->setStyleSheet(this->_color->StyleSheetLineEditMass);
+        this->_color->_bordercolorSelected = this->_color->_bordercolorMassive;
         break;
     case AdvancedTypeWidget::TYPES::OBJECT:
         this->_type = TYPES::OBJECT;
+        this->setStyleSheet(this->_color->StyleSheetLineEditObj);
+        this->_color->_bordercolorSelected = this->_color->_bordercolorObject;
         break;
     }
-    SetColors();
     this->_titlewidget->hide();
 }
 AdvancedTypeWidget::AdvancedTypeWidget(QWidget *parent)
     :MainWidgetExample(parent)
 {
     FirstObject();
-    this->_color->_colorbackgroundPressed = this->_color->_RootWidgetColor;
-    this->_color->_colorbackgroundEnter = this->_color->_RootWidgetColor;
-    this->_color->_colorbackgroundIdle = this->_color->_RootWidgetColor;
-    this->_color->_colorbackgroundSelected = this->_color->_RootWidgetColor;
-    //this->ResizeWidgets();
+    this->_color->_bordercolorSelected = this->_color->_bordercolorObject;
 }
 void AdvancedTypeWidget::FirstObject()
 {
@@ -51,7 +54,7 @@ void AdvancedTypeWidget::FirstObject()
     this->_value->hide();
     this->_label->setText(" : ");
     this->_key->setText("ROOT");
-    this->SetRound(5);
+    this->setStyleSheet(this->_color->StyleSheetLineEditObj);
 }
 void AdvancedTypeWidget::SetMemory()
 {
@@ -59,23 +62,4 @@ void AdvancedTypeWidget::SetMemory()
     this->Set_Memory();
     this->AddWidget();
     this->SetStyleSheetSimple();
-}
-void AdvancedTypeWidget::SetColors()
-{
-    switch (_type) {
-    case AdvancedTypeWidget::TYPES::MASSIVE:
-        this->_color->_colorbackgroundPressed = this->_color->_massiveType_Enter;
-        this->_color->_colorbackgroundEnter = this->_color->_massiveType_Enter;
-        this->_color->_colorbackgroundIdle = this->_color->_massiveType_Idle;
-        this->_color->_colorbackgroundSelected = this->_color->_massiveType_Idle;
-        this->SetRound(10);
-        break;
-    case AdvancedTypeWidget::TYPES::OBJECT:
-        this->_color->_colorbackgroundPressed = this->_color->_objectType_Enter;
-        this->_color->_colorbackgroundEnter = this->_color->_objectType_Enter;
-        this->_color->_colorbackgroundIdle = this->_color->_objectType_Idle;
-        this->_color->_colorbackgroundSelected = this->_color->_objectType_Idle;
-        this->SetRound(15);
-        break;
-    }
 }

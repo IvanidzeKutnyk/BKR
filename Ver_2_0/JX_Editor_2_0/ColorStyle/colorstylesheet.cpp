@@ -8,6 +8,10 @@ ColorStyleSheet::ColorStyleSheet()
     this->_colorbackgroundbigrecPressed = "#AFB0BF";
     this->_colorbackgroundbigrecEnter = "#7B7D92";
 
+    this->_logonewfileButton_Idle = ":/CustLeftButton/Icons/CustomLB/Logo_New_File_Idle.svg";
+    this->_logonewfileButton_Enter = ":/CustLeftButton/Icons/CustomLB/Logo_New_File_Enter.svg";
+    this->_logonewfileButton_Pressed = ":/CustLeftButton/Icons/CustomLB/Logo_New_File_Pressed.svg";
+
     this->_logoOpenButton_Idle = ":/CustLeftButton/Icons/CustomLB/OpenLogo_IDLE.svg";
     this->_logoOpenButton_Enter = ":/CustLeftButton/Icons/CustomLB/OpenLogo_ENTER.svg";
     this->_logoOpenButton_Pressed = ":/CustLeftButton/Icons/CustomLB/OpenLogo_PRESSED.svg";
@@ -16,17 +20,18 @@ ColorStyleSheet::ColorStyleSheet()
     this->_logoSaveButton_Enter = ":/CustLeftButton/Icons/CustomLB/SaveLogo_ENTER.svg";
     this->_logoSaveButton_Pressed = ":/CustLeftButton/Icons/CustomLB/SaveLogo_PRESSED.svg";
 
-    this->_logoSettButton_Idle = ":/CustLeftButton/Icons/CustomLB/SettingsLogo_IDLE.svg";
-    this->_logoSettButton_Enter = ":/CustLeftButton/Icons/CustomLB/SettingsLogo_ENTER.svg";
-    this->_logoSettButton_Pressed = ":/CustLeftButton/Icons/CustomLB/SettingsLogo_PRESSED.svg";
+    this->_logoSettButton_Idle = ":/CustLeftButton/Icons/CustomLB/Icon_Info_Idle.svg";
+    this->_logoSettButton_Enter = ":/CustLeftButton/Icons/CustomLB/Icon_Info_Enter.svg";
+    this->_logoSettButton_Pressed = ":/CustLeftButton/Icons/CustomLB/Icon_Info_Pressed.svg";
     // Last_Files_Widget
-    this->_backgroundColorEnter = "#A1A1F6";
-    this->_backgroundColorIdle = "#7070FF";
-    this->_backgroundColorPressed = "#C1C1F2";
+    this->_backgroundColorEnter = "#898A93";
+    this->_backgroundColorIdle = "#78797F";
+    this->_backgroundColorActive = "#A5A6AC";
     this->_backgroundColorMainRec = this->_backgroundColorIdle;
-    this->_mouseIdle = "background-color:#9C9CF5;border-radius: 5px;";
-    this->_mouseEnter = "background-color:#DBDBF6;border-radius: 5px;";
-    this->_mouseIn = "background-color:#BEBEFF;border-radius: 5px;";
+    this->_mouseIdle = "background-color:#9D9FA8;border-radius: 5px;";
+    this->_mouseEnter = "background-color:#B9BABE;border-radius: 5px;";
+    this->_mouseActive = "background-color:#B9BABE;border-radius: 5px;";
+
     //Paintfileinfo
     this->_backgroundMainWidgets = "";
     this->_backgroundStringWidgets = "";
@@ -34,43 +39,95 @@ ColorStyleSheet::ColorStyleSheet()
     this->_backgroundFloatWidgets = "";
     this->_backgroundMassiveWidgets = "";
     //MainWidgetExample
-    this->_bordercolordefault = "#000000";
-    this->_colorbackgroundPressed = "#C1C1F2";
-    this->_colorbackgroundEnter = "#A1A1F6";
-    this->_colorbackgroundIdle = "#7070FF";
-    this->_colorbackgroundSelected = this->_colorbackgroundIdle;
-    //Elements
-        //RootWidget
-    this->_RootWidgetColor = "#C1C1F2";
-        //Types
-    this->_doubleType_Idle = "#91BA77";
-    this->_doubleType_Enter = "#B1D999";
+    this->_advancedsimplecolorIdle = "#2F3136";
+    this->_simplecolorEnter = "#525355";
+    this->_bordercolorObject = "#DE764C";
+    this->_bordercolorMassive = "#DA63A1";
+    this->_bordercolorSelected = "#2F3136";
 
-    this->_stringType_Idle = "#A48375";
-    this->_stringType_Enter = "#C39F8F";
-
-    this->_boolType_Idle = "#7FA5C8";
-    this->_boolType_Enter = "#9AC0E3";
-
-    this->_massiveType_Idle = "#CAB445";
-    this->_massiveType_Enter = "#E7CF5A";
-
-    this->_objectType_Idle = "#A57CC0";
-    this->_objectType_Enter = "#B896CE";
-    this->StyleSheetLineEdit = "QLineEdit"
-                               "{"
-                                    "border-radius: 4px;"
-                                    "background-color: rgb(227, 229, 232);"
-                                    "color: rgb(46, 51, 56);"
-                                    "padding-left: 10px;"
-                                    "padding-right: 10px"
-                               "}"
-                                "QLineEdit:hover"
-                               "{"
-                                "background-color: rgb(221, 223, 226);"
-                               "}"
-                               "QLineEdit:focus"
-                               "{"
-                                "background-color: rgb(215, 220, 226);"
-                               "}";
+    this->StyleSheetLineEditString = "#_label"
+                                     "{"
+                                          "color: rgb(255, 255, 255);"
+                                     "}"
+                                     "#_key"
+                                     "{"
+                                          "border-radius: 6px;"
+                                          "background-color: rgb(66, 70, 77);"
+                                          "color: rgb(156, 220, 254);"
+                                          "padding-left: 10px;"
+                                          "padding-right: 10px"
+                                     "}"
+                                     "#_value"
+                                     "{"
+                                          "border-radius: 6px;"
+                                          "background-color: rgb(66, 70, 77);"
+                                          "border-width: 1px;"
+                                          "border-style: solid;"
+                                          "border-color: rgb(222, 118, 76);"
+                                          "color: rgb(222, 118, 76);"
+                                          "padding-left: 10px;"
+                                          "padding-right: 10px"
+                                     "}";
+    this->StyleSheetLineEditDouble = "#_label"
+                                     "{"
+                                           "color: rgb(255, 255, 255);"
+                                     "}"
+                                     "#_key"
+                                     "{"
+                                          "border-radius: 6px;"
+                                          "background-color: rgb(66, 70, 77);"
+                                          "color: rgb(156, 220, 254);"
+                                          "padding-left: 10px;"
+                                          "padding-right: 10px"
+                                     "}"
+                                     "#_value"
+                                     "{"
+                                          "border-radius: 6px;"
+                                          "background-color: rgb(66, 70, 77);"
+                                          "border-width: 1px;"
+                                          "border-style: solid;"
+                                          "border-color: rgb(151, 246, 101);"
+                                          "color: rgb(151, 246, 101);"
+                                          "padding-left: 10px;"
+                                          "padding-right: 10px"
+                                     "}";
+    this->StyleSheetLineEditBool = "#_label"
+                                   "{"
+                                        "color: rgb(255, 255, 255);"
+                                   "}"
+                                   "#_key"
+                                   "{"
+                                        "border-radius: 6px;"
+                                        "background-color: rgb(66, 70, 77);"
+                                        "color: rgb(156, 220, 254);"
+                                        "padding-left: 10px;"
+                                        "padding-right: 10px"
+                                   "}"
+                                   "#_value"
+                                   "{"
+                                        "border-radius: 6px;"
+                                        "background-color: rgb(66, 70, 77);"
+                                        "border-width: 1px;"
+                                        "border-style: solid;"
+                                        "border-color: rgb(53, 140, 217);"
+                                        "color: rgb(53, 140, 217);"
+                                        "padding-left: 10px;"
+                                        "padding-right: 10px"
+                                   "}";
+    this->StyleSheetLineEditObj = "#_key"
+                                  "{"
+                                       "border-radius: 6px;"
+                                       "background-color: rgb(66, 70, 77);"
+                                       "color: rgb(248, 248, 27);"
+                                       "padding-left: 10px;"
+                                       "padding-right: 10px"
+                                  "}";
+    this->StyleSheetLineEditMass = "#_key"
+                                   "{"
+                                        "border-radius: 6px;"
+                                        "background-color: rgb(66, 70, 77);"
+                                        "color: rgb(218, 99, 161);"
+                                        "padding-left: 10px;"
+                                        "padding-right: 10px"
+                                   "}";
 }

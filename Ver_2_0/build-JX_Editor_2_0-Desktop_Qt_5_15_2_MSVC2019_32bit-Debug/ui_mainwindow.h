@@ -14,7 +14,6 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -46,12 +45,6 @@ public:
     QGridLayout *gridLayout_2;
     QWidget *RightPartW;
     QVBoxLayout *verticalLayout_6;
-    QScrollArea *scrollArea;
-    QWidget *scrollAreaWidgetContents;
-    QGridLayout *gridLayout_4;
-    QSpacerItem *verticalSpacer_3;
-    QWidget *InputInfo;
-    QVBoxLayout *verticalLayout_7;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -60,16 +53,170 @@ public:
         MainWindow->resize(1257, 673);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        centralwidget->setStyleSheet(QString::fromUtf8("#LeftPartW{background-color: rgb(24, 26, 37);}\n"
-"#CentralPartW{background-color: rgb(37, 39, 59);}\n"
-"#RightPartW{background-color: rgb(255, 255, 255);}\n"
-"#LogoW,#ActiveFileW{background-color: rgb(58, 61, 88);}\n"
+        centralwidget->setStyleSheet(QString::fromUtf8("QLineEdit:hover\n"
+"{\n"
+"background-color: rgb(96, 98, 102);\n"
+"}\n"
+"QLineEdit:focus\n"
+"{\n"
+"background-color: rgb(124, 125, 126);\n"
+"}\n"
+"#LeftPartW\n"
+"{\n"
+"background-color: rgb(32, 34, 37);\n"
+"}\n"
+"#CentralPartW\n"
+"{\n"
+"background-color: rgb(41, 43, 47);\n"
+"}\n"
+"\n"
+"#RightPartW\n"
+"{\n"
+"background-color: rgb(47, 49, 54);\n"
+"}\n"
+"#LogoW,#ActiveFileW\n"
+"{\n"
+"background-color: rgb(41, 43, 47);\n"
+"}\n"
+"QScrollBar:horizontal\n"
+"    {\n"
+"        height: 15px;\n"
+"        margin: 3px 15px 3px 15px;\n"
+"        border: 1px transparent #2A2929;\n"
+"        border-radius: 4px;\n"
+"        background-color: #2A2929;    /* #2A2929; */\n"
+"    }\n"
+"\n"
+"    QScrollBar::handle:horizontal\n"
+"    {\n"
+"        background-color: #9D9FA8;  \n"
+"        min-width: 5px;\n"
+"        border-radius: 4px;\n"
+"    }\n"
+"\n"
+"    QScrollBar::add-line:horizontal\n"
+"    {\n"
+"        margin: 0px 3px 0px 3px;\n"
+"		\n"
+"        border-image: url(:/images/right_arrow_disabled.png);      \n"
+"        width: 10"
+                        "px;\n"
+"        height: 10px;\n"
+"        subcontrol-position: right;\n"
+"        subcontrol-origin: margin;\n"
+"    }\n"
+"\n"
+"    QScrollBar::sub-line:horizontal\n"
+"    {\n"
+"        margin: 0px 3px 0px 3px;\n"
+"        border-image: url(:/images/left_arrow_disabled.png);    \n"
+"        height: 10px;\n"
+"        width: 10px;\n"
+"        subcontrol-position: left;\n"
+"        subcontrol-origin: margin;\n"
+"    }\n"
+"\n"
+"    QScrollBar::add-line:horizontal:hover,QScrollBar::add-line:horizontal:on\n"
+"    {\n"
+"        border-image: url(:/images/right_arrow.png);            \n"
+"        height: 10px;\n"
+"        width: 10px;\n"
+"        subcontrol-position: right;\n"
+"        subcontrol-origin: margin;\n"
+"    }\n"
 "\n"
 "\n"
+"    QScrollBar::sub-line:horizontal:hover, QScrollBar::sub-line:horizontal:on\n"
+"    {\n"
+"        border-image: url(:/images/left_arrow.png);               /* # &lt;-------- */\n"
+"        height: 10px;\n"
+"        width: 10px;\n"
+"        subcontrol-position: left;\n"
+"        subcon"
+                        "trol-origin: margin;\n"
+"    }\n"
+"\n"
+"    QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal\n"
+"    {\n"
+"        background: none;\n"
+"    }\n"
 "\n"
 "\n"
+"    QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal\n"
+"    {\n"
+"        background: none;\n"
+"    }\n"
 "\n"
-""));
+"    QScrollBar:vertical\n"
+"    {\n"
+"        background-color: #2A2929;\n"
+"        width: 15px;\n"
+"        margin: 15px 3px 15px 3px;\n"
+"        border: 1px transparent #2A2929;\n"
+"        border-radius: 4px;\n"
+"    }\n"
+"\n"
+"    QScrollBar::handle:vertical\n"
+"    {\n"
+"        background-color: #9D9FA8;         /* #605F5F; */\n"
+"        min-height: 5px;\n"
+"        border-radius: 4px;\n"
+"    }\n"
+"\n"
+"    QScrollBar::sub-line:vertical\n"
+"    {\n"
+"        margin: 3px 0px 3px 0px;\n"
+"        border-image: url(:/images/up_arrow_disabled.png);        /* # &lt;-------- */\n"
+"        height: 10px;\n"
+"        width: 10px;\n"
+"        subcontrol-position: top;\n"
+"        subcontrol-origin: margin;\n"
+" "
+                        "   }\n"
+"\n"
+"    QScrollBar::add-line:vertical\n"
+"    {\n"
+"        margin: 3px 0px 3px 0px;\n"
+"        border-image: url(:/images/down_arrow_disabled.png);       /* # &lt;-------- */\n"
+"        height: 10px;\n"
+"        width: 10px;\n"
+"        subcontrol-position: bottom;\n"
+"        subcontrol-origin: margin;\n"
+"    }\n"
+"\n"
+"    QScrollBar::sub-line:vertical:hover,QScrollBar::sub-line:vertical:on\n"
+"    {\n"
+"        border-image: url(:/images/up_arrow.png);                  /* # &lt;-------- */\n"
+"        height: 10px;\n"
+"        width: 10px;\n"
+"        subcontrol-position: top;\n"
+"        subcontrol-origin: margin;\n"
+"    }\n"
+"\n"
+"    QScrollBar::add-line:vertical:hover, QScrollBar::add-line:vertical:on\n"
+"    {\n"
+"        border-image: url(:/images/down_arrow.png);                /* # &lt;-------- */\n"
+"        height: 10px;\n"
+"        width: 10px;\n"
+"        subcontrol-position: bottom;\n"
+"        subcontrol-origin: margin;\n"
+"    }\n"
+"\n"
+"    QScrollBar::up-arrow:vertical, QScro"
+                        "llBar::down-arrow:vertical\n"
+"    {\n"
+"        background: none;\n"
+"    }\n"
+"\n"
+"    QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical\n"
+"    {\n"
+"        background: none;\n"
+"    }\n"
+"\n"
+"QAbstractScrollArea::corner {\n"
+"    background: none;\n"
+"    border: none;\n"
+"}"));
         horizontalLayout = new QHBoxLayout(centralwidget);
         horizontalLayout->setSpacing(0);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -168,31 +315,6 @@ public:
         verticalLayout_6->setSpacing(0);
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
         verticalLayout_6->setContentsMargins(0, 0, 0, 0);
-        scrollArea = new QScrollArea(RightPartW);
-        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
-        scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 933, 671));
-        gridLayout_4 = new QGridLayout(scrollAreaWidgetContents);
-        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        gridLayout_4->setContentsMargins(0, 0, 0, 0);
-        verticalSpacer_3 = new QSpacerItem(20, 626, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_4->addItem(verticalSpacer_3, 1, 0, 1, 1);
-
-        InputInfo = new QWidget(scrollAreaWidgetContents);
-        InputInfo->setObjectName(QString::fromUtf8("InputInfo"));
-        verticalLayout_7 = new QVBoxLayout(InputInfo);
-        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
-        verticalLayout_7->setContentsMargins(2, 2, 2, 2);
-
-        gridLayout_4->addWidget(InputInfo, 0, 0, 1, 1);
-
-        scrollArea->setWidget(scrollAreaWidgetContents);
-
-        verticalLayout_6->addWidget(scrollArea);
-
 
         horizontalLayout->addWidget(RightPartW);
 

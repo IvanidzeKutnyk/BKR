@@ -13,5 +13,11 @@
         <file>Icons/CustomLB/SettingsLogo_ENTER.svg</file>
         <file>Icons/CustomLB/SettingsLogo_IDLE.svg</file>
         <file>Icons/CustomLB/SettingsLogo_PRESSED.svg</file>
+        <file>Icons/CustomLB/Icon_Info_Enter.svg</file>
+        <file>Icons/CustomLB/Icon_Info_Idle.svg</file>
+        <file>Icons/CustomLB/Icon_Info_Pressed.svg</file>
+        <file>Icons/CustomLB/Logo_New_File_Enter.svg</file>
+        <file>Icons/CustomLB/Logo_New_File_Idle.svg</file>
+        <file>Icons/CustomLB/Logo_New_File_Pressed.svg</file>
     </qresource>
 </RCC>
